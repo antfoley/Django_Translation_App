@@ -7,7 +7,6 @@ import csv
 import shutil 
 import datetime
 from google.cloud import translate_v2 as translate
-from docx_parser import DocumentParser
 import docx
 from docx.oxml import parse_xml
 from docx.oxml.ns import nsdecls
@@ -334,24 +333,24 @@ class File(models.Model):
         #     return content.replace('Hello', 'Hola')
         arr = self.originalFile.name.split('.')
         file_type = arr[-1].lower()
-        match file_type:
-            case 'csv':
-                self.translatedFile = f'translated_csv_file_{self.title}.csv'
-                translateCsv(self)
-            case 'xlsx':
-                self.translatedFile = f'translated_xlsx_file_{self.title}.xlsx'
-                translateXlsx(self)
-            case 'po':
-                self.translatedFile = f'translated_po_file_{self.title}.po'
-                translatePo(self)
-            case 'docx':
-                self.translatedFile = f'translated_docx_file_{self.title}.docx'
-                translateDocx(self)
-            case 'resx':
-                self.translatedFile = f'translated_resx_file_{self.title}.resx'
-                translateResx(self)
-            case _:
-                raise ValueError(f"Unsupported file type: {file_type}")
+        #match file_type:
+        if file_type == 'csv':
+            self.translatedFile = f'translated_csv_file_{self.title}.csv'
+            translateCsv(self)
+        elif file_type == 'xlsx':
+            self.translatedFile = f'translated_xlsx_file_{self.title}.xlsx'
+            translateXlsx(self)
+        elif file_type == 'po':
+            self.translatedFile = f'translated_po_file_{self.title}.po'
+            translatePo(self)
+        elif file_type == 'docx':
+            self.translatedFile = f'translated_docx_file_{self.title}.docx'
+            translateDocx(self)
+        elif file_type == 'resx':
+            self.translatedFile = f'translated_resx_file_{self.title}.resx'
+            translateResx(self)
+        else:
+            raise ValueError(f"Unsupported file type: {file_type}")
         self.save(update_fields=['translatedFile'])
 
 
