@@ -1,0 +1,4375 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-01 14:01+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?"
+"2:1));\n"
+
+#: accounts/password_check.py:61
+#, python-format
+msgid "Password not strong enough. Invalid Length (%s)"
+msgstr ""
+
+#: accounts/password_check.py:73
+#, python-format
+msgid "Must be %s characters or more"
+msgstr ""
+
+#: accounts/password_check.py:77
+#, python-format
+msgid "Must be %s characters or less"
+msgstr ""
+
+#: accounts/password_check.py:81
+#, python-format
+msgid "Password not strong enough. %s"
+msgstr ""
+
+#: accounts/password_check.py:113
+#, python-format
+msgid "Must contain %(UPPER)s or more unique uppercase characters"
+msgstr ""
+
+#: accounts/password_check.py:117
+#, python-format
+msgid "Must contain %(LOWER)s or more unique lowercase characters"
+msgstr ""
+
+#: accounts/password_check.py:121
+#, python-format
+msgid "Must contain %(DIGITS)s or more unique digits"
+msgstr ""
+
+#: accounts/password_check.py:125
+#, python-format
+msgid "Must contain %(PUNCTUATION)s or more unique punctuation character"
+msgstr ""
+
+#: accounts/password_check.py:129
+#, python-format
+msgid "Must contain %(NON ASCII)s or more unique non ascii characters"
+msgstr ""
+
+#: accounts/password_check.py:133
+#, python-format
+msgid "Must contain %(WORDS)s or more unique words"
+msgstr ""
+
+#: accounts/password_check.py:138
+#, python-format
+msgid "Too Similar to [%(haystacks)s]"
+msgstr ""
+
+#: accounts/password_check.py:178
+msgid "Based on a dictionary word."
+msgstr ""
+
+#: accounts/password_check.py:194
+msgid "Password not strong enough. Based on a common sequence of characters"
+msgstr ""
+
+#: adminhub/settings.py:195
+msgid "English"
+msgstr ""
+
+#: adminhub/settings.py:196
+msgid "French"
+msgstr ""
+
+#: adminhub/settings.py:197
+msgid "Hungarian"
+msgstr ""
+
+#: adminhub/settings.py:198
+msgid "Chinese"
+msgstr ""
+
+#: adminhub/settings.py:199
+msgid "Romanian"
+msgstr ""
+
+#: certificate_generator/views.py:45 certificate_generator/views.py:171
+#: pages/views.py:337 reporting_suite/forms.py:66
+#: templates/users/create_pdf_certificates.html:361
+msgid "All Departments"
+msgstr ""
+
+#: certificate_generator/views.py:49 certificate_generator/views.py:175
+#: pages/views.py:338 reporting_suite/forms.py:60
+msgid "All Roles"
+msgstr ""
+
+#: common/utils.py:214 common/utils.py:236
+msgid "Last synchronized: "
+msgstr ""
+
+#: leapfrog_bkp.html:121 templates/reporting_suite/cpd_report.html:143
+#: templates/reporting_suite/cpd_report.html:426
+#: templates/reporting_suite/dashboard.html:94
+#: templates/reporting_suite/leapfrog_report.html:18
+msgid "Staff Trained"
+msgstr ""
+
+#: leapfrog_bkp.html:129 templates/reporting_suite/cpd_report.html:151
+#: templates/reporting_suite/dashboard.html:102
+msgid ""
+"<span class=\"Subhead\" id=\"staff_trained_users_trained\"></span> of your "
+"<span class=\"Subhead registered_users\"></span> staff have tried a hand "
+"hygiene assessment in the selected time period."
+msgstr ""
+
+#: leapfrog_bkp.html:135 templates/reporting_suite/cpd_report.html:157
+#: templates/reporting_suite/dashboard.html:108
+#: templates/reporting_suite/infection_control_report.html:91
+#: templates/reporting_suite/infection_control_report.html:146
+#: templates/reporting_suite/leapfrog_report.html:32
+msgid "Staff Passed"
+msgstr ""
+
+#: leapfrog_bkp.html:143 templates/reporting_suite/cpd_report.html:165
+#: templates/reporting_suite/dashboard.html:116
+msgid ""
+"<span class=\"Subhead\" id=\"staff_passed_staff_passed\"></span> of your "
+"<span class=\"Subhead registered_users\"></span> staff have passed a hand "
+"hygiene assessment in the selected time period."
+msgstr ""
+
+#: leapfrog_bkp.html:149 reporting_suite/quiz_report2.html:48
+#: templates/admin_portal/aggregated_reports.html:83
+#: templates/admin_portal/aggregated_reports.html:111
+#: templates/quiz_report2.html:48 templates/reporting_suite/cpd_report.html:171
+#: templates/reporting_suite/dashboard.html:122
+#: templates/reporting_suite/infection_control_report.html:25
+#: templates/reporting_suite/infection_control_report.html:232
+#: templates/reporting_suite/leapfrog_report.html:46
+#: templates/reporting_suite/leapfrog_report.html:234
+#: templates/reporting_suite/leapfrog_report.html:419
+#: templates/reporting_suite/patient_visitor_report.html:280
+msgid "Pass Rate"
+msgstr ""
+
+#: leapfrog_bkp.html:157 templates/reporting_suite/cpd_report.html:179
+#: templates/reporting_suite/dashboard.html:130
+msgid ""
+" There were <span class=\"Subhead\" id=\"total_passes\"></span> passes in "
+"<span class=\"Subhead\" id=\"total_assessments\"></span> hand hygiene "
+"assessments."
+msgstr ""
+
+#: leapfrog_bkp.html:174 templates/reporting_suite/cpd_report.html:196
+#: templates/reporting_suite/dashboard.html:46
+#: templates/reporting_suite/dashboard.html:147
+msgid "Top Performing Roles"
+msgstr ""
+
+#: leapfrog_bkp.html:198 templates/admin_portal/aggregated_reports.html:122
+#: templates/reporting_suite/cpd_report.html:220
+#: templates/reporting_suite/dashboard.html:171
+msgid "Cumulative staff time spent using SureWash kiosks"
+msgstr ""
+
+#: leapfrog_bkp.html:202 templates/reporting_suite/cpd_report.html:224
+#: templates/reporting_suite/dashboard.html:175
+#: templates/reporting_suite/learning_progress_report.html:74
+msgid "Active Users"
+msgstr ""
+
+#: leapfrog_bkp.html:204 templates/reporting_suite/cpd_report.html:226
+#: templates/reporting_suite/dashboard.html:177
+msgid ""
+"Total number of staff who engaged with SureWash in the selected time period."
+msgstr ""
+
+#: leapfrog_bkp.html:208 templates/admin_portal/aggregated_reports.html:138
+#: templates/reporting_suite/cpd_report.html:230
+#: templates/reporting_suite/dashboard.html:181
+msgid "Average Time"
+msgstr ""
+
+#: leapfrog_bkp.html:212 templates/reporting_suite/cpd_report.html:234
+#: templates/reporting_suite/dashboard.html:184
+msgid ""
+"Average amount of time spent learning on SureWash by the staff who used the "
+"system."
+msgstr ""
+
+#: leapfrog_bkp.html:288 leapfrog_bkp.html:546 leapfrog_bkp.html:801
+#: leapfrog_bkp.html:1055 leapfrog_bkp.html:1308
+#: templates/reporting_suite/cpd_report.html:331
+msgid "Total Staff"
+msgstr ""
+
+#: leapfrog_bkp.html:306 leapfrog_bkp.html:564 leapfrog_bkp.html:611
+#: leapfrog_bkp.html:819 leapfrog_bkp.html:866 leapfrog_bkp.html:1073
+#: leapfrog_bkp.html:1120 leapfrog_bkp.html:1326 leapfrog_bkp.html:1373
+#: templates/reporting_suite/cpd_report.html:357
+msgid "Staff Passed Both"
+msgstr ""
+
+#: leapfrog_bkp.html:325 leapfrog_bkp.html:583 leapfrog_bkp.html:838
+#: leapfrog_bkp.html:1092 leapfrog_bkp.html:1345
+#: templates/reporting_suite/cpd_report.html:384
+msgid "Staff Passed Quiz"
+msgstr ""
+
+#: leapfrog_bkp.html:343 leapfrog_bkp.html:601 leapfrog_bkp.html:856
+#: leapfrog_bkp.html:1110 leapfrog_bkp.html:1363
+#: templates/reporting_suite/cpd_report.html:410
+msgid "Staff Passed Lesson"
+msgstr ""
+
+#: leapfrog_bkp.html:620 leapfrog_bkp.html:875 leapfrog_bkp.html:1129
+#: leapfrog_bkp.html:1382
+msgid "Staff Attempted Both"
+msgstr ""
+
+#: pages/forms.py:28
+msgid "Reset settings back to default"
+msgstr ""
+
+#: pages/forms.py:33
+msgid "Hospital Name"
+msgstr ""
+
+#: pages/forms.py:35
+msgid "Default Language on the system (Culture-Code)"
+msgstr ""
+
+#: pages/forms.py:37
+msgid "Current Location"
+msgstr ""
+
+#: pages/forms.py:39
+msgid "Which camera your machine uses"
+msgstr ""
+
+#: pages/forms.py:45
+msgid "Staff Member"
+msgstr ""
+
+#: pages/forms.py:47
+msgid "Non-medical staff Member"
+msgstr ""
+
+#: pages/forms.py:49
+msgid "Visitor"
+msgstr ""
+
+#: pages/forms.py:51
+msgid "Patient"
+msgstr ""
+
+#: pages/forms.py:53
+msgid "Student"
+msgstr ""
+
+#: pages/forms.py:55
+msgid "Athlete"
+msgstr ""
+
+#: pages/forms.py:57
+msgid "Resident"
+msgstr ""
+
+#: pages/forms.py:59
+msgid "Contractor"
+msgstr ""
+
+#: pages/forms.py:64
+msgid "Disable touchscreen login (Only login with RFID Card)"
+msgstr ""
+
+#: pages/forms.py:66
+msgid "Show animation for swipe card login"
+msgstr ""
+
+#: pages/forms.py:70
+msgid "Require users to provide their name, role, and department"
+msgstr ""
+
+#: pages/forms.py:72
+msgid "Require users to provide only their role and department"
+msgstr ""
+
+#: pages/forms.py:74
+msgid "Number of logins before user info is required"
+msgstr ""
+
+#: pages/forms.py:76
+msgid "Show a list of all users at login"
+msgstr ""
+
+#: pages/forms.py:78
+msgid "Only allow preloaded users to login"
+msgstr ""
+
+#: pages/forms.py:86
+msgid "Enable department leaderboard"
+msgstr ""
+
+#: pages/forms.py:88
+msgid "Enable roles leaderboard"
+msgstr ""
+
+#: pages/forms.py:90
+msgid "Enable users leaderboard"
+msgstr ""
+
+#: pages/forms.py:93
+msgid "Enable Hand Hygiene Goals"
+msgstr ""
+
+#: pages/forms.py:95
+msgid "Number of people required to pass goal"
+msgstr ""
+
+#: pages/forms.py:97
+msgid "Level required to pass to achieve goal"
+msgstr ""
+
+#: pages/forms.py:99
+msgid "Start date of Goal"
+msgstr ""
+
+#: pages/forms.py:101
+msgid "End date of Goal"
+msgstr ""
+
+#: pages/forms.py:103
+msgid "Unlock all levels for all users"
+msgstr ""
+
+#: pages/forms.py:105
+msgid "Hand Hygiene Technique to use"
+msgstr ""
+
+#: pages/forms.py:113
+msgid "Enable Tutorial"
+msgstr ""
+
+#: pages/forms.py:115
+msgid "Number of passes to complete tutorial"
+msgstr ""
+
+#: pages/forms.py:117
+msgid "Enable Level1: "
+msgstr ""
+
+#: pages/forms.py:119
+msgid "Number of passes to complete Level1"
+msgstr ""
+
+#: pages/forms.py:121
+msgid "Enable Level2: "
+msgstr ""
+
+#: pages/forms.py:123
+msgid "Number of passes to complete Level2"
+msgstr ""
+
+#: pages/forms.py:125
+msgid "Enable Level3: "
+msgstr ""
+
+#: pages/forms.py:127
+msgid "Number of passes to complete Level3"
+msgstr ""
+
+#: pages/forms.py:129
+msgid "Enable Level4: "
+msgstr ""
+
+#: pages/forms.py:131
+msgid "Number of passes to complete Level4"
+msgstr ""
+
+#: pages/forms.py:133
+msgid "Enable Level5: "
+msgstr ""
+
+#: pages/forms.py:135
+msgid "Number of passes to complete Level5"
+msgstr ""
+
+#: pages/forms.py:141
+msgid "How long to show correct answer during quiz"
+msgstr ""
+
+#: quiz/forms.py:36 templates/reporting_suite/quiz_report/quiz_report.html:96
+#: templates/reporting_suite/quiz_report/quiz_report.html:207
+msgid "Quiz Title"
+msgstr ""
+
+#: quiz/forms.py:37
+msgid "Quiz Description"
+msgstr ""
+
+#: quiz/forms.py:38
+msgid "Show feedback"
+msgstr ""
+
+#: quiz/forms.py:39
+msgid "Max questions shown"
+msgstr ""
+
+#: quiz/forms.py:40
+msgid "Max answers shown"
+msgstr ""
+
+#: quiz/forms.py:59
+msgid "Question Image"
+msgstr ""
+
+#: quiz/forms.py:65
+msgid "Question Text"
+msgstr ""
+
+#: quiz/forms.py:105
+#, python-format
+msgid "Answer %d"
+msgstr ""
+
+#: quiz/models.py:309 quiz/models.py:314 quiz/models.py:333
+msgid ""
+"Your SureWash machine's quizzes could not be updated as your machine is not "
+"online. Please ensure that your machine is powered on and connected to WiFi "
+"and try again. If problems persist, please contact support@surewash.com."
+msgstr ""
+
+#: quiz/models.py:329
+msgid ""
+"Quiz upload failed: A quiz with this name already exists on your SureWash "
+"machine. If you wish to replace the existing quiz with this name, please "
+"login to your machine as an administrator and delete the existing quiz."
+msgstr ""
+
+#: quiz/models.py:336
+msgid ""
+"Something has gone wrong. Please contact 'support@surewash.com' for "
+"assistance"
+msgstr ""
+
+#: quiz/models.py:339
+msgid ""
+"Error: either a SureWash unit of this id does not exist, or you have not "
+"been assigned the privilege to see this unit"
+msgstr ""
+
+#: quiz/views.py:247
+msgid "Error"
+msgstr ""
+
+#: quiz/views.py:250
+msgid "Your machine's quizzes have been successfully updated."
+msgstr ""
+
+#: quiz/views.py:251
+msgid "Success"
+msgstr ""
+
+#: reporting_suite/forms.py:73 reporting_suite/forms.py:197
+msgid "All Quizzes"
+msgstr ""
+
+#: reporting_suite/forms.py:79 reporting_suite/forms.py:326
+msgid "All Lessons"
+msgstr ""
+
+#: reporting_suite/forms.py:289
+msgid "Both Locations"
+msgstr ""
+
+#: reporting_suite/quiz_report2.html:7 templates/quiz_report2.html:7
+#: templates/user_help.html:60
+msgid "Quiz Report"
+msgstr ""
+
+#: reporting_suite/quiz_report2.html:20 templates/quiz_report2.html:20
+msgid "Quiz Summary"
+msgstr ""
+
+#: reporting_suite/quiz_report2.html:37 templates/quiz_report2.html:37
+msgid "Overview Stats"
+msgstr ""
+
+#: reporting_suite/quiz_report2.html:40 templates/quiz_report2.html:40
+msgid "Quiz Assessments"
+msgstr ""
+
+#: reporting_suite/quiz_report2.html:44 templates/quiz_report2.html:44
+#: templates/reporting_suite/quiz_report/quiz_report.html:155
+#: templates/reporting_suite/quiz_report/quiz_report.html:325
+#: templates/reporting_suite/quiz_report/quiz_report.html:770
+msgid "Quiz Passes"
+msgstr ""
+
+#: reporting_suite/quiz_report2.html:55 templates/quiz_report2.html:55
+msgid "Staff Quiz Stats"
+msgstr ""
+
+#: reporting_suite/quiz_report2.html:58 templates/quiz_report2.html:58
+msgid "Unique Staff Attempted"
+msgstr ""
+
+#: reporting_suite/quiz_report2.html:62 templates/quiz_report2.html:62
+msgid "Unique Staff Passed"
+msgstr ""
+
+#: reporting_suite/quiz_report2.html:66 templates/quiz_report2.html:66
+msgid "Staff Pass Rate"
+msgstr ""
+
+#: reporting_suite/quiz_report2.html:73 templates/quiz_report2.html:73
+msgid "Non-Staff"
+msgstr ""
+
+#: reporting_suite/quiz_report2.html:76 templates/quiz_report2.html:76
+msgid "# Patients to Attempt a Quiz"
+msgstr ""
+
+#: reporting_suite/quiz_report2.html:80 templates/quiz_report2.html:80
+msgid "# Visitors to Attempt a Quiz"
+msgstr ""
+
+#: reporting_suite/quiz_report2.html:84 templates/quiz_report2.html:84
+msgid "Patient and Visitor Pass Rate"
+msgstr ""
+
+#: reporting_suite/quiz_report2.html:103 templates/quiz_report2.html:103
+#: templates/reporting_suite/quiz_report/quiz_report.html:14
+#: templates/reporting_suite/quiz_report/quiz_report.html:360
+#: templates/reporting_suite/quiz_report/quiz_report.html:427
+msgid "Quiz Usage over Time"
+msgstr ""
+
+#: reporting_suite/quiz_report2.html:143 templates/quiz_report2.html:143
+msgid "Total sessions:"
+msgstr ""
+
+#: reporting_suite/quiz_report2.html:144 templates/quiz_report2.html:144
+msgid "Total passes:"
+msgstr ""
+
+#: reporting_suite/quiz_report2.html:145 templates/quiz_report2.html:145
+msgid "Unique users assessed:"
+msgstr ""
+
+#: reporting_suite/quiz_report2.html:146 templates/quiz_report2.html:146
+msgid "Unique users passed:"
+msgstr ""
+
+#: reporting_suite/quiz_report2.html:147 templates/quiz_report2.html:147
+msgid "Avg. sessions per user:"
+msgstr ""
+
+#: reporting_suite/quiz_report2.html:148 templates/quiz_report2.html:148
+msgid "Avg. session score:"
+msgstr ""
+
+#: templates/404.html:44 templates/500.html:43
+#: templates/admin_portal/admin_portal_base.html:235
+msgid "visit"
+msgstr ""
+
+#: templates/404.html:64
+msgid "Page not found"
+msgstr ""
+
+#: templates/404.html:65
+msgid ""
+"The page you're looking for does not exist. Click below to return to our "
+"homepage."
+msgstr ""
+
+#: templates/404.html:66 templates/content/my_quizzes_v5.html:208
+#: templates/pages/select_kiosk_for_offline_sync.html:208
+msgid "Go Back"
+msgstr ""
+
+#: templates/500.html:63
+msgid "Internal Server Error"
+msgstr ""
+
+#: templates/500.html:64
+msgid ""
+"It's not you, it's us! Something went wrong. The site administrators have "
+"been notified of your issue."
+msgstr ""
+
+#: templates/500.html:65
+msgid "Please click below to return to the homepage."
+msgstr ""
+
+#: templates/accounts/account_request_confirmation.html:36
+msgid "Thank you for your interest in SureWash."
+msgstr ""
+
+#: templates/accounts/account_request_confirmation.html:37
+msgid ""
+"We have received your request and will contact you shortly at the provided "
+"email address. If you have any further questions, please contact "
+"<b>info@surewash.com</b>."
+msgstr ""
+
+#: templates/accounts/account_request_confirmation.html:38
+msgid "GO BACK"
+msgstr ""
+
+#: templates/accounts/confirm.html:14
+msgid "Hand Hygiene Hub"
+msgstr ""
+
+#: templates/accounts/confirm.html:44
+msgid "Thank you"
+msgstr ""
+
+#: templates/accounts/forgot_password.html:42
+msgid ""
+"Provide your email address below to receive an email link which will allow "
+"you to create a new password."
+msgstr ""
+
+#: templates/accounts/forgot_password.html:46
+#: templates/accounts/register.html:66
+#: templates/accounts/request_account.html:41
+#: templates/accounts/update_password.html:50
+msgid "SUBMIT"
+msgstr ""
+
+#: templates/accounts/login_ssot.html:50
+msgid ""
+"The Reporting Suite on SureWash.Net is a highly secure audited training "
+"record for internal use and regulatory bodies."
+msgstr ""
+
+#: templates/accounts/login_ssot.html:51
+msgid "It provides administrators the ability to: "
+msgstr ""
+
+#: templates/accounts/login_ssot.html:54
+msgid "Access and easily track staff’s training data"
+msgstr ""
+
+#: templates/accounts/login_ssot.html:56
+msgid "Identify the learning curve towards competency"
+msgstr ""
+
+#: templates/accounts/login_ssot.html:58
+msgid "Automate & aggregate data across organisations"
+msgstr ""
+
+#: templates/accounts/login_ssot.html:60
+msgid "Conduct Quizzes & Lessons to address gaps in learning"
+msgstr ""
+
+#: templates/accounts/login_ssot.html:62
+msgid "Audited reports down to individual level"
+msgstr ""
+
+#: templates/accounts/login_ssot.html:85
+msgid "Your username and password didn't match. Please try again."
+msgstr ""
+
+#: templates/accounts/login_ssot.html:91
+msgid "Sign In to SureWash.Net"
+msgstr ""
+
+#: templates/accounts/login_ssot.html:94
+msgid "Looking to sign up?"
+msgstr ""
+
+#: templates/accounts/login_ssot.html:95
+msgid "Request an Account"
+msgstr ""
+
+#: templates/accounts/login_ssot.html:100
+#: templates/accounts/request_account.html:38
+#: templates/admin_portal/existing_surewash_users.html:60
+msgid "Email"
+msgstr ""
+
+#: templates/accounts/login_ssot.html:106
+msgid "Password"
+msgstr ""
+
+#: templates/accounts/login_ssot.html:107
+msgid "Forgot Password ?"
+msgstr ""
+
+#: templates/accounts/login_ssot.html:117
+msgid "Login"
+msgstr ""
+
+#: templates/accounts/login_ssot.html:118
+msgid "Please wait..."
+msgstr ""
+
+#: templates/accounts/login_ssot.html:136
+#: templates/admin_portal/admin_portal_base.html:399
+#: templates/admin_portal/aggregated_reports_base.html:187
+#: templates/content/content_base.html:150
+#: templates/content/content_base_v5.html:190
+#: templates/dashboard/db_backup.html:198
+#: templates/dashboard/offline_sync.html:187 templates/user_help.html:65
+#: templates/users/users_base.html:190
+#: templates/users/users_base_no_report_parameters.html:146
+msgid "About"
+msgstr ""
+
+#: templates/accounts/login_ssot.html:137
+#: templates/admin_portal/aggregated_reports_base.html:190
+msgid "Support"
+msgstr ""
+
+#: templates/accounts/login_ssot.html:138
+msgid "Contact Us"
+msgstr ""
+
+#: templates/accounts/password_change_done.html:14
+#: templates/accounts/password_change_form.html:14
+#: templates/accounts/password_update_confirmation.html:9
+#: templates/accounts/register.html:14
+#: templates/accounts/request_account.html:10
+#: templates/accounts/reset_email_sent.html:15
+#: templates/accounts/update_password.html:15
+#: templates/content/content_base.html:10
+#: templates/content/content_base_v5.html:11
+#: templates/dashboard/offline_sync.html:11
+#: templates/dashboard/software_download.html:15
+msgid "Hand Hygiene Reports"
+msgstr ""
+
+#: templates/accounts/password_change_done.html:57
+msgid "Password successfully changed."
+msgstr ""
+
+#: templates/accounts/password_change_form.html:58
+msgid "Password change failed"
+msgstr ""
+
+#: templates/accounts/password_update_confirmation.html:33
+msgid "Success!"
+msgstr ""
+
+#: templates/accounts/password_update_confirmation.html:34
+msgid "Your password has been successfully updated."
+msgstr ""
+
+#: templates/accounts/password_update_confirmation.html:34
+msgid "Click below to return to the Homepage."
+msgstr ""
+
+#: templates/accounts/password_update_confirmation.html:35
+#: templates/accounts/reset_email_sent.html:46
+#: templates/dashboard/software_download.html:57
+#: templates/mobile_app/link_to_lms2.html:64 templates/navbar_base.html:43
+msgid "HOME"
+msgstr ""
+
+#: templates/accounts/register.html:56
+msgid ""
+"To activate your SureWash.Net account, please submit your password below."
+msgstr ""
+
+#: templates/accounts/request_account.html:36
+msgid ""
+"If you would like to request an account for SureWash.Net, please provide "
+"your email address below."
+msgstr ""
+
+#: templates/accounts/reset_email_sent.html:43
+msgid ""
+"If your account exists, then a password reset has been sent to your "
+"registered email address. If you do not receive an email, it may be because "
+"your do not have an active SureWash.Net account or you may also need to "
+"check your spam folder. "
+msgstr ""
+
+#: templates/accounts/reset_email_sent.html:44
+msgid "Contact an info@surewash.com if you do not receive any email. "
+msgstr ""
+
+#: templates/accounts/update_password.html:43
+msgid "Please enter your new password below."
+msgstr ""
+
+#: templates/admin_portal/admin_portal_base.html:9
+msgid "SureWash Reports"
+msgstr ""
+
+#: templates/admin_portal/admin_portal_base.html:154
+msgid "Select your language"
+msgstr ""
+
+#: templates/admin_portal/admin_portal_base.html:223
+msgid "Settings"
+msgstr ""
+
+#: templates/admin_portal/admin_portal_base.html:229
+#: templates/dashboard/software_download.html:77
+#: templates/mobile_app/link_to_lms2.html:110 templates/navbar_base.html:86
+msgid "Help Centre"
+msgstr ""
+
+#: templates/admin_portal/admin_portal_base.html:241
+#: templates/content/content_base.html:125
+#: templates/content/content_base_v5.html:165
+#: templates/dashboard/db_backup.html:121
+#: templates/dashboard/offline_sync.html:102
+#: templates/mobile_app/app_report_base.html:180
+#: templates/mobile_app/link_to_lms.html:166
+#: templates/mobile_app/link_to_lms__before.html:164
+#: templates/pages/faq_page.html:94 templates/pages/kiosks.html:696
+#: templates/reporting_suite/reporting_suite_base.html:148
+#: templates/users/create_pdf_certificates.html:185
+msgid "Logout"
+msgstr ""
+
+#: templates/admin_portal/admin_portal_base.html:282
+#: templates/admin_portal/create_api_credentials_for_kiosk.html:5
+#: templates/admin_portal/create_api_credentials_for_kiosk2.html:5
+#: templates/admin_portal/create_app_users.html:5
+#: templates/admin_portal/create_customer.html:5
+#: templates/admin_portal/create_machine.html:5
+#: templates/admin_portal/create_surewash_user.html:5
+#: templates/admin_portal/data_view.html:5
+#: templates/admin_portal/existing_app_users.html:6
+#: templates/admin_portal/existing_surewash_users.html:6
+#: templates/admin_portal/show_new_app_users.html:5
+#: templates/admin_portal/show_user.html:5
+msgid "Admin Portal"
+msgstr ""
+
+#: templates/admin_portal/admin_portal_base.html:289
+#: templates/admin_portal/aggregated_reports_base.html:61
+#: templates/admin_portal/usage_overview.html:5
+msgid "Usage Overview"
+msgstr ""
+
+#: templates/admin_portal/admin_portal_base.html:296
+#: templates/admin_portal/aggregated_reports_base.html:67
+msgid "Aggregated Reports"
+msgstr ""
+
+#: templates/admin_portal/admin_portal_base.html:303
+#: templates/admin_portal/aggregated_reports_base.html:73
+#: templates/admin_portal/create_api_credentials_for_kiosk.html:16
+#: templates/admin_portal/create_api_credentials_for_kiosk2.html:16
+#: templates/admin_portal/data_view.html:16
+msgid "Change My Data"
+msgstr ""
+
+#: templates/admin_portal/admin_portal_base.html:310
+#: templates/admin_portal/aggregated_reports_base.html:79
+msgid "Download Usage CSV"
+msgstr ""
+
+#: templates/admin_portal/admin_portal_base.html:315
+msgid "User Accounts"
+msgstr ""
+
+#: templates/admin_portal/admin_portal_base.html:322
+#: templates/admin_portal/aggregated_reports_base.html:85
+msgid "Create Customer"
+msgstr ""
+
+#: templates/admin_portal/admin_portal_base.html:330
+#: templates/admin_portal/aggregated_reports_base.html:91
+msgid "Create SureWash Machines"
+msgstr ""
+
+#: templates/admin_portal/admin_portal_base.html:337
+#: templates/admin_portal/aggregated_reports_base.html:97
+#: templates/admin_portal/create_surewash_user.html:35
+#: templates/admin_portal/existing_surewash_users.html:31
+msgid "Create User"
+msgstr ""
+
+#: templates/admin_portal/admin_portal_base.html:342
+msgid "SureWash App"
+msgstr ""
+
+#: templates/admin_portal/admin_portal_base.html:349
+#: templates/admin_portal/aggregated_reports_base.html:103
+msgid "Sample App Users"
+msgstr ""
+
+#: templates/admin_portal/admin_portal_base.html:361
+#: templates/admin_portal/aggregated_reports_base.html:109
+msgid "Home"
+msgstr ""
+
+#: templates/admin_portal/admin_portal_base.html:404
+#: templates/content/content_base.html:153
+#: templates/content/content_base_v5.html:193
+#: templates/dashboard/db_backup.html:201
+#: templates/dashboard/offline_sync.html:190
+#: templates/users/users_base.html:193
+#: templates/users/users_base_no_report_parameters.html:149
+msgid "Privacy"
+msgstr ""
+
+#: templates/admin_portal/admin_portal_base.html:409
+#: templates/content/content_base.html:156
+#: templates/content/content_base_v5.html:196
+#: templates/dashboard/db_backup.html:204
+#: templates/dashboard/offline_sync.html:193
+#: templates/users/users_base.html:196
+#: templates/users/users_base_no_report_parameters.html:152
+msgid "Legal"
+msgstr ""
+
+#: templates/admin_portal/admin_portal_base.html:414
+#: templates/content/content_base.html:159
+#: templates/content/content_base_v5.html:199
+#: templates/dashboard/db_backup.html:207
+#: templates/dashboard/offline_sync.html:196
+#: templates/users/users_base.html:199
+#: templates/users/users_base_no_report_parameters.html:155
+msgid "Terms of Service"
+msgstr ""
+
+#: templates/admin_portal/admin_portal_base.html:418
+msgid "Help Center"
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports.html:5
+#: templates/content/multimedia_question.html:5
+#: templates/content/multimedia_question2.html:5
+#: templates/content/quiz_finish.html:5 templates/content/text_question.html:5
+#: templates/reporting_suite/patient_visitor_report.html:106
+#: templates/reporting_suite/reporting_suite_base.html:61
+#: templates/users/add_users.html:5 templates/users/add_users_v5.html:5
+#: templates/users/user_breakdown.html:5
+msgid "Infection Control"
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports.html:16
+#: templates/reporting_suite/dashboard.html:12
+#: templates/reporting_suite/patient_visitor_report.html:1192
+msgid "Pass Rate over Time"
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports.html:23
+#: templates/admin_portal/aggregated_reports.html:41
+#: templates/admin_portal/aggregated_reports_base.html:231
+#: templates/admin_portal/create_app_users.html:126
+#: templates/admin_portal/show_new_app_users.html:107
+#: templates/content/attract_loop.html:101
+#: templates/content/attract_loop.html:189
+#: templates/content/lesson_create_v5.html:41 templates/content/lessons.html:89
+#: templates/content/my_quizzes_v5.html:22
+#: templates/content/my_quizzes_v5.html:40
+#: templates/content/text_question.html:23
+#: templates/dashboard/software_download.html:158
+#: templates/mobile_app/app_report_base.html:108
+#: templates/mobile_app/link_to_lms.html:82
+#: templates/mobile_app/link_to_lms.html:105
+#: templates/mobile_app/link_to_lms__before.html:103
+#: templates/pages/kiosks.html:638 templates/reporting_suite/dashboard.html:13
+#: templates/reporting_suite/dashboard.html:19
+#: templates/reporting_suite/dashboard.html:30
+#: templates/reporting_suite/dashboard.html:36
+#: templates/reporting_suite/dashboard.html:47
+#: templates/reporting_suite/dashboard.html:53
+#: templates/reporting_suite/lesson_report.html:23
+#: templates/reporting_suite/lesson_report.html:42
+#: templates/reporting_suite/lesson_report.html:60
+#: templates/reporting_suite/quiz_report/quiz_report.html:21
+#: templates/reporting_suite/quiz_report/quiz_report.html:38
+#: templates/reporting_suite/quiz_report/quiz_report.html:55
+#: templates/reporting_suite/quiz_report/quiz_report.html:72
+#: templates/users/user_breakdown.html:79
+#: templates/users/user_breakdown.html:166
+msgid "Close"
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports.html:34
+#: templates/reporting_suite/dashboard.html:29
+#: templates/reporting_suite/dashboard.html:967
+#: templates/reporting_suite/patient_visitor_report.html:976
+#: templates/reporting_suite/quiz_report/quiz_report.html:65
+msgid "Time of Day Usage"
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports.html:59
+msgid "Total Assessments Performed"
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports.html:65
+msgid ""
+"hand hygiene assessments have been performed in the selected time period."
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports.html:71
+msgid "Unique Users Trained"
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports.html:77
+msgid ""
+"different staff have tried a hand hygiene assessment in the selected time "
+"period."
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports.html:91
+#, python-format
+msgid ""
+" There were <span class=\"Subhead\">%(num_passes)s</span> passes in <span "
+"class=\"Subhead\">%(num_sessions)s</span> hand hygiene assessments."
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports.html:107
+msgid "Quiz Sessions delivered"
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports.html:109
+msgid "Quizzes Passed"
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports.html:120
+#: templates/reporting_suite/dashboard.html:167
+#: templates/reporting_suite/learning_progress_report.html:85
+msgid "Training Time Delivered"
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports.html:126
+msgid "Visitors Trained"
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports.html:128
+msgid "Total amount of visitors who have attempted a hand hygiene assessment"
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports.html:132
+msgid "Patients Trained"
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports.html:134
+msgid "Total amount of patients who have attempted a hand hygiene assessment"
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports.html:142
+msgid "Average time a user spends logged in to the system"
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports.html:148
+msgid "Pose Scores"
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports.html:156
+#: templates/reporting_suite/infection_control_report.html:250
+msgid "Palms"
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports.html:164
+#: templates/reporting_suite/infection_control_report.html:258
+msgid "Backs of the Hands"
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports.html:172
+#: templates/reporting_suite/infection_control_report.html:266
+msgid "Between the Fingers"
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports.html:180
+#: templates/reporting_suite/infection_control_report.html:274
+msgid "Backs of the Fingers"
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports.html:188
+#: templates/reporting_suite/infection_control_report.html:282
+msgid "Thumbs"
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports.html:196
+#: templates/reporting_suite/infection_control_report.html:290
+msgid "Fingertips"
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports.html:205
+#: templates/reporting_suite/infection_control_report.html:299
+msgid "Wrists"
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports.html:217
+msgid "Users Passed Level 1"
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports.html:223
+msgid ""
+"Total amount of unique users who have passed level 1 in the selected time "
+"period."
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports.html:229
+msgid "Users Passed Level 3"
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports.html:235
+msgid ""
+"Total amount of unique users who have passed level 3 in the selected time "
+"period."
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports.html:241
+msgid "Users Passed Level 5"
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports.html:247
+msgid ""
+"Total amount of unique users who have passed level 5 in the selected time "
+"period."
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports_base.html:120
+#: templates/content/content_base.html:96
+#: templates/content/content_base_v5.html:135
+#: templates/dashboard/db_backup.html:92
+#: templates/dashboard/offline_sync.html:73
+#: templates/mobile_app/app_report_base.html:151
+#: templates/mobile_app/link_to_lms.html:131
+#: templates/mobile_app/link_to_lms__before.html:129
+#: templates/pages/faq_page.html:65 templates/pages/kiosks.html:666
+#: templates/reporting_suite/reporting_suite_base.html:116
+#: templates/users/create_pdf_certificates.html:157
+#: templates/users/users_base.html:83
+#: templates/users/users_base_no_report_parameters.html:85
+msgid "Reports"
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports_base.html:123
+#: templates/content/content_base.html:99
+#: templates/content/content_base_v5.html:138
+#: templates/dashboard/db_backup.html:95
+#: templates/dashboard/offline_sync.html:76
+#: templates/mobile_app/app_report_base.html:154
+#: templates/mobile_app/link_to_lms.html:134
+#: templates/mobile_app/link_to_lms__before.html:132
+#: templates/pages/faq_page.html:68 templates/pages/kiosks.html:669
+#: templates/reporting_suite/reporting_suite_base.html:119
+#: templates/users/create_pdf_certificates.html:160
+#: templates/users/users_base.html:86
+#: templates/users/users_base_no_report_parameters.html:88
+msgid "Users"
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports_base.html:126
+#: templates/content/content_base.html:103
+#: templates/content/content_base_v5.html:142
+#: templates/dashboard/db_backup.html:99
+#: templates/dashboard/offline_sync.html:80
+#: templates/mobile_app/app_report_base.html:158
+#: templates/mobile_app/link_to_lms.html:138
+#: templates/mobile_app/link_to_lms__before.html:136
+#: templates/pages/faq_page.html:72 templates/pages/kiosks.html:672
+#: templates/reporting_suite/reporting_suite_base.html:123
+#: templates/users/create_pdf_certificates.html:164
+#: templates/users/users_base.html:90
+#: templates/users/users_base_no_report_parameters.html:92
+msgid "Kiosks"
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports_base.html:129
+#: templates/content/content_base.html:108
+#: templates/content/content_base_v5.html:147
+#: templates/dashboard/db_backup.html:104
+#: templates/dashboard/offline_sync.html:85
+#: templates/mobile_app/app_report_base.html:162
+#: templates/mobile_app/link_to_lms.html:142
+#: templates/mobile_app/link_to_lms__before.html:140
+#: templates/pages/faq_page.html:77 templates/pages/kiosks.html:676
+#: templates/reporting_suite/reporting_suite_base.html:128
+#: templates/users/create_pdf_certificates.html:169
+#: templates/users/users_base.html:95
+#: templates/users/users_base_no_report_parameters.html:97
+msgid "Mobile"
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports_base.html:132
+#: templates/content/content_base.html:112
+#: templates/content/content_base_v5.html:151
+#: templates/dashboard/db_backup.html:108
+#: templates/dashboard/offline_sync.html:89
+#: templates/mobile_app/app_report_base.html:165
+#: templates/mobile_app/link_to_lms.html:145
+#: templates/mobile_app/link_to_lms__before.html:143
+#: templates/pages/faq_page.html:81 templates/pages/kiosks.html:680
+#: templates/reporting_suite/reporting_suite_base.html:132
+#: templates/users/create_pdf_certificates.html:173
+#: templates/users/users_base.html:99
+#: templates/users/users_base_no_report_parameters.html:101
+msgid "Content"
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports_base.html:193
+msgid "Purchase"
+msgstr ""
+
+#: templates/admin_portal/aggregated_reports_base.html:227
+msgid ""
+"<b>You have not selected any units. </b><br>\n"
+"            Please select 1 or more SureWash from which to create a report. "
+msgstr ""
+
+#: templates/admin_portal/create_api_credentials_for_kiosk.html:26
+msgid ""
+"Select the 'Unit ID' of the SureWash Kiosk that you wish to create V6 "
+"credentials for, and select the Customer that it should be linked to. Then "
+"press 'Select'."
+msgstr ""
+
+#: templates/admin_portal/create_api_credentials_for_kiosk2.html:26
+msgid ""
+"Select the 'Unit ID' of the SureWash Kiosk that you wish to create V6 "
+"credentials for, and select the Customer that it should be linked to. Then "
+"press 'Select'"
+msgstr ""
+
+#: templates/admin_portal/create_app_users.html:24
+#: templates/admin_portal/existing_app_users.html:20
+#: templates/admin_portal/show_new_app_users.html:24
+msgid "SureWash Hand Hygiene App"
+msgstr ""
+
+#: templates/admin_portal/create_app_users.html:35
+#: templates/admin_portal/existing_app_users.html:31
+#: templates/admin_portal/show_new_app_users.html:35
+#: templates/mobile_app/app_report_base.html:134
+msgid "Issue Accounts"
+msgstr ""
+
+#: templates/admin_portal/create_app_users.html:41
+#: templates/admin_portal/existing_app_users.html:37
+#: templates/admin_portal/show_new_app_users.html:41
+#: templates/mobile_app/app_report_base.html:140
+msgid "Existing Accounts"
+msgstr ""
+
+#: templates/admin_portal/create_app_users.html:60
+msgid "Use this page to create dummy accounts for the SureWash app."
+msgstr ""
+
+#: templates/admin_portal/create_app_users.html:65
+#: templates/mobile_app/issue_app_accounts.html:122
+msgid "Select the number of anonymous accounts you wish to create."
+msgstr ""
+
+#: templates/admin_portal/create_app_users.html:73
+msgid "Use a Single Registration Code for All Users"
+msgstr ""
+
+#: templates/admin_portal/create_app_users.html:78
+msgid "Enter your desired registration code"
+msgstr ""
+
+#: templates/admin_portal/create_app_users.html:85
+#: templates/mobile_app/issue_app_accounts.html:142
+msgid "CREATE ACCOUNTS"
+msgstr ""
+
+#: templates/admin_portal/create_customer.html:16
+msgid "Create New Customer"
+msgstr ""
+
+#: templates/admin_portal/create_machine.html:16
+msgid "Create New SureWash Machine"
+msgstr ""
+
+#: templates/admin_portal/create_surewash_user.html:24
+#: templates/admin_portal/existing_surewash_users.html:20
+msgid "Create Users"
+msgstr ""
+
+#: templates/admin_portal/create_surewash_user.html:41
+#: templates/admin_portal/existing_surewash_users.html:37
+msgid "Existing Users"
+msgstr ""
+
+#: templates/admin_portal/data_view.html:26
+msgid "Your account's data is currently set to:"
+msgstr ""
+
+#: templates/admin_portal/data_view.html:27
+msgid ""
+"To change the data linked to your SureWash.Net account, select your desired "
+"customer from the dropdown below."
+msgstr ""
+
+#: templates/admin_portal/existing_app_users.html:58
+#: templates/admin_portal/show_new_app_users.html:61
+#: templates/mobile_app/existing_app_accounts.html:29
+msgid "User Email"
+msgstr ""
+
+#: templates/admin_portal/existing_app_users.html:59
+#: templates/admin_portal/show_new_app_users.html:62
+#: templates/mobile_app/existing_app_accounts.html:30
+msgid "Registration Code"
+msgstr ""
+
+#: templates/admin_portal/existing_app_users.html:60
+#: templates/mobile_app/existing_app_accounts.html:31
+msgid "Date Created"
+msgstr ""
+
+#: templates/admin_portal/existing_app_users.html:61
+msgid "Date Redeemed"
+msgstr ""
+
+#: templates/admin_portal/existing_app_users.html:62
+#: templates/mobile_app/existing_app_accounts.html:32
+msgid "Account is Active"
+msgstr ""
+
+#: templates/admin_portal/existing_app_users.html:63
+#: templates/users/user_breakdown.html:57
+msgid "Attempts"
+msgstr ""
+
+#: templates/admin_portal/existing_app_users.html:64
+#: templates/users/user_breakdown.html:66
+msgid "Passes"
+msgstr ""
+
+#: templates/admin_portal/existing_surewash_users.html:61
+msgid "Customer"
+msgstr ""
+
+#: templates/admin_portal/existing_surewash_users.html:62
+msgid "Activated?"
+msgstr ""
+
+#: templates/admin_portal/existing_surewash_users.html:63
+msgid "Last Login"
+msgstr ""
+
+#: templates/admin_portal/existing_surewash_users.html:64
+msgid "Machines"
+msgstr ""
+
+#: templates/admin_portal/existing_surewash_users.html:65
+msgid "Has SureWash App?"
+msgstr ""
+
+#: templates/admin_portal/existing_surewash_users.html:66
+msgid "# Of App Accounts"
+msgstr ""
+
+#: templates/admin_portal/show_new_app_users.html:100
+#: templates/content/lesson_create_v5.html:35
+#: templates/content/text_question.html:15
+#: templates/content/text_question.html:34
+#: templates/content/text_question.html:54
+#: templates/content/text_question.html:73
+#: templates/dashboard/software_download.html:152
+#: templates/mobile_app/link_to_lms.html:53 templates/pages/kiosks.html:632
+#: templates/users/create_pdf_certificates.html:107
+msgid "Warning!"
+msgstr ""
+
+#: templates/admin_portal/show_user.html:16
+msgid "User Created"
+msgstr ""
+
+#: templates/admin_portal/usage_overview.html:11
+msgid "SureWash.Net Usage"
+msgstr ""
+
+#: templates/admin_portal/usage_overview.html:38
+msgid "SureWash.Net Usage Stats"
+msgstr ""
+
+#: templates/content/attract_loop.html:6 templates/content/content.html:29
+#: templates/content/content.html:117
+msgid "Attract Loop Slides"
+msgstr ""
+
+#: templates/content/attract_loop.html:16
+msgid "Create Attract Loop"
+msgstr ""
+
+#: templates/content/attract_loop.html:21
+#: templates/content/attract_loop.html:88
+msgid "Attract Loop Title"
+msgstr ""
+
+#: templates/content/attract_loop.html:25
+msgid "Please enter the title of the attract loop you wish to create"
+msgstr ""
+
+#: templates/content/attract_loop.html:31
+msgid "Attract Loop Source File"
+msgstr ""
+
+#: templates/content/attract_loop.html:35
+msgid "Click to browse or drag and drop your .PNG file"
+msgstr ""
+
+#: templates/content/attract_loop.html:60 templates/content/lessons.html:146
+#: templates/content/lessons.html:218 templates/content/my_quizzes_v5.html:105
+#: templates/content/quiz.html:50 templates/pages/kiosks.html:609
+#: templates/users/add_users.html:39 templates/users/add_users.html:79
+#: templates/users/add_users.html:120
+msgid "Cancel"
+msgstr ""
+
+#: templates/content/attract_loop.html:64 templates/content/lessons.html:92
+#: templates/content/lessons.html:222 templates/content/quiz.html:54
+#: templates/mobile_app/app_pilot_overview.html:23
+#: templates/pages/kiosks.html:612
+#: templates/reporting_suite/reporting_suite_base.html:202
+#: templates/users/add_users.html:43 templates/users/add_users.html:83
+#: templates/users/add_users.html:124 templates/users/users_base.html:142
+msgid "Apply"
+msgstr ""
+
+#: templates/content/attract_loop.html:82
+msgid "Edit Attract Loop"
+msgstr ""
+
+#: templates/content/attract_loop.html:92
+#: templates/content/attract_loop.html:223
+#: templates/content/attract_loop.html:266 templates/content/content.html:45
+#: templates/content/content.html:85 templates/content/content.html:124
+#: templates/content/lessons.html:125 templates/content/lessons.html:300
+#: templates/content/lessons.html:349 templates/content/quiz.html:144
+#: templates/content/quiz.html:191
+msgid "Description"
+msgstr ""
+
+#: templates/content/attract_loop.html:102 templates/content/lessons.html:147
+msgid "Save changes"
+msgstr ""
+
+#: templates/content/attract_loop.html:120 templates/content/lessons.html:170
+#: templates/content/quiz.html:23 templates/users/add_users.html:18
+#: templates/users/add_users.html:58 templates/users/add_users.html:99
+msgid "Available Kiosks"
+msgstr ""
+
+#: templates/content/attract_loop.html:121
+msgid ""
+"Please select the Kiosks you wish to make the attract loop slide available on"
+msgstr ""
+
+#: templates/content/attract_loop.html:128 templates/content/lessons.html:179
+#: templates/content/quiz.html:32 templates/users/add_users.html:26
+#: templates/users/add_users.html:66 templates/users/add_users.html:107
+msgid "All Kiosks"
+msgstr ""
+
+#: templates/content/attract_loop.html:170
+msgid ""
+"Are you sure you want to delete the <span id=\"modal-attractloop-title\"></"
+"span> attract loop slide? <br> Select the kiosk you wish to delete this "
+"attract loop slide from."
+msgstr ""
+
+#: templates/content/attract_loop.html:177 templates/content/lessons.html:253
+#: templates/content/quiz.html:82
+msgid "Select Kiosk:"
+msgstr ""
+
+#: templates/content/attract_loop.html:210
+msgid "Add new Attract Loop"
+msgstr ""
+
+#: templates/content/attract_loop.html:216
+msgid "SureWash Attract Loop Slides"
+msgstr ""
+
+#: templates/content/attract_loop.html:222
+#: templates/content/attract_loop.html:265 templates/content/content.html:44
+#: templates/content/content.html:84 templates/content/content.html:123
+#: templates/content/lessons.html:299 templates/content/lessons.html:348
+#: templates/content/quiz.html:143 templates/content/quiz.html:190
+msgid "Title"
+msgstr ""
+
+#: templates/content/attract_loop.html:224
+#: templates/content/attract_loop.html:267 templates/content/content.html:46
+#: templates/content/content.html:86 templates/content/content.html:125
+#: templates/content/lessons.html:301 templates/content/lessons.html:350
+#: templates/content/quiz.html:145 templates/content/quiz.html:192
+msgid "Created by"
+msgstr ""
+
+#: templates/content/attract_loop.html:225
+#: templates/content/attract_loop.html:268 templates/content/content.html:47
+#: templates/content/content.html:87 templates/content/content.html:126
+#: templates/content/lessons.html:302 templates/content/lessons.html:351
+#: templates/content/quiz.html:146 templates/content/quiz.html:193
+msgid "Created on"
+msgstr ""
+
+#: templates/content/attract_loop.html:226
+#: templates/content/attract_loop.html:269 templates/content/content.html:48
+#: templates/content/content.html:88 templates/content/content.html:127
+#: templates/content/lessons.html:303 templates/content/lessons.html:352
+#: templates/content/quiz.html:147 templates/content/quiz.html:194
+msgid "Actions"
+msgstr ""
+
+#: templates/content/attract_loop.html:249
+msgid "There are no SureWash attract loop slides."
+msgstr ""
+
+#: templates/content/attract_loop.html:260
+msgid "My Attract Loop Slides"
+msgstr ""
+
+#: templates/content/attract_loop.html:294
+msgid "You haven't uploaded any attract loop slides yet.."
+msgstr ""
+
+#: templates/content/content.html:6 templates/content/content_base.html:72
+#: templates/content/lesson_create_v5.html:5 templates/content/lessons.html:6
+msgid "Lessons"
+msgstr ""
+
+#: templates/content/content.html:15 templates/content/content.html:38
+msgid "Active Lessons"
+msgstr ""
+
+#: templates/content/content.html:17
+msgid "Total number of lessons currently active on your SureWash kiosks"
+msgstr ""
+
+#: templates/content/content.html:22 templates/content/content.html:78
+msgid "Active Quizzes"
+msgstr ""
+
+#: templates/content/content.html:24
+msgid "Total number of quizzes currently active on your SureWash kiosks"
+msgstr ""
+
+#: templates/content/content.html:31
+msgid ""
+"Total number of additional attract loop slides currently in use on your "
+"SureWash kiosks"
+msgstr ""
+
+#: templates/content/content.html:59 templates/content/content.html:99
+#: templates/content/content.html:138 templates/pages/kiosks.html:726
+msgid "Manage"
+msgstr ""
+
+#: templates/content/content.html:66
+msgid "There are no active lessons."
+msgstr ""
+
+#: templates/content/content.html:106
+msgid "There are no quizzes."
+msgstr ""
+
+#: templates/content/content.html:145
+msgid "There are no attractloop slides."
+msgstr ""
+
+#: templates/content/content_base.html:66 templates/pages/kiosks.html:655
+#: templates/reporting_suite/patient_visitor_report.html:100
+#: templates/reporting_suite/reporting_suite_base.html:55
+msgid "Dashboard"
+msgstr ""
+
+#: templates/content/content_base.html:78 templates/content/quiz.html:6
+msgid "Quizzes"
+msgstr ""
+
+#: templates/content/content_base.html:84
+msgid "Attract Loop"
+msgstr ""
+
+#: templates/content/content_base.html:116
+#: templates/content/content_base_v5.html:155
+#: templates/dashboard/db_backup.html:112
+#: templates/dashboard/offline_sync.html:93
+#: templates/mobile_app/app_report_base.html:169
+#: templates/mobile_app/link_to_lms.html:149
+#: templates/mobile_app/link_to_lms__before.html:147
+#: templates/pages/faq_page.html:85 templates/pages/kiosks.html:684
+#: templates/reporting_suite/reporting_suite_base.html:136
+#: templates/users/create_pdf_certificates.html:177
+#: templates/users/users_base.html:103
+#: templates/users/users_base_no_report_parameters.html:105
+msgid "Offline"
+msgstr ""
+
+#: templates/content/content_base.html:120
+#: templates/content/content_base_v5.html:160
+#: templates/dashboard/db_backup.html:116
+#: templates/dashboard/offline_sync.html:97
+#: templates/mobile_app/app_report_base.html:173
+#: templates/mobile_app/link_to_lms.html:159
+#: templates/mobile_app/link_to_lms__before.html:157
+#: templates/pages/faq_page.html:55 templates/pages/faq_page.html:89
+#: templates/pages/kiosks.html:688
+#: templates/reporting_suite/reporting_suite_base.html:141
+#: templates/users/create_pdf_certificates.html:181
+#: templates/users/users_base.html:107
+#: templates/users/users_base_no_report_parameters.html:109
+msgid "FAQS"
+msgstr ""
+
+#: templates/content/content_base_v5.html:65
+#: templates/content/content_base_v5.html:111
+msgid "Public Quizzes"
+msgstr ""
+
+#: templates/content/content_base_v5.html:71
+#: templates/content/content_base_v5.html:98
+msgid "Create Quiz"
+msgstr ""
+
+#: templates/content/content_base_v5.html:77
+#: templates/content/content_base_v5.html:123
+msgid "Public Lessons"
+msgstr ""
+
+#: templates/content/content_base_v5.html:83
+msgid "Create Lessons"
+msgstr ""
+
+#: templates/content/content_base_v5.html:105
+#: templates/content/my_quizzes_v5.html:6 templates/content/quiz.html:184
+#: templates/content/quiz_downloads_v5.html:6
+#: templates/dashboard/software_download.html:76
+#: templates/mobile_app/link_to_lms2.html:109 templates/navbar_base.html:85
+#: templates/pages/select_kiosk_for_offline_sync.html:6
+msgid "My Quizzes"
+msgstr ""
+
+#: templates/content/content_base_v5.html:117 templates/content/lessons.html:17
+msgid "Create Lesson"
+msgstr ""
+
+#: templates/content/lesson_create_v5.html:14
+msgid "Uploading"
+msgstr ""
+
+#: templates/content/lesson_create_v5.html:38
+msgid "You have not filled in all of the required fields."
+msgstr ""
+
+#: templates/content/lesson_create_v5.html:58
+msgid "Lesson Creator"
+msgstr ""
+
+#: templates/content/lesson_create_v5.html:63
+msgid ""
+"To create a SureWash Lesson, upload a PowerPoint(.ppt) file containing a "
+"slideshow of the micro-learning content."
+msgstr ""
+
+#: templates/content/lesson_create_v5.html:64
+msgid ""
+"<i>Note: your file must be of type <b>.ppt</b>. The Lesson Creator will not "
+"work with <b>.pptx</b> files. If you have a .pptx file that you wish to "
+"upload you must first convert it to .ppt. To do this, open your file in "
+"PowerPoint and click 'Save As...' and save it to the type <b>'PowerPoint "
+"97-2003 Presentation (*.ppt)'</b>.</i>"
+msgstr ""
+
+#: templates/content/lesson_create_v5.html:65
+msgid ""
+"After uploading your PowerPoint file, a .zip file will downloaded from your "
+"web browser, containing a correctly-formatted SureWash Lesson file."
+msgstr ""
+
+#: templates/content/lesson_create_v5.html:66
+msgid ""
+"To install the Lesson on your SureWash machine, copy the .zip file to the "
+"root folder of your SureWash USB key. Insert the USB stick into your "
+"SureWash machine, login to it as administrator and go to administrator "
+"settings. Here, you will find a 'Lesson' settings tab which will give the "
+"option to upload the lesson from your USB key."
+msgstr ""
+
+#: templates/content/lesson_create_v5.html:76
+#: templates/dashboard/db_backup.html:155
+msgid "Clear"
+msgstr ""
+
+#: templates/content/lesson_create_v5.html:81
+#: templates/dashboard/db_backup.html:160 templates/users/add_users.html:196
+#: templates/users/add_users_v5.html:132
+msgid "Browse"
+msgstr ""
+
+#: templates/content/lesson_create_v5.html:88
+#: templates/users/add_users_v5.html:30 templates/users/add_users_v5.html:31
+#: templates/users/add_users_v5.html:57
+msgid "Upload"
+msgstr ""
+
+#: templates/content/lessons.html:23 templates/content/lessons.html:121
+#: templates/reporting_suite/lesson_report.html:85
+#: templates/reporting_suite/lesson_report.html:203
+msgid "Lesson Title"
+msgstr ""
+
+#: templates/content/lessons.html:27
+msgid "Please enter the title of the lesson you wish to create"
+msgstr ""
+
+#: templates/content/lessons.html:33
+msgid "Lesson for SureWash Elite"
+msgstr ""
+
+#: templates/content/lessons.html:41 templates/content/lessons.html:55
+msgid "Click to browse or drag and drop your .pdf or .pptx file"
+msgstr ""
+
+#: templates/content/lessons.html:46
+msgid "Lesson for SureWash GO"
+msgstr ""
+
+#: templates/content/lessons.html:61
+msgid "In order for a file to be uploadable it must be in PDF or PPTX format."
+msgstr ""
+
+#: templates/content/lessons.html:64
+msgid "Lesson Navigation"
+msgstr ""
+
+#: templates/content/lessons.html:66
+msgid "Kiosk Buttons"
+msgstr ""
+
+#: templates/content/lessons.html:70
+msgid "Powerpoint Navigation"
+msgstr ""
+
+#: templates/content/lessons.html:77 templates/content/lessons.html:131
+msgid "Associated Quiz"
+msgstr ""
+
+#: templates/content/lessons.html:80 templates/content/lessons.html:134
+msgid "Select Quiz:"
+msgstr ""
+
+#: templates/content/lessons.html:115
+msgid "Edit Lesson"
+msgstr ""
+
+#: templates/content/lessons.html:171
+msgid "Please select the Kiosks you wish to make the lesson available on"
+msgstr ""
+
+#: templates/content/lessons.html:197
+msgid "Show to Registered users"
+msgstr ""
+
+#: templates/content/lessons.html:203
+msgid "Show to Visitors"
+msgstr ""
+
+#: templates/content/lessons.html:207
+msgid "Show to Patients"
+msgstr ""
+
+#: templates/content/lessons.html:213
+msgid "Outbreak Mode"
+msgstr ""
+
+#: templates/content/lessons.html:236 templates/content/quiz.html:68
+msgid "Confirm action"
+msgstr ""
+
+#: templates/content/lessons.html:244
+msgid ""
+"Are you sure you want to delete the <span\n"
+"                                id=\"modal-lesson-title\"></span> attract "
+"loop slide? <br> Select the kiosk you wish to\n"
+"                            delete this attract loop slide from."
+msgstr ""
+
+#: templates/content/lessons.html:268 templates/content/quiz.html:97
+msgid "Delete"
+msgstr ""
+
+#: templates/content/lessons.html:287
+msgid "Add new Lesson"
+msgstr ""
+
+#: templates/content/lessons.html:293
+msgid "SureWash Lessons"
+msgstr ""
+
+#: templates/content/lessons.html:329
+msgid "There are no SureWash lessons."
+msgstr ""
+
+#: templates/content/lessons.html:342
+msgid "My Lessons"
+msgstr ""
+
+#: templates/content/lessons.html:380
+msgid "You haven't uploaded a lesson yet."
+msgstr ""
+
+#: templates/content/multimedia_question.html:14
+#: templates/content/multimedia_question2.html:14
+msgid "Uploading..."
+msgstr ""
+
+#: templates/content/multimedia_question.html:35
+#: templates/content/multimedia_question2.html:35
+msgid "Warning"
+msgstr ""
+
+#: templates/content/multimedia_question.html:39
+#: templates/content/multimedia_question2.html:39
+msgid ""
+"You have yet to complete all required fields.</span><br>\n"
+"        Please enter text for the 'question' field in addition to at least 2 "
+"questions. "
+msgstr ""
+
+#: templates/content/multimedia_question.html:59
+#: templates/content/multimedia_question2.html:59
+msgid ""
+"Video files may only be submitted in question fields.</span><br>\n"
+"        If you wish to upload a multimedia file as for an answer, please "
+"ensure that it is an image. "
+msgstr ""
+
+#: templates/content/multimedia_question.html:74
+#: templates/content/multimedia_question2.html:74
+msgid "Empty Text Field"
+msgstr ""
+
+#: templates/content/multimedia_question.html:78
+#: templates/content/multimedia_question2.html:78
+msgid ""
+"You must complete the text field for each image uploaded.</span><br>\n"
+"        This text value will be used in reports etc. "
+msgstr ""
+
+#: templates/content/multimedia_question.html:95
+#: templates/content/multimedia_question2.html:95
+#: templates/content/quiz_downloads_v5.html:16
+#: templates/content/select_existing_lesson_v5.html:15
+msgid "Images Not Uploaded For Remaining Answers"
+msgstr ""
+
+#: templates/content/multimedia_question.html:99
+#: templates/content/multimedia_question2.html:99
+msgid ""
+"If you have provided an image for one answer field,</span><br>\n"
+"           All answer fields must also contain an image."
+msgstr ""
+
+#: templates/content/multimedia_question.html:116
+#: templates/content/multimedia_question2.html:116
+msgid "Incorrect File Type"
+msgstr ""
+
+#: templates/content/multimedia_question.html:120
+#: templates/content/multimedia_question2.html:120
+msgid ""
+"The file type you have selected is not permitted.</span><br>\n"
+"          Please select an image file of type .JPEG, .PNG, and .GIF,<br>\n"
+"          or a video file of type .MOV, .MPEG4 and .AVI. "
+msgstr ""
+
+#: templates/content/multimedia_question.html:162
+#: templates/content/multimedia_question2.html:162
+msgid "Quiz Creator"
+msgstr ""
+
+#: templates/content/multimedia_question.html:170
+#: templates/content/multimedia_question2.html:170
+#: templates/content/text_question.html:173
+msgid "Question text"
+msgstr ""
+
+#: templates/content/multimedia_question.html:196
+#: templates/content/multimedia_question2.html:196
+#: templates/content/text_question.html:178
+msgid "Correct answer"
+msgstr ""
+
+#: templates/content/multimedia_question.html:221
+#: templates/content/multimedia_question2.html:221
+#: templates/content/text_question.html:185
+msgid "Incorrect answers"
+msgstr ""
+
+#: templates/content/multimedia_question.html:368
+#: templates/content/multimedia_question2.html:368
+msgid "Update Question"
+msgstr ""
+
+#: templates/content/multimedia_question.html:370
+#: templates/content/multimedia_question2.html:370
+msgid "Add Question"
+msgstr ""
+
+#: templates/content/my_quizzes_v5.html:37
+#: templates/pages/select_kiosk_for_offline_sync.html:37
+msgid "Your quiz has been deleted."
+msgstr ""
+
+#: templates/content/my_quizzes_v5.html:50
+#: templates/content/my_quizzes_v5.html:76
+#: templates/pages/select_kiosk_for_offline_sync.html:76
+msgid "Choose an action"
+msgstr ""
+
+#: templates/content/my_quizzes_v5.html:55
+msgid "Send to SureWash"
+msgstr ""
+
+#: templates/content/my_quizzes_v5.html:56
+#: templates/content/my_quizzes_v5.html:83
+#: templates/content/quiz_downloads_v5.html:42
+#: templates/pages/faq_page.html:111
+#: templates/pages/select_kiosk_for_offline_sync.html:56
+#: templates/pages/select_kiosk_for_offline_sync.html:83
+msgid "Download Quiz"
+msgstr ""
+
+#: templates/content/my_quizzes_v5.html:57
+#: templates/content/my_quizzes_v5.html:84
+#: templates/pages/select_kiosk_for_offline_sync.html:57
+#: templates/pages/select_kiosk_for_offline_sync.html:84
+msgid "Edit Quiz"
+msgstr ""
+
+#: templates/content/my_quizzes_v5.html:58
+#: templates/content/my_quizzes_v5.html:85
+#: templates/pages/select_kiosk_for_offline_sync.html:58
+#: templates/pages/select_kiosk_for_offline_sync.html:85
+msgid "Export to .txt file"
+msgstr ""
+
+#: templates/content/my_quizzes_v5.html:59
+#: templates/content/my_quizzes_v5.html:86
+#: templates/pages/select_kiosk_for_offline_sync.html:59
+#: templates/pages/select_kiosk_for_offline_sync.html:86
+msgid "Delete Quiz"
+msgstr ""
+
+#: templates/content/my_quizzes_v5.html:98
+msgid "Confirm"
+msgstr ""
+
+#: templates/content/my_quizzes_v5.html:101
+msgid "Are you sure you want to delete"
+msgstr ""
+
+#: templates/content/my_quizzes_v5.html:107
+#: templates/pages/select_kiosk_for_offline_sync.html:107
+msgid "Are you sure you want to delete?"
+msgstr ""
+
+#: templates/content/my_quizzes_v5.html:123
+#: templates/pages/select_kiosk_for_offline_sync.html:123
+msgid "Select destination SureWash machine."
+msgstr ""
+
+#: templates/content/my_quizzes_v5.html:155
+#: templates/pages/select_kiosk_for_offline_sync.html:155
+msgid "Select Quiz"
+msgstr ""
+
+#: templates/content/my_quizzes_v5.html:158
+#: templates/pages/select_kiosk_for_offline_sync.html:158
+msgid ""
+"Select one of your previously created quizzes from the drop-down list to "
+"make changes."
+msgstr ""
+
+#: templates/content/my_quizzes_v5.html:207
+#: templates/pages/select_kiosk_for_offline_sync.html:207
+msgid "You have yet to create any quizzes."
+msgstr ""
+
+#: templates/content/my_quizzes_v5.html:207
+#: templates/pages/select_kiosk_for_offline_sync.html:207
+msgid ""
+"Use this feature if you wish to make  changes to any of the quizzes you "
+"write."
+msgstr ""
+
+#: templates/content/quiz.html:24
+msgid "Please select the Kiosks you wish to make the quiz available on"
+msgstr ""
+
+#: templates/content/quiz.html:75
+msgid "Are you sure you want to delete the"
+msgstr ""
+
+#: templates/content/quiz.html:75
+msgid "Select the kiosk you wish to delete this quiz from."
+msgstr ""
+
+#: templates/content/quiz.html:130
+msgid "Add new Quiz"
+msgstr ""
+
+#: templates/content/quiz.html:137
+msgid "SureWash Quizzes"
+msgstr ""
+
+#: templates/content/quiz.html:172
+msgid "There are no SureWash quizzes."
+msgstr ""
+
+#: templates/content/quiz.html:224
+msgid "You haven't created a quiz yet."
+msgstr ""
+
+#: templates/content/quiz_downloads_v5.html:19
+#: templates/content/select_existing_lesson_v5.html:18
+msgid ""
+"<b>If you have provided an image for one answer field,</b><br>\n"
+"         All answer fields must also contain an image."
+msgstr ""
+
+#: templates/content/quiz_downloads_v5.html:43
+msgid ""
+"Select your desired quiz from the drop-down list and download to your "
+"SureWash USB key."
+msgstr ""
+
+#: templates/content/quiz_downloads_v5.html:68
+#: templates/content/select_existing_lesson_v5.html:67
+msgid "Download"
+msgstr ""
+
+#: templates/content/quiz_finish.html:18
+msgid "Select destination SureWash machine"
+msgstr ""
+
+#: templates/content/quiz_finish.html:48
+msgid "Quiz creation complete!"
+msgstr ""
+
+#: templates/content/quiz_finish.html:52
+msgid "Click below to download your SureWash quiz file."
+msgstr ""
+
+#: templates/content/quiz_finish.html:53
+msgid ""
+"To load the file onto your SureWash kiosk, copy it to your SureWash USB key "
+"and login to the kiosk as an administrator."
+msgstr ""
+
+#: templates/content/quiz_finish.html:60
+msgid "Send to Kiosk"
+msgstr ""
+
+#: templates/content/quiz_setup.html:26
+msgid "Create New Quiz"
+msgstr ""
+
+#: templates/content/quiz_setup.html:69
+msgid "Show answer feedback"
+msgstr ""
+
+#: templates/content/quiz_setup.html:80
+msgid "Include images/video in quiz"
+msgstr ""
+
+#: templates/content/quiz_setup.html:89
+msgid "Proceed"
+msgstr ""
+
+#: templates/content/select_existing_lesson_v5.html:5
+msgid "Existing Lessons"
+msgstr ""
+
+#: templates/content/select_existing_lesson_v5.html:39
+msgid "Download Lesson"
+msgstr ""
+
+#: templates/content/select_existing_lesson_v5.html:40
+msgid ""
+"Select your desired lesson from the drop-down list and download to your "
+"SureWash USB key."
+msgstr ""
+
+#: templates/content/select_existing_lesson_v5.html:41
+msgid ""
+"To install the lesson on your machine, login as an administrator and go to "
+"the 'Lessons' section of the administrator settings."
+msgstr ""
+
+#: templates/content/text_question.html:19
+msgid ""
+"You have yet to complete all required fields.</b><br>\n"
+"          Please enter text for the 'question' field in addition to at least "
+"2 questions."
+msgstr ""
+
+#: templates/content/text_question.html:38
+msgid "You have yet to complete all required fields."
+msgstr ""
+
+#: templates/content/text_question.html:39
+msgid "Please enter a title for your quiz."
+msgstr ""
+
+#: templates/content/text_question.html:58
+msgid "You have already created a quiz with this title."
+msgstr ""
+
+#: templates/content/text_question.html:59
+msgid "Quiz titles must be unique."
+msgstr ""
+
+#: templates/content/text_question.html:77
+msgid ""
+"You have entered a value <b>'<span name=\"nonasciitext\" id=\"nonasciitext"
+"\"></span>'</b> that contains non-ASCII characters.<br><br>\n"
+"            Please provide text that contains only alphanumeric/punctuation "
+"characters."
+msgstr ""
+
+#: templates/content/text_question.html:111
+msgid "Are you sure?"
+msgstr ""
+
+#: templates/content/text_question.html:116
+msgid ""
+"Do you really want to delete this question from your quiz? Once deleted, the "
+"question cannot be recovered."
+msgstr ""
+
+#: templates/content/text_question.html:244
+msgid "UPDATE QUESTION"
+msgstr ""
+
+#: templates/content/text_question.html:246
+msgid "ADD QUESTION"
+msgstr ""
+
+#: templates/dashboard/db_backup.html:79
+#: templates/dashboard/offline_sync.html:62
+msgid "Data Sync"
+msgstr ""
+
+#: templates/dashboard/db_backup.html:142
+msgid "OFFLINE DATA"
+msgstr ""
+
+#: templates/dashboard/db_backup.html:145
+#, python-format
+msgid ""
+"To push your machine's data to SureWash.Net, locate the database backup .zip "
+"file on your USB stick with the name prefix <b>SureWashUserData_%(unit_id)s</"
+"b>. <br><br>For further instructions, <a href='/data_sync_guide/'>see our "
+"PDF guide.</a>"
+msgstr ""
+
+#: templates/dashboard/offline_sync.html:121
+msgid "Select Unit"
+msgstr ""
+
+#: templates/dashboard/offline_sync.html:123
+msgid "Select the kiosk for which you wish to perform an offline data upload."
+msgstr ""
+
+#: templates/dashboard/software_download.html:47
+msgid "Toggle navigation"
+msgstr ""
+
+#: templates/dashboard/software_download.html:58
+#: templates/mobile_app/link_to_lms2.html:65 templates/navbar_base.html:44
+msgid "REPORTING"
+msgstr ""
+
+#: templates/dashboard/software_download.html:59
+msgid "QUIZZES"
+msgstr ""
+
+#: templates/dashboard/software_download.html:60
+#: templates/mobile_app/link_to_lms2.html:67 templates/navbar_base.html:46
+msgid "USERS"
+msgstr ""
+
+#: templates/dashboard/software_download.html:61
+#: templates/mobile_app/link_to_lms2.html:68 templates/navbar_base.html:47
+msgid "OFFLINE"
+msgstr ""
+
+#: templates/dashboard/software_download.html:70
+#: templates/mobile_app/link_to_lms2.html:103 templates/navbar_base.html:79
+msgid "My Account"
+msgstr ""
+
+#: templates/dashboard/software_download.html:80
+#: templates/mobile_app/link_to_lms2.html:114 templates/navbar_base.html:89
+msgid "Sign out"
+msgstr ""
+
+#: templates/dashboard/software_download.html:99
+msgid "SOFTWARE DOWNLOAD"
+msgstr ""
+
+#: templates/dashboard/software_download.html:103
+msgid "Stay up to date with the latest SureWash releases."
+msgstr ""
+
+#: templates/dashboard/software_download.html:117
+msgid ""
+"To update your machine's software to version <b>v5.0.20.0</b>, click the "
+"button below to download the latest version to your SureWash USB stick."
+"<br><br>When installing the software to your machine, you will be prompted "
+"for software update password. If you do not have this password, please "
+"contact support@surewash.com."
+msgstr ""
+
+#: templates/dashboard/software_download.html:136
+msgid ""
+"Please help us make this tool better by sending comments and suggestions to "
+msgstr ""
+
+#: templates/dashboard/software_download.html:155
+msgid "You have not filled in all of the required fields. "
+msgstr ""
+
+#: templates/dashboard/user_portal.html:22
+msgid "MANAGE USERS"
+msgstr ""
+
+#: templates/dashboard/user_portal.html:23
+msgid ""
+"Select this option if you wish to create user profiles and import user lists "
+"to your SureWash system."
+msgstr ""
+
+#: templates/dashboard/user_portal.html:24
+#: templates/dashboard/user_portal.html:32
+#: templates/pages/content_creator.html:23
+#: templates/pages/content_creator.html:31
+msgid "SELECT"
+msgstr ""
+
+#: templates/dashboard/user_portal.html:30
+msgid "ISSUE CERTIFICATES"
+msgstr ""
+
+#: templates/dashboard/user_portal.html:31
+msgid ""
+"Select this option to create and issue certificates of SureWash hand hygiene "
+"competence to your staff."
+msgstr ""
+
+#: templates/mobile_app/app_help_guide.html:23
+msgid ""
+"Note: This guide can be downloaded as a PDF: <a href=\"/"
+"surewashpocket_admin_guide/\">here</a>."
+msgstr ""
+
+#: templates/mobile_app/app_help_guide.html:24
+msgid ""
+"The SureWash Hand Hygiene App is a mobile app that delivers basic hand "
+"hygiene training for hospital staff and patients. If you have a base of "
+"staff or students and would like to get them training on SureWash HH App, "
+"and be able to subsequently track their usage and view data analytics, "
+"follow the steps in this guide."
+msgstr ""
+
+#: templates/mobile_app/app_help_guide.html:25
+msgid ""
+"The procedure for getting users set up on the SureWash Hand Hygiene App is "
+"as follows:"
+msgstr ""
+
+#: templates/mobile_app/app_help_guide.html:29
+msgid "Registration Codes"
+msgstr ""
+
+#: templates/mobile_app/app_help_guide.html:30
+msgid ""
+"The first thing to note is that for each SureWash App user account that you "
+"wish to create, you will need a registration code. A registration code is a "
+"unique code which will unlock all of the app’s functionality for a user, and "
+"link that user’s data with your organization’s web dashboard."
+msgstr ""
+
+#: templates/mobile_app/app_help_guide.html:31
+msgid ""
+"To see how many SureWash App Registration Codes you currently have, login to "
+"your SureWash.Net account and navigate to the Mobile section. Now click on "
+"’Issue Accounts’ in the sidebar and from here you can see the 'Registration "
+"codes remaining' indicator."
+msgstr ""
+
+#: templates/mobile_app/app_help_guide.html:33
+msgid ""
+"If you have not already received any registration codes for the SureWash HH "
+"App, please contact info@surewash.com with the number of codes you would "
+"like to receive. You will need 1 registration code for each user that you "
+"wish to give app access to."
+msgstr ""
+
+#: templates/mobile_app/app_help_guide.html:38
+msgid "Linking User Emails to Registration Codes"
+msgstr ""
+
+#: templates/mobile_app/app_help_guide.html:39
+msgid ""
+"Once you have received an allocation of registration codes, you can use "
+"SureWash.Net to link these codes to users of your selection by uploading a "
+"formatted list of email addresses to the site."
+msgstr ""
+
+#: templates/mobile_app/app_help_guide.html:40
+msgid ""
+"To do this, click on the ‘Issue Accounts’ tab. Now you will see the "
+"following webpage:"
+msgstr ""
+
+#: templates/mobile_app/app_help_guide.html:42
+msgid ""
+"On this page, you should find a link to download the ‘user upload template "
+"file’. This file is simply a specially-formatted CSV file which you can use "
+"as a template for providing user email addresses to the system."
+msgstr ""
+
+#: templates/mobile_app/app_help_guide.html:43
+msgid ""
+"Download this CSV file, enter your list of email addresses (each email "
+"address should belong to one of your intended SureWash HH App users) into "
+"the file, and then re-upload your completed file. Note that the number of "
+"users that you can create is limited to the number of registration codes "
+"that you have received, so please ensure that the CSV user list that you are "
+"uploading does not contain more entries than available codes - it will be "
+"rejected if so."
+msgstr ""
+
+#: templates/mobile_app/app_help_guide.html:46
+msgid "About the User Upload Template File"
+msgstr ""
+
+#: templates/mobile_app/app_help_guide.html:47
+msgid ""
+"When you download the <i>‘user upload template file’</i> and open it up in "
+"Excel, you will see the following columns: <i>Email</i>, <i>First Name</i>, "
+"<i>Family Name</i>, <i>Department</i>, <i>Role</i>, <i>Additional ID</i>. A "
+"description of each field is given below. It is important to note that only "
+"the <i>Email</i> file is mandatory - because an email address is the unique "
+"value used to represent each of your app users. The remaining 5 fields can "
+"be left blank if you choose. This means that you can uplaod a CSV file that "
+"is just a list of email addresses, with all other data omitted. However, if "
+"you wish to enhance your reports with additional descriptive information for "
+"your users, then you may find it beneficial to fill-in the other columns and "
+"provide extra information such as name, role, department, etc. "
+msgstr ""
+
+#: templates/mobile_app/app_help_guide.html:48
+msgid "The meanings of each column heading in the CSV file are as follows:"
+msgstr ""
+
+#: templates/mobile_app/app_help_guide.html:50
+msgid ""
+"<b>Email:</b> this is the only mandatory field. The 'Email' field is used to "
+"store the user’s email address. This is the only mandatory field, it cannot "
+"be left blank."
+msgstr ""
+
+#: templates/mobile_app/app_help_guide.html:51
+msgid ""
+"<b>First Name:</b> the user's first name. It can be left blank if desired."
+msgstr ""
+
+#: templates/mobile_app/app_help_guide.html:52
+msgid ""
+"<b>Family Name:</b> the user's last name (family name/surname). It can be "
+"left blank if desired."
+msgstr ""
+
+#: templates/mobile_app/app_help_guide.html:53
+msgid ""
+"<b>Department:</b> the hospital department to which the user belongs, e.g. "
+"Cardiology, Radiology, etc. It can be left blank if desired."
+msgstr ""
+
+#: templates/mobile_app/app_help_guide.html:54
+msgid ""
+"<b>Role:</b> the user's role/job title, e.g. Nurse, Doctor, Athlete, etc. It "
+"can be left blank if desired."
+msgstr ""
+
+#: templates/mobile_app/app_help_guide.html:55
+msgid ""
+"<b>Additional ID:</b> this can be used to store some extra unique identifier "
+"to represent a user, such as their staff/personnel number or else the number "
+"that is stored on their staff card. It can be left blank if desired."
+msgstr ""
+
+#: templates/mobile_app/app_help_guide.html:58
+msgid ""
+"An example of a completed user list after filling the template file with "
+"additional descriptive fields can be seen below:"
+msgstr ""
+
+#: templates/mobile_app/app_help_guide.html:61
+msgid ""
+"Conversely, if you wish to only fill in the 'Email Address' column and leave "
+"the other fields blank, an example of such CSV lists can be seen here: "
+msgstr ""
+
+#: templates/mobile_app/app_help_guide.html:67
+msgid "Uploading your User Template File"
+msgstr ""
+
+#: templates/mobile_app/app_help_guide.html:68
+msgid ""
+"Once you have filled in the user upload template file and saved it to your "
+"PC, click the ‘Browse’ button to select the file on your PC. Then click the "
+"‘Upload’ button."
+msgstr ""
+
+#: templates/mobile_app/app_help_guide.html:69
+msgid ""
+"Once the file is successfully uploaded you will receive a list of "
+"registration codes, each one corresponding to one of your user email "
+"addresses."
+msgstr ""
+
+#: templates/mobile_app/app_help_guide.html:71
+msgid ""
+"You can click the ‘Export to CSV’ button to download a copy of this list to "
+"your PC. The final step of the SureWash HH App Account Creation process is "
+"for you to disseminate the registration codes (e.g. via email, or whatever "
+"your preferred way to contact employees is) so that each user receives their "
+"unique code."
+msgstr ""
+
+#: templates/mobile_app/app_help_guide.html:75
+msgid "Linking Your Phone’s Account"
+msgstr ""
+
+#: templates/mobile_app/app_help_guide.html:78
+msgid ""
+"When a user receives their registration code, they should then proceed to "
+"download the SureWash Hand Hygiene app to their phone. More information "
+"about the app, along with links to where it can be found in the Google Play "
+"Store and the Apple App Store, are available <a href=\"https://surewash.com/"
+"products/surewash-pocket/\">at this link.</a>"
+msgstr ""
+
+#: templates/mobile_app/app_help_guide.html:80
+msgid ""
+"<i><b>Note: The software requirements for the app are as follows:</b><br>For "
+"Apple devices, the phone must be an iPhone 7(2016) or newer, and should run "
+"iOS10 or above.<br><br>For Android devices, the phone should be running "
+"Android 8.0 or greater and requires at least 4GB of RAM.\n"
+"                       If the app is not showing up in the app store for "
+"your phone, it’s possible that this is because your device does not meet the "
+"minimum app requirements.</i>"
+msgstr ""
+
+#: templates/mobile_app/app_help_guide.html:86
+msgid ""
+"When a user runs the app for the first time, they will first be shown a "
+"video that introduces how to use the app.<br><br>The user will then be "
+"prompted to register by typing in their email address and registration code. "
+"Once this is done, their data will be linked to your SureWash.Net account."
+"<br><br>In the event that a user accidentally clicks the ‘Guest’ button and "
+"skips the registration process, they can always retroactively register for "
+"the app by clicking the ‘You’ button on the app’s homescreen, and then "
+"clicking the ‘Settings’ tab and providing their registration details here."
+msgstr ""
+
+#: templates/mobile_app/app_help_guide.html:97
+msgid "Viewing Your Data"
+msgstr ""
+
+#: templates/mobile_app/app_help_guide.html:98
+msgid ""
+"Once your users have registered for the app and performed some training "
+"sessions, you can log in to SureWash.Net, navigate to the reporting suite "
+"and view analytical charts that reflect your staff’s usage. This "
+"infonformation can also be exported to a printable PDF file by selecting the "
+"'EXPORT PDF' button. <br><br>You can get more extensive data by clicking the "
+"'EXCEL REPORT' button (in the top right corner of the page) which will "
+"generate a downloadable Excel report that contains per-user and per-session "
+"data for your staff's app usage. "
+msgstr ""
+
+#: templates/mobile_app/app_pilot_overview.html:67
+#: templates/mobile_app/handhygiene_app_report.html:54
+msgid "Accounts Issued"
+msgstr ""
+
+#: templates/mobile_app/app_pilot_overview.html:75
+#: templates/mobile_app/handhygiene_app_report.html:62
+msgid "Accounts Activated"
+msgstr ""
+
+#: templates/mobile_app/app_pilot_overview.html:87
+#: templates/mobile_app/handhygiene_app_report.html:74
+msgid "Total Assessments"
+msgstr ""
+
+#: templates/mobile_app/app_pilot_overview.html:95
+#: templates/mobile_app/handhygiene_app_report.html:82
+msgid "Total Passes"
+msgstr ""
+
+#: templates/mobile_app/app_report_base.html:122
+msgid "App Report"
+msgstr ""
+
+#: templates/mobile_app/app_report_base.html:128
+msgid "App Help Guide"
+msgstr ""
+
+#: templates/mobile_app/existing_app_accounts.html:19
+#: templates/mobile_app/show_new_users.html:19
+msgid "Existing App Accounts"
+msgstr ""
+
+#: templates/mobile_app/existing_app_accounts.html:21
+#: templates/mobile_app/show_new_users.html:21
+#, python-format
+msgid ""
+"Registration codes used so far: <span style=\"color: #008998;\">"
+"%(registration_codes_already_issued)s</span>"
+msgstr ""
+
+#: templates/mobile_app/existing_app_accounts.html:22
+#: templates/mobile_app/issue_app_accounts.html:26
+#: templates/mobile_app/show_new_users.html:22
+#, python-format
+msgid ""
+"Registration codes remaining: <span style=\"color: #008998;\">"
+"%(registration_codes_remaining)s</span>"
+msgstr ""
+
+#: templates/mobile_app/issue_app_accounts.html:22
+msgid "Issue App Accounts"
+msgstr ""
+
+#: templates/mobile_app/issue_app_accounts.html:25
+#, python-format
+msgid ""
+"Registration codes used so far: <span style=\"color: #008998;\">"
+"%(registration_codes_already_issued)s</span></b>"
+msgstr ""
+
+#: templates/mobile_app/issue_app_accounts.html:79
+#: templates/mobile_app/issue_app_accounts.html:117
+msgid ""
+"For instructions on how to create SureWash Hand Hygiene App user accounts, "
+"first read <a href='/mobile_app/help_guide/'>our help guide.</a>"
+msgstr ""
+
+#: templates/mobile_app/issue_app_accounts.html:81
+msgid ""
+"You can download the <b>user upload template file</b> <a href='/"
+"surewashpocket_user_upload_template/'>here.</a>"
+msgstr ""
+
+#: templates/mobile_app/issue_app_accounts.html:83
+msgid ""
+"Once you have populated the <b>user upload template file</b> with your "
+"intended list of user emails, locate the <b>csv</b> file on your computer "
+"and click the 'Upload' button below."
+msgstr ""
+
+#: templates/mobile_app/issue_app_accounts.html:112
+#: templates/mobile_app/link_to_lms.html:209
+#: templates/mobile_app/link_to_lms__before.html:212
+msgid "UPLOAD"
+msgstr ""
+
+#: templates/mobile_app/link_to_lms.html:119
+#: templates/mobile_app/link_to_lms__before.html:117
+msgid "LMS Link"
+msgstr ""
+
+#: templates/mobile_app/link_to_lms.html:154
+#: templates/mobile_app/link_to_lms__before.html:152
+msgid "LMS"
+msgstr ""
+
+#: templates/mobile_app/link_to_lms.html:186
+#: templates/mobile_app/link_to_lms__before.html:183
+msgid "Link LMS Logins to SureWash Emails"
+msgstr ""
+
+#: templates/mobile_app/link_to_lms.html:191
+msgid ""
+"This p1age is for SureWash.Net users who also utilize an LMS. If you wish to "
+"see usage from your SureWash GO or SureWash ELITE kiosk/s, you can use this "
+"page to link your staff members' SureWash logins to their LMS logins."
+msgstr ""
+
+#: templates/mobile_app/link_to_lms.html:193
+#: templates/mobile_app/link_to_lms__before.html:190
+msgid ""
+"To make the link between SureWash kiosk logins and LMS accounts, you must "
+"upload a CSV file that consists of two columns: the email address for a "
+"user, and the user's username from the SureWash kiosk (this can be their "
+"hospital ID, their staff card number, or a username)."
+msgstr ""
+
+#: templates/mobile_app/link_to_lms2.html:66 templates/navbar_base.html:45
+msgid "CONTENT"
+msgstr ""
+
+#: templates/mobile_app/link_to_lms2.html:111 templates/navbar_base.html:87
+msgid "Visit"
+msgstr ""
+
+#: templates/mobile_app/link_to_lms2.html:129
+msgid "ATTRACT LOOP SLIDE UPLOAD"
+msgstr ""
+
+#: templates/mobile_app/link_to_lms2.html:149
+msgid ""
+"To make an image available for use in the attract loop on your SureWash\n"
+"                                systems"
+msgstr ""
+
+#: templates/mobile_app/link_to_lms2.html:151
+msgid ""
+"<i>Note: your file must be of type <b>.png</b>. The Slide Upload will\n"
+"                                not work with <b>.jpg or other image files.</"
+"b> If you have image files that are not <b>.png</b>\n"
+"                                files, please convert them to <b>.png</b> "
+"before uploading them.</i>"
+msgstr ""
+
+#: templates/mobile_app/link_to_lms2.html:154
+msgid ""
+"Once uploaded, The Attract Loop slide will be available to be synced\n"
+"                                with any of your SureWash systems. <i>Please "
+"ensure your SureWash system is connected to\n"
+"                                the internet</i>"
+msgstr ""
+
+#: templates/mobile_app/link_to_lms__before.html:188
+msgid ""
+"This page is for SureWash.Net users who also utilize an LMS. If you wish to "
+"see usage from your SureWash GO or SureWash ELITE kiosk/s, you can use this "
+"page to link your staff members' SureWash logins to their LMS logins."
+msgstr ""
+
+#: templates/pages/admin_view.html:6
+msgid "Admin View"
+msgstr ""
+
+#: templates/pages/admin_view.html:21
+msgid "Subdelegate Users"
+msgstr ""
+
+#: templates/pages/content_creator.html:21
+msgid "SUREWASH QUIZ"
+msgstr ""
+
+#: templates/pages/content_creator.html:22
+msgid ""
+"Select this option to create text and multimedia-based quizzes to install "
+"and use across your SureWash systems."
+msgstr ""
+
+#: templates/pages/content_creator.html:29
+msgid "SUREWASH LESSONS"
+msgstr ""
+
+#: templates/pages/content_creator.html:30
+msgid ""
+"Select this option to convert PowerPoint files into micro-learning SureWash "
+"Lesson modules for your users to take."
+msgstr ""
+
+#: templates/pages/faq_page.html:14
+msgid "FAQ Section"
+msgstr ""
+
+#: templates/pages/faq_page.html:127
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: templates/pages/faq_page.html:130
+msgid ""
+"Got a question? We're here to help you find what you need. If you don't see "
+"your question here, please drop us a message on our Contact page."
+msgstr ""
+
+#: templates/pages/faq_page.html:140
+msgid "General FAQs"
+msgstr ""
+
+#: templates/pages/faq_page.html:171
+msgid "How does the SureWash Reporting Suite help me?"
+msgstr ""
+
+#: templates/pages/faq_page.html:178
+msgid ""
+"The SureWash Reporting Suite is a new addition to SureWash.Net that gives "
+"you comprehensive, customizable views of your SureWash training data. The "
+"Reporting Suite feature provides a variety interactive web-based reports "
+"that capture different metrics and provide the ability to export your data "
+"in different formats, or drill-down to see more detailed views."
+msgstr ""
+
+#: templates/pages/faq_page.html:216
+msgid ""
+"How do I update the software or apply Windows Updates to my SureWash device?"
+msgstr ""
+
+#: templates/pages/faq_page.html:223
+msgid ""
+"The SureWash Support Team can assist you! Contact the Support Team at "
+"support@surewash.com to log a software/windows update request."
+msgstr ""
+
+#: templates/pages/faq_page.html:259
+msgid ""
+"How often does my SureWash device synchronize with the surewash.net "
+"Reporting Suite?"
+msgstr ""
+
+#: templates/pages/faq_page.html:266
+msgid ""
+"Your SureWash device synchronizes with the SureWash Reporting Suite once "
+"every hour."
+msgstr ""
+
+#: templates/pages/faq_page.html:302
+msgid "How do I connect my SureWash device to the Hospital Wi-Fi network?"
+msgstr ""
+
+#: templates/pages/faq_page.html:310
+#, python-format
+msgid ""
+"In order to get your SureWash machine connected to a WiFi network in your "
+"facility, follow these steps:\n"
+"                                            <p> </p>\n"
+"                                            <ul>\n"
+"                                              <li>Firstly, log into SureWash "
+"as an administrator and click on 'Administrator Settings'.</li>\n"
+"                                              <li>\n"
+"                                                From here, navigate to the "
+"'General' tab. Scroll down until you see the Wi-Fi settings section (shown "
+"in the image below).\n"
+"                                                <p> </p>\n"
+"                                                <div>\n"
+"                                                  <img src=\"/static/images/"
+"help_images/connecting-to-wifi.png\" alt=\"Connecting to Wifi\" style="
+"\"padding-bottom: 16px; max-width: 100%%; max-height: 100%%; padding-left: "
+"20px\" height=\"58%%\" >\n"
+"                                                </div>\n"
+"                                              </li>\n"
+"                                              <li>Click 'Connect' on your "
+"desired network and enter your network security key.</li>\n"
+"                                              <li>If your connection was "
+"successful, a new window should open with a web browser which load https://"
+"wwww.google.com.</li>\n"
+"                                              <li>You can also use the ‘Open "
+"web browser’ button to test if your machine is connected. This button will "
+"bring up a web browser and try to load the Google homepage.</li>\n"
+"                                              <li>If the webpage has not "
+"loaded correctly, the web browser may prompt you with an additional network "
+"credentials page, depending on the configuration of your facility’s WiFi "
+"network.</li>\n"
+"                                              <li>If you are still having "
+"trouble connecting, contact support@surewash.com for technical support.</"
+"li>\n"
+"                                            </ul>\n"
+"                                            <p>When connecting your SureWash "
+"system to your network, it is recommended to follow your IT guidelines on "
+"maintaining Windows updates and patches. SureWash is not in a position to "
+"provide this service and we recommend your IT department take ownership of "
+"the machine."
+msgstr ""
+
+#: templates/pages/faq_page.html:342
+msgid "SureWash Admin Functionalities"
+msgstr ""
+
+#: templates/pages/faq_page.html:373
+msgid "How can I filter data in the Reporting Dashboard?"
+msgstr ""
+
+#: templates/pages/faq_page.html:380
+msgid ""
+"At the top of each Report View there is a set of dropdown selection tools "
+"that allow the user to filter the data they are shown based on their "
+"different SureWash kiosks, staff departments, staff roles, and date range "
+"for which their data will be queried."
+msgstr ""
+
+#: templates/pages/faq_page.html:386 templates/user_help.html:105
+msgid ""
+"Once you have set the drop-down list for each filter criteria to your "
+"liking, click the 'Apply' button and your Report View will be reloaded with "
+"new data based on your filters."
+msgstr ""
+
+#: templates/pages/faq_page.html:421
+msgid "How do I upload Users, Roles and Departments to my SureWash device?"
+msgstr ""
+
+#: templates/pages/faq_page.html:429
+#, python-format
+msgid ""
+"New users can be uploaded using the SureWash.Net portal by navigating to the "
+"Users page from the top-navigation bar. Users can either be uploaded "
+"individually or via a CSV file as shown in the images below- </div>\n"
+"                                          <!--end::Text-->\n"
+"                                          <div>\n"
+"                                            <img src=\"/static/images/"
+"help_images/upload-individual-user.png\" alt=\"Upload individual users\" "
+"style=\"padding-bottom: 16px; max-width: 100%%; max-height: 100%%; padding-"
+"left: 20px\" height=\"58%%\" >\n"
+"                                          </div>\n"
+"                                          <p> </p>\n"
+"                                          <div>\n"
+"                                            <img src=\"/static/images/"
+"help_images/upload-users-from-file.png\" alt=\"Upload users from file\" "
+"style=\"padding-bottom: 16px; max-width: 100%%; max-height: 100%%; padding-"
+"left: 20px\" height=\"58%%\" >\n"
+"                                          </div>\n"
+"                                          <p> </p>\n"
+"                                          <p>Similarly, roles and "
+"departments can also be uploaded using the SureWash.Net portal via a CSV "
+"file as shown below- </p>\n"
+"                                          <div>\n"
+"                                            <img src=\"/static/images/"
+"help_images/upload-roles-and-departments.png\" alt=\"Upload roles and "
+"departments from file\" style=\"padding-bottom: 16px; max-width: 100%%; max-"
+"height: 100%%; padding-left: 20px\" height=\"58%%\" >\n"
+"                                          </div>\n"
+"                                          <p> </p>\n"
+"                                          "
+msgstr ""
+
+#: templates/pages/faq_page.html:478
+msgid "How do I create a quiz?"
+msgstr ""
+
+#: templates/pages/faq_page.html:485
+msgid ""
+"You can create a Quiz using the Quiz Creator functionality on your surewash."
+"net portal. The Quiz Creator tool can create both, text based (you will have "
+"to provide the quiz questions, correct and incorrect answers) and multi-"
+"media based (you will have to provide the quiz questions, correct and "
+"incorrect answers, as well as an image associated with each question and "
+"answer) quizzes."
+msgstr ""
+
+#: templates/pages/faq_page.html:529
+msgid "How do I generate certificates?"
+msgstr ""
+
+#: templates/pages/faq_page.html:537
+msgid ""
+"You can generate certificates by going to the Certificates section on the "
+"Users page in your SureWash portal. Here, you can set the time period for "
+"which you want to generate the certificates, setting the data to your "
+"specific SureWash machine and the difficulty level for which you want to "
+"generate the certificate."
+msgstr ""
+
+#: templates/pages/faq_page.html:577
+msgid "How do I add new lessons on my SureWash devices?"
+msgstr ""
+
+#: templates/pages/faq_page.html:584
+msgid ""
+"You can create a Lesson using the Lesson Creator functionality on your "
+"surewash.net portal. To create a SureWash Lesson, upload a PowerPoint(.ppt) "
+"file containing a slideshow of the micro-learning content. After uploading "
+"your PowerPoint file, a .zip file will downloaded from your web browser, "
+"containing a correctly-formatted SureWash Lesson file. To install the Lesson "
+"on your SureWash machine, copy the .zip file to the root folder of your "
+"SureWash USB key. Insert the USB stick into your SureWash machine, login to "
+"it as administrator and go to administrator settings. Here, you will find a "
+"'Lesson' settings tab which will give the option to upload the lesson from "
+"your USB key."
+msgstr ""
+
+#: templates/pages/faq_page.html:591
+msgid ""
+"Note: your file must be of type .ppt. The Lesson Creator will not work with ."
+"pptx files. If you have a .pptx file that you wish to upload you must first "
+"convert it to .ppt. To do this, open your file in PowerPoint and click 'Save "
+"As...' and save it to the type 'PowerPoint 97-2003 Presentation (*.ppt)'."
+msgstr ""
+
+#: templates/pages/faq_page.html:623
+msgid "How do I export the SureWash Usage data?"
+msgstr ""
+
+#: templates/pages/faq_page.html:630 templates/user_help.html:113
+msgid ""
+"Each Report View can be exported into different formats for printing, "
+"archiving, or further processing. At the top right corner of each Report "
+"View there is a 'Excel Report' button and a 'Export PDF' button. Pressing "
+"'Export PDF' on any page will output a printable-PDF version of the filtered "
+"report data you had loaded. An exported PDF of the 'Management Report View' "
+"is shown below."
+msgstr ""
+
+#: templates/pages/faq_page.html:638 templates/user_help.html:115
+msgid ""
+"The 'Excel Report' button will generate an Excel Report that encapsulates "
+"all of your SureWash data. The generated Excel report will be downloaded in "
+"your browser."
+msgstr ""
+
+#: templates/pages/kiosks.html:87
+msgid "General Settings"
+msgstr ""
+
+#: templates/pages/kiosks.html:140
+msgid "User Types"
+msgstr ""
+
+#: templates/pages/kiosks.html:234
+msgid "User Login Settings"
+msgstr ""
+
+#: templates/pages/kiosks.html:321
+msgid "Quiz Settings"
+msgstr ""
+
+#: templates/pages/kiosks.html:343
+msgid "Hand Hygiene Training Settings"
+msgstr ""
+
+#: templates/pages/kiosks.html:563
+msgid "Attract Loop Settings"
+msgstr ""
+
+#: templates/pages/kiosks.html:882
+msgid "\"Software Version\""
+msgstr ""
+
+#: templates/pages/kiosks.html:882
+msgid "\"Licence\""
+msgstr ""
+
+#: templates/pages/kiosks.html:882
+msgid "\"Users on Kiosk\""
+msgstr ""
+
+#: templates/pages/kiosks.html:882
+msgid "\"Hand Hygiene Technique\""
+msgstr ""
+
+#: templates/pages/kiosks.html:882
+msgid "\"Lessons Available\""
+msgstr ""
+
+#: templates/pages/kiosks.html:882
+msgid "\"Quizzes Available\""
+msgstr ""
+
+#: templates/pages/kiosks.html:882
+msgid "\"Current Status\""
+msgstr ""
+
+#: templates/pages/kiosks.html:882
+msgid "\"Last Data Pull\""
+msgstr ""
+
+#: templates/reporting_suite/dashboard.html:155
+msgid "Which staff types have performed the most assessments"
+msgstr ""
+
+#: templates/reporting_suite/dashboard.html:185
+msgid "Avg amount of time spent learning on SureWash by staff."
+msgstr ""
+
+#: templates/reporting_suite/dashboard.html:189
+msgid "Recent Highlights"
+msgstr ""
+
+#: templates/reporting_suite/dashboard.html:199
+#: templates/reporting_suite/leapfrog_report.html:56
+#: templates/reporting_suite/leapfrog_report.html:243
+#: templates/reporting_suite/leapfrog_report.html:428
+msgid "Department Breakdown"
+msgstr ""
+
+#: templates/reporting_suite/dashboard.html:204
+#: templates/reporting_suite/leapfrog_report.html:61
+#: templates/reporting_suite/leapfrog_report.html:155
+#: templates/reporting_suite/leapfrog_report.html:247
+#: templates/reporting_suite/leapfrog_report.html:340
+#: templates/reporting_suite/leapfrog_report.html:432
+#: templates/reporting_suite/leapfrog_report.html:524
+msgid "Status"
+msgstr ""
+
+#: templates/reporting_suite/dashboard.html:205
+#: templates/reporting_suite/leapfrog_report.html:62
+#: templates/reporting_suite/lesson_report.html:83
+#: templates/reporting_suite/lesson_report.html:201
+#: templates/reporting_suite/quiz_report/quiz_report.html:94
+#: templates/reporting_suite/quiz_report/quiz_report.html:205
+#: templates/users/add_users.html:245 templates/users/add_users_v5.html:182
+#: templates/users/user_breakdown.html:195
+msgid "Department"
+msgstr ""
+
+#: templates/reporting_suite/dashboard.html:206
+msgid "Registered Users"
+msgstr ""
+
+#: templates/reporting_suite/dashboard.html:207
+msgid "Trained Users"
+msgstr ""
+
+#: templates/reporting_suite/dashboard.html:208
+#: templates/reporting_suite/dashboard.html:210
+msgid "Passed Users"
+msgstr ""
+
+#: templates/reporting_suite/dashboard.html:209
+#, python-format
+msgid "%% Trained Users"
+msgstr ""
+
+#: templates/reporting_suite/dashboard.html:211
+#: templates/reporting_suite/infection_control_report.html:69
+#: templates/reporting_suite/infection_control_report.html:124
+msgid "Sessions"
+msgstr ""
+
+#: templates/reporting_suite/dashboard.html:212
+msgid "Passed Sessions"
+msgstr ""
+
+#: templates/reporting_suite/dashboard.html:753
+msgid "SureWash Usage by Month"
+msgstr ""
+
+#: templates/reporting_suite/dashboard.html:765
+msgid "Assessments vs passes over time"
+msgstr ""
+
+#: templates/reporting_suite/dashboard.html:978
+msgid "When do your users interact the most?"
+msgstr ""
+
+#: templates/reporting_suite/infection_control_report.html:20
+#: templates/reporting_suite/infection_control_report.html:227
+#: templates/reporting_suite/lesson_report.html:82
+#: templates/reporting_suite/lesson_report.html:200
+#: templates/reporting_suite/quiz_report/quiz_report.html:93
+#: templates/reporting_suite/quiz_report/quiz_report.html:204
+#: templates/users/add_users.html:252 templates/users/add_users_v5.html:189
+#: templates/users/user_breakdown.html:196
+msgid "Role"
+msgstr ""
+
+#: templates/reporting_suite/infection_control_report.html:21
+#: templates/reporting_suite/infection_control_report.html:228
+msgid "# users who used surewash"
+msgstr ""
+
+#: templates/reporting_suite/infection_control_report.html:22
+#: templates/reporting_suite/infection_control_report.html:229
+msgid "# assessments"
+msgstr ""
+
+#: templates/reporting_suite/infection_control_report.html:23
+#: templates/reporting_suite/infection_control_report.html:230
+msgid "# quizzes"
+msgstr ""
+
+#: templates/reporting_suite/infection_control_report.html:24
+#: templates/reporting_suite/infection_control_report.html:231
+msgid "interactions"
+msgstr ""
+
+#: templates/reporting_suite/infection_control_report.html:56
+msgid ""
+"Hand Hygiene Stats <span class=\"subheading\"> (in the given date range)</"
+"span>"
+msgstr ""
+
+#: templates/reporting_suite/infection_control_report.html:70
+msgid "assessments performed on SureWash"
+msgstr ""
+
+#: templates/reporting_suite/infection_control_report.html:80
+#: templates/reporting_suite/infection_control_report.html:135
+msgid "Unique Staff"
+msgstr ""
+
+#: templates/reporting_suite/infection_control_report.html:81
+msgid "number of staff who have trained"
+msgstr ""
+
+#: templates/reporting_suite/infection_control_report.html:92
+msgid "number of staff who have passed an assessment"
+msgstr ""
+
+#: templates/reporting_suite/infection_control_report.html:110
+msgid "Quiz Stats <span class=\"subheading\">(in the given date range)</span>"
+msgstr ""
+
+#: templates/reporting_suite/infection_control_report.html:125
+msgid "quizzes performed on SureWash"
+msgstr ""
+
+#: templates/reporting_suite/infection_control_report.html:136
+msgid "number of staff who have attempted a quiz"
+msgstr ""
+
+#: templates/reporting_suite/infection_control_report.html:147
+msgid "number of staff who have passed a quiz"
+msgstr ""
+
+#: templates/reporting_suite/infection_control_report.html:165
+msgid ""
+"Lesson Stats <span class=\"subheading\">(in the given date range)</span>"
+msgstr ""
+
+#: templates/reporting_suite/infection_control_report.html:181
+#: templates/reporting_suite/lesson_report.html:134
+msgid "Lessons Available"
+msgstr ""
+
+#: templates/reporting_suite/infection_control_report.html:182
+msgid "number of different lessons available on your SureWash kiosks"
+msgstr ""
+
+#: templates/reporting_suite/infection_control_report.html:192
+msgid "Total Lesson Views"
+msgstr ""
+
+#: templates/reporting_suite/infection_control_report.html:193
+msgid "number of times the lessons on your SureWash kiosks have been viewed"
+msgstr ""
+
+#: templates/reporting_suite/infection_control_report.html:203
+#: templates/reporting_suite/lesson_report.html:156
+msgid "Unique Users"
+msgstr ""
+
+#: templates/reporting_suite/infection_control_report.html:204
+msgid "number of unique users to try a lesson"
+msgstr ""
+
+#: templates/reporting_suite/infection_control_report.html:222
+msgid "Role Breakdown"
+msgstr ""
+
+#: templates/reporting_suite/leapfrog_report.html:26
+msgid ""
+"<span class=\"Subhead\" id=\"hh-staff-trained\"></span> of your <span class="
+"\"Subhead registered-users\"></span> staff have tried a hand hygiene "
+"assessment in the selected time period."
+msgstr ""
+
+#: templates/reporting_suite/leapfrog_report.html:40
+msgid ""
+"<span class=\"Subhead\" id=\"hh-staff-passed\"></span> of your <span class="
+"\"Subhead registered-users\"></span> staff have passed a hand hygiene "
+"assessment in the selected time period."
+msgstr ""
+
+#: templates/reporting_suite/leapfrog_report.html:63
+msgid "# Registered Staff"
+msgstr ""
+
+#: templates/reporting_suite/leapfrog_report.html:64
+msgid "# Attempted HH"
+msgstr ""
+
+#: templates/reporting_suite/leapfrog_report.html:65
+#, python-format
+msgid "%% Attempted HH"
+msgstr ""
+
+#: templates/reporting_suite/leapfrog_report.html:66
+msgid "# Passed HH"
+msgstr ""
+
+#: templates/reporting_suite/leapfrog_report.html:67
+#, python-format
+msgid "%% Passed HH"
+msgstr ""
+
+#: templates/reporting_suite/leapfrog_report.html:79
+#: templates/reporting_suite/leapfrog_report.html:173
+#: templates/reporting_suite/leapfrog_report.html:264
+#: templates/reporting_suite/leapfrog_report.html:358
+#: templates/reporting_suite/leapfrog_report.html:449
+#: templates/reporting_suite/leapfrog_report.html:542
+#: templates/user_help.html:58 templates/user_help.html:154
+#: templates/users/create_pdf_certificates.html:135
+#: templates/users/user_breakdown.html:180 templates/users/users_base.html:59
+#: templates/users/users_base_no_report_parameters.html:62
+msgid "User Breakdown"
+msgstr ""
+
+#: templates/reporting_suite/leapfrog_report.html:84
+#: templates/reporting_suite/leapfrog_report.html:178
+#: templates/reporting_suite/leapfrog_report.html:268
+#: templates/reporting_suite/leapfrog_report.html:363
+#: templates/reporting_suite/leapfrog_report.html:453
+#: templates/reporting_suite/leapfrog_report.html:547
+#: templates/reporting_suite/lesson_report.html:80
+#: templates/reporting_suite/lesson_report.html:198
+#: templates/reporting_suite/quiz_report/quiz_report.html:91
+#: templates/reporting_suite/quiz_report/quiz_report.html:202
+#: templates/users/user_breakdown.html:193
+msgid "User ID"
+msgstr ""
+
+#: templates/reporting_suite/leapfrog_report.html:85
+#: templates/reporting_suite/leapfrog_report.html:179
+#: templates/reporting_suite/leapfrog_report.html:269
+#: templates/reporting_suite/leapfrog_report.html:364
+#: templates/reporting_suite/leapfrog_report.html:454
+#: templates/reporting_suite/leapfrog_report.html:548
+#: templates/users/user_breakdown.html:194
+msgid "Name"
+msgstr ""
+
+#: templates/reporting_suite/leapfrog_report.html:86
+msgid "Attempted HH"
+msgstr ""
+
+#: templates/reporting_suite/leapfrog_report.html:87
+msgid "Passed HH"
+msgstr ""
+
+#: templates/reporting_suite/leapfrog_report.html:88
+msgid "Date Passed"
+msgstr ""
+
+#: templates/reporting_suite/leapfrog_report.html:112
+#: templates/reporting_suite/leapfrog_report.html:181
+#: templates/reporting_suite/leapfrog_report.html:206
+#: templates/reporting_suite/leapfrog_report.html:271
+#: templates/reporting_suite/leapfrog_report.html:297
+#: templates/reporting_suite/leapfrog_report.html:366
+#: templates/reporting_suite/leapfrog_report.html:391
+#: templates/reporting_suite/leapfrog_report.html:456
+#: templates/reporting_suite/leapfrog_report.html:481
+#: templates/reporting_suite/leapfrog_report.html:550
+msgid "Completed Lesson"
+msgstr ""
+
+#: templates/reporting_suite/leapfrog_report.html:120
+msgid ""
+"<span class=\"Subhead\" id=\"whhp-staff-passed-lesson\"></span> of your "
+"<span class=\"Subhead registered-users\"></span> registered staff members "
+"have completed the 'WHO Hand Hygiene Protocol' quiz."
+msgstr ""
+
+#: templates/reporting_suite/leapfrog_report.html:126
+#: templates/reporting_suite/leapfrog_report.html:180
+#: templates/reporting_suite/leapfrog_report.html:220
+#: templates/reporting_suite/leapfrog_report.html:270
+#: templates/reporting_suite/leapfrog_report.html:311
+#: templates/reporting_suite/leapfrog_report.html:365
+#: templates/reporting_suite/leapfrog_report.html:405
+#: templates/reporting_suite/leapfrog_report.html:455
+#: templates/reporting_suite/leapfrog_report.html:495
+#: templates/reporting_suite/leapfrog_report.html:549
+msgid "Completed Quiz"
+msgstr ""
+
+#: templates/reporting_suite/leapfrog_report.html:134
+msgid ""
+"<span class=\"Subhead\" id=\"whhp-staff-passed-quiz\"></span> of your <span "
+"class=\"Subhead registered-users\"></span> registered staff members have "
+"completed the 'WHO Hand Hygiene Protocol' quiz."
+msgstr ""
+
+#: templates/reporting_suite/leapfrog_report.html:140
+#: templates/reporting_suite/leapfrog_report.html:325
+#: templates/reporting_suite/leapfrog_report.html:509
+msgid "Lesson/Quiz Completion by Month"
+msgstr ""
+
+#: templates/reporting_suite/leapfrog_report.html:156
+#: templates/reporting_suite/leapfrog_report.html:248
+#: templates/reporting_suite/leapfrog_report.html:341
+#: templates/reporting_suite/leapfrog_report.html:433
+#: templates/reporting_suite/leapfrog_report.html:525
+msgid "Department Name"
+msgstr ""
+
+#: templates/reporting_suite/leapfrog_report.html:157
+#: templates/reporting_suite/leapfrog_report.html:249
+#: templates/reporting_suite/leapfrog_report.html:342
+#: templates/reporting_suite/leapfrog_report.html:434
+#: templates/reporting_suite/leapfrog_report.html:526
+msgid "# Registered Staff"
+msgstr ""
+
+#: templates/reporting_suite/leapfrog_report.html:158
+#: templates/reporting_suite/leapfrog_report.html:250
+#: templates/reporting_suite/leapfrog_report.html:343
+#: templates/reporting_suite/leapfrog_report.html:435
+#: templates/reporting_suite/leapfrog_report.html:527
+#, python-format
+msgid "%% Completed Quiz"
+msgstr ""
+
+#: templates/reporting_suite/leapfrog_report.html:159
+#: templates/reporting_suite/leapfrog_report.html:251
+#: templates/reporting_suite/leapfrog_report.html:344
+#: templates/reporting_suite/leapfrog_report.html:436
+#: templates/reporting_suite/leapfrog_report.html:528
+#, python-format
+msgid "%% Completed Lesson"
+msgstr ""
+
+#: templates/reporting_suite/leapfrog_report.html:160
+#: templates/reporting_suite/leapfrog_report.html:252
+#: templates/reporting_suite/leapfrog_report.html:345
+#: templates/reporting_suite/leapfrog_report.html:437
+#: templates/reporting_suite/leapfrog_report.html:529
+msgid "# Completed Both"
+msgstr ""
+
+#: templates/reporting_suite/leapfrog_report.html:161
+#: templates/reporting_suite/leapfrog_report.html:253
+#: templates/reporting_suite/leapfrog_report.html:346
+#: templates/reporting_suite/leapfrog_report.html:438
+#: templates/reporting_suite/leapfrog_report.html:530
+#, python-format
+msgid "%% Completed Both"
+msgstr ""
+
+#: templates/reporting_suite/leapfrog_report.html:182
+#: templates/reporting_suite/leapfrog_report.html:272
+#: templates/reporting_suite/leapfrog_report.html:367
+#: templates/reporting_suite/leapfrog_report.html:457
+#: templates/reporting_suite/leapfrog_report.html:551
+msgid "Completed Both"
+msgstr ""
+
+#: templates/reporting_suite/leapfrog_report.html:183
+#: templates/reporting_suite/leapfrog_report.html:273
+#: templates/reporting_suite/leapfrog_report.html:368
+#: templates/reporting_suite/leapfrog_report.html:458
+#: templates/reporting_suite/leapfrog_report.html:552
+msgid "Date Completed Both"
+msgstr ""
+
+#: templates/reporting_suite/leapfrog_report.html:214
+msgid ""
+"<span class=\"Subhead\" id=\"ttt-staff-passed-lesson\"></span> of your <span "
+"class=\"Subhead registered_users\"></span> staff have tried a hand hygiene "
+"assessment in the selected time period."
+msgstr ""
+
+#: templates/reporting_suite/leapfrog_report.html:228
+msgid ""
+"<span class=\"Subhead\" id=\"ttt-staff-passed-quiz\"></span> of your <span "
+"class=\"Subhead registered_users\"></span> staff have passed a hand hygiene "
+"assessment in the selected time period."
+msgstr ""
+
+#: templates/reporting_suite/leapfrog_report.html:305
+msgid ""
+"<span class=\"Subhead\" id=\"fivemoments-staff-passed-lesson\"></span> of "
+"your <span class=\"Subhead registered-users\"></span> registered staff "
+"members have completed the 'WHO Hand Hygiene Protocol' quiz."
+msgstr ""
+
+#: templates/reporting_suite/leapfrog_report.html:319
+msgid ""
+"<span class=\"Subhead\" id=\"fivemoments-staff-passed-quiz\"></span> of your "
+"<span class=\"Subhead registered-users\"></span> registered staff members "
+"have completed the 'WHO Hand Hygiene Protocol' quiz."
+msgstr ""
+
+#: templates/reporting_suite/leapfrog_report.html:399
+msgid ""
+"<span class=\"Subhead\" id=\"ppe-staff-passed-lesson\"></span> of your <span "
+"class=\"Subhead registered_users\"></span> staff have tried a hand hygiene "
+"assessment in the selected time period."
+msgstr ""
+
+#: templates/reporting_suite/leapfrog_report.html:413
+msgid ""
+"<span class=\"Subhead\" id=\"ppe-staff-passed-quiz\"></span> of your <span "
+"class=\"Subhead registered_users\"></span> staff have passed a hand hygiene "
+"assessment in the selected time period."
+msgstr ""
+
+#: templates/reporting_suite/leapfrog_report.html:489
+msgid ""
+"<span class=\"Subhead\" id=\"monitoring-staff-passed-lesson\"></span> of "
+"your <span class=\"Subhead registered-users\"></span> registered staff "
+"members have completed the 'WHO Hand Hygiene Protocol' quiz."
+msgstr ""
+
+#: templates/reporting_suite/leapfrog_report.html:503
+msgid ""
+"<span class=\"Subhead\" id=\"monitoring-staff-passed-quiz\"></span> of your "
+"<span class=\"Subhead registered-users\"></span> registered staff members "
+"have completed the 'WHO Hand Hygiene Protocol' quiz."
+msgstr ""
+
+#: templates/reporting_suite/learning_progress_report.html:31
+msgid "Level 5 Compliance"
+msgstr ""
+
+#: templates/reporting_suite/learning_progress_report.html:61
+msgid "SureWash Usage"
+msgstr ""
+
+#: templates/reporting_suite/learning_progress_report.html:75
+msgid "within the provided date range"
+msgstr ""
+
+#: templates/reporting_suite/learning_progress_report.html:86
+msgid "the collective time spent training by staff in the given period"
+msgstr ""
+
+#: templates/reporting_suite/learning_progress_report.html:96
+msgid "Avg. Training Time"
+msgstr ""
+
+#: templates/reporting_suite/learning_progress_report.html:97
+msgid "average training time per user"
+msgstr ""
+
+#: templates/reporting_suite/learning_progress_report.html:123
+msgid ""
+"<span class=\"heading\">Did you know?</span><br>A recent study found that it "
+"takes the average user <b>32</b> hand hygiene training sessions to reach "
+"level 5 competency on SureWash. Your users have performed an average of<b> "
+"<span style=\"color: #008996\" id=\"average-number-of-training-sessions-per-"
+"user\"></span> </b>sessions on SureWash."
+msgstr ""
+
+#: templates/reporting_suite/learning_progress_report.html:128
+msgid ""
+"<span class=\"heading\">Did you know?</span><br>The same study found that "
+"the average user will spend <b>27 minutes</b> training on SureWash before "
+"they achieve full competency. On average, your users have spent <b><span "
+"style=\"color: #008996\" id=\"avg-training-time-per-user\"></span> </"
+"b>training on SureWash."
+msgstr ""
+
+#: templates/reporting_suite/learning_progress_report.html:137
+msgid "Learning Outcomes"
+msgstr ""
+
+#: templates/reporting_suite/learning_progress_report.html:141
+msgid "In this period"
+msgstr ""
+
+#: templates/reporting_suite/learning_progress_report.html:143
+#: templates/users/create_pdf_certificates.html:327
+#: templates/users/user_breakdown.html:47
+msgid "Tutorial"
+msgstr ""
+
+#: templates/reporting_suite/learning_progress_report.html:144
+#: templates/users/create_pdf_certificates.html:328
+#: templates/users/user_breakdown.html:48
+msgid "Level 1"
+msgstr ""
+
+#: templates/reporting_suite/learning_progress_report.html:145
+#: templates/users/create_pdf_certificates.html:329
+#: templates/users/user_breakdown.html:49
+msgid "Level 2"
+msgstr ""
+
+#: templates/reporting_suite/learning_progress_report.html:146
+#: templates/users/create_pdf_certificates.html:330
+#: templates/users/user_breakdown.html:50
+msgid "Level 3"
+msgstr ""
+
+#: templates/reporting_suite/learning_progress_report.html:147
+#: templates/users/create_pdf_certificates.html:331
+#: templates/users/user_breakdown.html:51
+msgid "Level 4"
+msgstr ""
+
+#: templates/reporting_suite/learning_progress_report.html:148
+#: templates/users/create_pdf_certificates.html:332
+#: templates/users/user_breakdown.html:52
+msgid "Level 5"
+msgstr ""
+
+#: templates/reporting_suite/learning_progress_report.html:387
+msgid "Number of staff to attempt this level"
+msgstr ""
+
+#: templates/reporting_suite/learning_progress_report.html:397
+msgid "Number of staff to pass this level"
+msgstr ""
+
+#: templates/reporting_suite/learning_progress_report.html:407
+msgid "Proportion of staff to pass this level"
+msgstr ""
+
+#: templates/reporting_suite/learning_progress_report.html:417
+msgid "Number of staff with this competency level"
+msgstr ""
+
+#: templates/reporting_suite/learning_progress_report.html:427
+msgid "Proportion of staff with this competency level"
+msgstr ""
+
+#: templates/reporting_suite/learning_progress_report.html:437
+msgid "Average time spent training by users who have passed this level"
+msgstr ""
+
+#: templates/reporting_suite/learning_progress_report.html:447
+msgid "Average number of training sessions per staff member at this level"
+msgstr ""
+
+#: templates/reporting_suite/learning_progress_report.html:668
+#: templates/reporting_suite/learning_progress_report.html:763
+msgid "Level 5 Compliance over Time"
+msgstr ""
+
+#: templates/reporting_suite/learning_progress_report.html:679
+#: templates/reporting_suite/learning_progress_report.html:774
+msgid "Number of users to pass level 5"
+msgstr ""
+
+#: templates/reporting_suite/lesson_report.html:12
+#: templates/reporting_suite/lesson_report.html:183
+msgid "Recent Events"
+msgstr ""
+
+#: templates/reporting_suite/lesson_report.html:34
+msgid "Lesson Uses"
+msgstr ""
+
+#: templates/reporting_suite/lesson_report.html:53
+#: templates/reporting_suite/lesson_report.html:473
+msgid "Lesson Usage by Role"
+msgstr ""
+
+#: templates/reporting_suite/lesson_report.html:72
+#: templates/reporting_suite/lesson_report.html:194
+#: templates/reporting_suite/quiz_report/quiz_report.html:84
+#: templates/reporting_suite/quiz_report/quiz_report.html:198
+msgid "User Interactions"
+msgstr ""
+
+#: templates/reporting_suite/lesson_report.html:81
+#: templates/reporting_suite/lesson_report.html:199
+#: templates/reporting_suite/quiz_report/quiz_report.html:92
+#: templates/reporting_suite/quiz_report/quiz_report.html:203
+msgid "Full Name"
+msgstr ""
+
+#: templates/reporting_suite/lesson_report.html:84
+#: templates/reporting_suite/lesson_report.html:202
+#: templates/reporting_suite/quiz_report/quiz_report.html:95
+#: templates/reporting_suite/quiz_report/quiz_report.html:206
+msgid "Date"
+msgstr ""
+
+#: templates/reporting_suite/lesson_report.html:119
+#: templates/reporting_suite/quiz_report/quiz_report.html:129
+msgid " Usage"
+msgstr ""
+
+#: templates/reporting_suite/lesson_report.html:121
+msgid "Overall Lesson Usage"
+msgstr ""
+
+#: templates/reporting_suite/lesson_report.html:135
+msgid "Number of different lessons available"
+msgstr ""
+
+#: templates/reporting_suite/lesson_report.html:145
+msgid "Lesson Views"
+msgstr ""
+
+#: templates/reporting_suite/lesson_report.html:146
+msgid "Total number of times that lessons were viewed"
+msgstr ""
+
+#: templates/reporting_suite/lesson_report.html:157
+msgid "Number of users that have viewed a lesson"
+msgstr ""
+
+#: templates/reporting_suite/lesson_report.html:484
+msgid "Which staff roles interact with lessons the most?"
+msgstr ""
+
+#: templates/reporting_suite/lesson_report.html:606
+#: templates/reporting_suite/lesson_report.html:676
+msgid "Per-Lesson Usage"
+msgstr ""
+
+#: templates/reporting_suite/lesson_report.html:617
+#: templates/reporting_suite/lesson_report.html:687
+msgid "Which of your lessons have been taken most by staff?"
+msgstr ""
+
+#: templates/reporting_suite/lesson_report.html:642
+msgid "Times lesson taken"
+msgstr ""
+
+#: templates/reporting_suite/patient_visitor_report.html:112
+#: templates/reporting_suite/reporting_suite_base.html:67
+msgid "Learning Progress"
+msgstr ""
+
+#: templates/reporting_suite/patient_visitor_report.html:119
+#: templates/reporting_suite/reporting_suite_base.html:85
+msgid "Lesson Usage"
+msgstr ""
+
+#: templates/reporting_suite/patient_visitor_report.html:125
+#: templates/reporting_suite/reporting_suite_base.html:91
+msgid "Quiz Usage"
+msgstr ""
+
+#: templates/reporting_suite/patient_visitor_report.html:131
+#: templates/reporting_suite/reporting_suite_base.html:97
+msgid "Patient & Visitor"
+msgstr ""
+
+#: templates/reporting_suite/patient_visitor_report.html:138
+#: templates/reporting_suite/reporting_suite_base.html:104
+msgid "Leapfrog"
+msgstr ""
+
+#: templates/reporting_suite/patient_visitor_report.html:228
+msgid "Patient Usage"
+msgstr ""
+
+#: templates/reporting_suite/patient_visitor_report.html:254
+#: templates/reporting_suite/patient_visitor_report.html:918
+msgid "Patient Sessions"
+msgstr ""
+
+#: templates/reporting_suite/patient_visitor_report.html:306
+msgid "Patient Passes"
+msgstr ""
+
+#: templates/reporting_suite/patient_visitor_report.html:332
+msgid "Patient Fails"
+msgstr ""
+
+#: templates/reporting_suite/patient_visitor_report.html:351
+msgid "Usage Breakdown"
+msgstr ""
+
+#: templates/reporting_suite/patient_visitor_report.html:369
+msgid "Visitor Usage"
+msgstr ""
+
+#: templates/reporting_suite/patient_visitor_report.html:395
+#: templates/reporting_suite/patient_visitor_report.html:914
+msgid "Visitor Sessions"
+msgstr ""
+
+#: templates/reporting_suite/patient_visitor_report.html:421
+msgid "Visitors Pass Rate"
+msgstr ""
+
+#: templates/reporting_suite/patient_visitor_report.html:445
+msgid "Visitor Passes"
+msgstr ""
+
+#: templates/reporting_suite/patient_visitor_report.html:471
+msgid "Visitor Fails"
+msgstr ""
+
+#: templates/reporting_suite/patient_visitor_report.html:828
+msgid "Patient sessions"
+msgstr ""
+
+#: templates/reporting_suite/patient_visitor_report.html:828
+msgid "Visitor sessions"
+msgstr ""
+
+#: templates/reporting_suite/patient_visitor_report.html:986
+msgid "When do your patients and visitors interact with SureWash?"
+msgstr ""
+
+#: templates/reporting_suite/patient_visitor_report.html:1202
+msgid "Patient and visitor interactions over time"
+msgstr ""
+
+#: templates/reporting_suite/quiz_report/quiz_report.html:31
+#: templates/reporting_suite/quiz_report/quiz_report.html:806
+msgid "Per-Quiz Usage"
+msgstr ""
+
+#: templates/reporting_suite/quiz_report/quiz_report.html:48
+#: templates/reporting_suite/quiz_report/quiz_report.html:646
+msgid "Quiz Usage by Role"
+msgstr ""
+
+#: templates/reporting_suite/quiz_report/quiz_report.html:97
+#: templates/reporting_suite/quiz_report/quiz_report.html:208
+msgid "Score"
+msgstr ""
+
+#: templates/reporting_suite/quiz_report/quiz_report.html:131
+msgid "Overall Quiz Usage"
+msgstr ""
+
+#: templates/reporting_suite/quiz_report/quiz_report.html:144
+#: templates/reporting_suite/quiz_report/quiz_report.html:767
+msgid "Quiz Sessions"
+msgstr ""
+
+#: templates/reporting_suite/quiz_report/quiz_report.html:145
+msgid "Total number of times that quizzes were taken"
+msgstr ""
+
+#: templates/reporting_suite/quiz_report/quiz_report.html:156
+msgid "Number of times that quizzes were passed"
+msgstr ""
+
+#: templates/reporting_suite/quiz_report/quiz_report.html:166
+msgid "Unique Users Attempted"
+msgstr ""
+
+#: templates/reporting_suite/quiz_report/quiz_report.html:167
+msgid "Number of unique users that have taken a quiz"
+msgstr ""
+
+#: templates/reporting_suite/quiz_report/quiz_report.html:322
+msgid "Quiz Attempts"
+msgstr ""
+
+#: templates/reporting_suite/quiz_report/quiz_report.html:371
+#: templates/reporting_suite/quiz_report/quiz_report.html:438
+msgid "Tracking interaction with quizzes on your SureWash kiosk/s"
+msgstr ""
+
+#: templates/reporting_suite/quiz_report/quiz_report.html:657
+msgid "Which staff roles interact with quizzes the most?"
+msgstr ""
+
+#: templates/reporting_suite/quiz_report/quiz_report.html:691
+msgid "Quizzes taken"
+msgstr ""
+
+#: templates/reporting_suite/quiz_report/quiz_report.html:817
+msgid "Number of sessions/passes per available Quiz"
+msgstr ""
+
+#: templates/reporting_suite/reporting_suite_base.html:146
+msgid "Export to pdf"
+msgstr ""
+
+#: templates/reporting_suite/reporting_suite_base.html:147
+msgid "Export to excel"
+msgstr ""
+
+#: templates/user_help.html:39
+msgid "USER HELP"
+msgstr ""
+
+#: templates/user_help.html:43
+msgid "A guide to using the features of SureWash.Net"
+msgstr ""
+
+#: templates/user_help.html:51
+msgid "Reporting Suite"
+msgstr ""
+
+#: templates/user_help.html:52
+msgid "What is the SureWash Reporting Suite?"
+msgstr ""
+
+#: templates/user_help.html:53
+msgid "Filtering Report Data"
+msgstr ""
+
+#: templates/user_help.html:54
+msgid "Exporting a Report"
+msgstr ""
+
+#: templates/user_help.html:55
+msgid "Management Report"
+msgstr ""
+
+#: templates/user_help.html:56
+msgid "Infection Control Report"
+msgstr ""
+
+#: templates/user_help.html:57
+msgid "Learning Progress Report"
+msgstr ""
+
+#: templates/user_help.html:59
+msgid "Pocket Report"
+msgstr ""
+
+#: templates/user_help.html:64
+msgid "Content Creator"
+msgstr ""
+
+#: templates/user_help.html:66
+msgid "Creating a Quiz"
+msgstr ""
+
+#: templates/user_help.html:67
+msgid "Installing a Quiz"
+msgstr ""
+
+#: templates/user_help.html:68
+msgid "Creating a Lesson"
+msgstr ""
+
+#: templates/user_help.html:69
+msgid "Installing a Lesson"
+msgstr ""
+
+#: templates/user_help.html:73
+msgid "Other Features"
+msgstr ""
+
+#: templates/user_help.html:74
+msgid "Getting Your SureWash data onto the Web"
+msgstr ""
+
+#: templates/user_help.html:75
+msgid "Offline Synchronization"
+msgstr ""
+
+#: templates/user_help.html:76 templates/users/create_pdf_certificates.html:147
+#: templates/users/users_base.html:71
+#: templates/users/users_base_no_report_parameters.html:74
+msgid "Certificates"
+msgstr ""
+
+#: templates/user_help.html:77
+msgid "Adding Users"
+msgstr ""
+
+#: templates/user_help.html:84
+msgid "Back to Top"
+msgstr ""
+
+#: templates/user_help.html:93
+msgid ""
+"The SureWash Reporting Suite is a new addition to SureWash.Net that gives "
+"you comprehensive, cutomizable views of your SureWash training data."
+msgstr ""
+
+#: templates/user_help.html:95
+msgid ""
+"The Reporting Suite feature provides a variety interactive web-based reports "
+"that capture different metrics and provide the ability to export your data "
+"in different formats, or drill-down to see more detailed views."
+msgstr ""
+
+#: templates/user_help.html:103
+msgid ""
+"At the top of each Report View there is a set of dropdown selection tools "
+"that allow the user to filter the data they are shown based on their "
+"different SureWash kiosks, staff departments, staff roles, and date range "
+"for which their data will be queried. "
+msgstr ""
+
+#: templates/user_help.html:125
+msgid ""
+"The Management Report is the top level view of your SureWash training data. "
+"It is intended for the hospital/facility management, showing high-level "
+"analytics and key stats - such as how many staff members trained, which "
+"departments trained the most, and what is the average pass rate among staff."
+msgstr ""
+
+#: templates/user_help.html:127
+msgid ""
+"Each of the graphs on the Management Report can be expanded by clicking the "
+"graph's heading, allowing the user to drill down into the graph data and see "
+"more detail."
+msgstr ""
+
+#: templates/user_help.html:137
+msgid ""
+"The Infection Control Report View is intended for the Infection Prevention & "
+"Control Nurse, or whoever is acting as the on-site SureWash administrator. "
+"It provides a more detailed breakdown of kiosk usage, staff roles, and the "
+"hand hygiene poses which most users passed/failed."
+msgstr ""
+
+#: templates/user_help.html:139
+msgid "The Infection Control Report View exported as a PDF:"
+msgstr ""
+
+#: templates/user_help.html:148
+msgid ""
+"The Learning Progress Report is intended to help SureWash administrators "
+"track the learning progress of their userbase over time and view the "
+"learning curve towards Level 5 competency."
+msgstr ""
+
+#: templates/user_help.html:156
+msgid ""
+"The User Breakdown View lets the user hone in on their userbase to see which "
+"users have assessed and which users have not. , which users have achieved "
+"the various different hand hygiene difficulty levels, etc. The filters can "
+"be used to restrict the User Breakdown view to various departments/roles as "
+"desired by the user."
+msgstr ""
+
+#: templates/user_help.html:164
+msgid ""
+"For SureWash.Net users who are signed up for <b>SureWash Pocket</b> this "
+"view incorporates all of the data accumulated from training sessions "
+"conducted on their staff-base's smartphones and smart devices.<br><br>If you "
+"are not signed up for <b>SureWash Pocket</b> and would like to learn more, "
+"<a href=\"https://surewash.com/products/surewash-pocket/\">you can click "
+"here."
+msgstr ""
+
+#: templates/user_help.html:172
+msgid ""
+"The Quiz Report View lets you track the performance of your staff in "
+"relation to the micro-learning quizzes installed on your kiosk. This Report "
+"View provides a high-level overview of quiz performance, but per-quiz "
+"results can be obtained by clicking on each of the quiz summaries(shown "
+"below)"
+msgstr ""
+
+#: templates/user_help.html:174
+msgid ""
+"This will load a new page showing your staff results for the selected quiz:"
+msgstr ""
+
+#: templates/user_help.html:176
+msgid ""
+"With a detailed breakdown of how your users answered each question in the "
+"quiz:"
+msgstr ""
+
+#: templates/user_help.html:198
+msgid ""
+"The SureWash Content reator is a tool which allows you to create your own "
+"personalised quizzes lessons and for use on SureWash training kiosks."
+msgstr ""
+
+#: templates/user_help.html:199
+msgid ""
+"Lessons can be used to enhance the knowledge of your hospital staff, "
+"visitors, and patients on topics relating to protocols, the spread of "
+"infections, or any other issues of your choice. Quizzes can be used to test "
+"this knowledge."
+msgstr ""
+
+#: templates/user_help.html:200
+msgid ""
+"When finished creating quiz, your quiz can be installed onto your kiosk "
+"either via an automatic transfer(if your kiosk has a WiFi connection) or by "
+"downloading and manually installing onto your kiosk using your SureWash USB "
+"key."
+msgstr ""
+
+#: templates/user_help.html:210
+msgid "Question Guidelines"
+msgstr ""
+
+#: templates/user_help.html:212
+msgid ""
+"We recommend 8 - 10 questions with multiple choice answers. There can be "
+"more questions than this in the quiz and 8 - 10 will be randomly asked each "
+"time. "
+msgstr ""
+
+#: templates/user_help.html:213
+msgid ""
+"There may be 2 - 5 answer options for each question, however there can only "
+"be one correct answer."
+msgstr ""
+
+#: templates/user_help.html:214
+msgid ""
+"There should be no reference to previous questions - the questions rotate in "
+"random order. Furthermore, there should be no 'all of the above'-type "
+"answers, since the answers are rotated in random order each time a quiz is "
+"taken on a SureWash unit."
+msgstr ""
+
+#: templates/user_help.html:216
+msgid "How to Create a New Quiz"
+msgstr ""
+
+#: templates/user_help.html:218
+msgid ""
+"To create new quiz, navigate to the 'QUIZ CREATOR' section from the "
+"homepage. You will see the Quiz Setup screen, in which you are prompted to "
+"provide some configuration settings for the quiz."
+msgstr ""
+
+#: templates/user_help.html:220
+msgid ""
+"After finishing the quiz setup and clicking the 'Proceed' button, you may "
+"begin creating questions and and corresponding answer sets."
+msgstr ""
+
+#: templates/user_help.html:222
+msgid ""
+"When satisfied that you have written all of your desired questions, ensure "
+"that your SureWash USB is inserted into the computer and click the "
+"'Download' button to download a zip folder from your web browser, containing "
+"the quiz files."
+msgstr ""
+
+#: templates/user_help.html:232
+msgid ""
+"Once you have finished with quiz creation/editing there are 2 ways to get "
+"the quiz files onto your SureWash kiosk:<br><br><ul><li><b>Online Update: </"
+"b>If your kiosk is connected to a WiFi network and configured to use "
+"SureWash.Net, you can click the 'Send to SureWash' button and your quiz will "
+"be pushed to SureWash.Net over the web.</li><br><li><b>Offline Quiz Install: "
+"</b>If your kiosk is not connected to a network, you can create your quiz on "
+"SureWash.Net and download to your SureWash USB stick. Press the 'Download' "
+"button and then locate the quiz file in your computer's Downloads folder. "
+"Move the .zip quiz file onto your SureWash USB key(do not extract/unzip the "
+"file). Now plug the USB key into your kiosk, log in as an administrator and "
+"import the quiz as normal."
+msgstr ""
+
+#: templates/user_help.html:242
+msgid ""
+"The SureWash Lesson Creator tool allows you to convert PowerPoint slideshows "
+"into a format which can be displayed on your SureWash kiosk so that you can "
+"present your users with micro-learning modules to enhance their knowledge on "
+"relevant topics."
+msgstr ""
+
+#: templates/user_help.html:244
+msgid ""
+"Note that the powerpoint file which you upload must be of type .ppt (not ."
+"pptx). The Lesson Creator will not work with .pptx files at present. If you "
+"have a .pptx file that you wish to upload you must first convert it to .ppt. "
+"To do this, open your file in PowerPoint and click 'Save As...' and save it "
+"to the type 'PowerPoint 97-2003 Presentation (*.ppt)'."
+msgstr ""
+
+#: templates/user_help.html:255
+msgid ""
+"After uploading your PowerPoint file to SureWash.Net, a .zip file will "
+"downloaded to your PC, containing a correctly-formatted SureWash Lesson "
+"file. To install the Lesson on your SureWash kiosk, copy the .zip file to "
+"the root folder of your SureWash USB key. Insert the USB stick into your "
+"SureWash machine, login to it as administrator and go to administrator "
+"settings. Here, you will find a 'Lesson' settings tab which will give the "
+"option to upload the lesson from your USB key."
+msgstr ""
+
+#: templates/user_help.html:268
+msgid "Getting Your SureWash Data Onto the Web"
+msgstr ""
+
+#: templates/user_help.html:271
+msgid ""
+"There are two ways to get the usage data(user accounts, hand hygiene "
+"sessions, quiz sessions) from your SureWash kiosk onto your SureWash.Net "
+"account:<br><br><ul><li><b>Active Connection: </b>If your kiosk is connected "
+"to a WiFi network, your SureWash data will be pushed to SureWash.Net once "
+"per day, as long as your kiosk is powered on.</li><br><li><b>Offline Data "
+"Upload: </b>If no WiFi network is available, you can manually push your "
+"SureWash data to the web by logging into your kiosk as an administrator, "
+"plugging in your SureWash USB and clicking 'Export data for SureWash.Net'. "
+"<i>Note: This button is only available if your SureWash kiosk is upgraded to "
+"version 4.7.2.0 or above.</i><br><br> This will create a .zip file that "
+"contains a backup of your SureWash data. You can now upload this data to "
+"your SureWash.Net account by navigating to the Analytics page and clicking "
+"on the 'Offline Data Sync' button.<br><br>For detailed instructions, <a "
+"href='/data_sync_guide/'>see our PDF guide.</a></li></ul>"
+msgstr ""
+
+#: templates/user_help.html:287
+msgid ""
+"You can issue a certificate to users based on role, department, date range, "
+"or by manually entering the user IDs. Each certificate will be outputted as "
+"a printable PDF file."
+msgstr ""
+
+#: templates/user_help.html:296
+msgid ""
+"If your SureWash system is online, you can use this feature to import new "
+"users onto your system."
+msgstr ""
+
+#: templates/user_help.html:297
+msgid ""
+"Note: this feature will only work if your SureWash kiosk has been configured "
+"for SureWash.Net and is currently powered on and connected to your WiFi "
+"network."
+msgstr ""
+
+#: templates/user_help.html:298
+msgid ""
+"You can add users by importing from a .CSV file, or by manually entering "
+"their details.<br>If you are importing from a CSV file(this method is "
+"quicker and more suitable for cases when you have a larger amount of users "
+"to add), you can find instructions on how to format the CSV file, along with "
+"a CSV template file, <a href='/add_users/'>in the 'Users' section.</a>"
+msgstr ""
+
+#: templates/users/add_users.html:19 templates/users/add_users.html:59
+#: templates/users/add_users.html:100 templates/users/add_users_v5.html:18
+#: templates/users/add_users_v5.html:46
+msgid "Select the destination SureWash machine to upload your users to:"
+msgstr ""
+
+#: templates/users/add_users.html:160 templates/users/add_users.html:180
+#: templates/users/add_users_v5.html:96 templates/users/add_users_v5.html:116
+msgid "Upload Users From File"
+msgstr ""
+
+#: templates/users/add_users.html:163 templates/users/add_users.html:217
+#: templates/users/add_users_v5.html:99 templates/users/add_users_v5.html:152
+msgid "Upload Individual Users"
+msgstr ""
+
+#: templates/users/add_users.html:168 templates/users/add_users_v5.html:104
+msgid "Upload Roles & Depts"
+msgstr ""
+
+#: templates/users/add_users.html:181 templates/users/add_users_v5.html:117
+msgid ""
+"To upload users, download the <a class=\"sw-link\" href='/"
+"surewash_user_upload_template/'>user template file</a> to your computer. "
+"Populate the file with your user data and save it to your computer. "
+"<br><br>For user upload file formatting instructions, <a class=\"sw-link\" "
+"href='/surewash_user_upload_guide/'>see our PDF guide.</a><br><br>Finally, "
+"click the 'Upload' button below and select the file."
+msgstr ""
+
+#: templates/users/add_users.html:218 templates/users/add_users_v5.html:153
+msgid ""
+"To create users, enter user details, below, inlclusing the unit ID you wish "
+"to upload these users. Click apply, and then when all users have been "
+"created, click the upload button to upload them to your machine."
+msgstr ""
+
+#: templates/users/add_users.html:224 templates/users/add_users_v5.html:161
+msgid "ID"
+msgstr ""
+
+#: templates/users/add_users.html:231 templates/users/add_users_v5.html:168
+msgid "First Name"
+msgstr ""
+
+#: templates/users/add_users.html:238 templates/users/add_users_v5.html:175
+msgid "Last Name"
+msgstr ""
+
+#: templates/users/add_users.html:259 templates/users/add_users_v5.html:196
+msgid "Additional Hospital ID"
+msgstr ""
+
+#: templates/users/add_users.html:265 templates/users/add_users_v5.html:202
+msgid "Add User"
+msgstr ""
+
+#: templates/users/add_users.html:271 templates/users/add_users_v5.html:208
+msgid "You have not added any users..."
+msgstr ""
+
+#: templates/users/add_users.html:277 templates/users/add_users_v5.html:213
+msgid "Upload Users"
+msgstr ""
+
+#: templates/users/add_users.html:292 templates/users/add_users_v5.html:227
+msgid "Upload Roles and Departments From File"
+msgstr ""
+
+#: templates/users/add_users.html:293 templates/users/add_users_v5.html:228
+msgid ""
+"To upload roles and departments, download the <a class=\"sw-link\" href='/"
+"surewash_roles_departments_upload_template/'>roles and departments template "
+"file</a> to your computer.<br><br>The template file consists of 2 columns: "
+"'Name' and 'Type'. In the 'Type' column, you will enter whether it is a "
+"'Role' or a 'Department' that you are adding. In the 'Name' column, you must "
+"enter the name of your Role/Department. Add a new row for each Role/"
+"Department you wish to add, as shown in the example image below:"
+msgstr ""
+
+#: templates/users/add_users.html:296
+msgid ""
+"\n"
+"\t\t                   Once you have saved your CSV file, click the 'Browse' "
+"button below and select the file from whether it's saved on your PC. Then "
+"click 'Upload File'"
+msgstr ""
+
+#: templates/users/add_users_v5.html:14 templates/users/add_users_v5.html:42
+msgid "Select machine"
+msgstr ""
+
+#: templates/users/add_users_v5.html:231
+msgid ""
+"\n"
+"          Once you have saved your CSV file, click the 'Browse' button below "
+"and select the file from whether it's saved on your PC. Then click 'Upload "
+"File'"
+msgstr ""
+
+#: templates/users/create_pdf_certificates.html:56
+msgid ""
+"Based on the parameters that you have provided, no users in your SureWash "
+"data records were found to have achieved Level 1 or higher in their hand "
+"hygiene training, so no certificates can be issued."
+msgstr ""
+
+#: templates/users/create_pdf_certificates.html:74
+msgid ""
+"Your certificates are being generated. The certificate PDF file will open in "
+"a new tab when certificate generation is complete."
+msgstr ""
+
+#: templates/users/create_pdf_certificates.html:141
+#: templates/users/users_base.html:65
+#: templates/users/users_base_no_report_parameters.html:68
+msgid "User Management"
+msgstr ""
+
+#: templates/users/create_pdf_certificates.html:223
+msgid "Certificate Settings"
+msgstr ""
+
+#: templates/users/create_pdf_certificates.html:231
+msgid "Start Date: "
+msgstr ""
+
+#: templates/users/create_pdf_certificates.html:250
+msgid "End Date: "
+msgstr ""
+
+#: templates/users/create_pdf_certificates.html:269
+msgid "Certify users from machine/s:"
+msgstr ""
+
+#: templates/users/create_pdf_certificates.html:275
+msgid "SureWash Elite Units"
+msgstr ""
+
+#: templates/users/create_pdf_certificates.html:282
+msgid "SureWash Go Units"
+msgstr ""
+
+#: templates/users/create_pdf_certificates.html:301
+msgid "Create certificates based on:"
+msgstr ""
+
+#: templates/users/create_pdf_certificates.html:307
+msgid "Training Difficulty Level"
+msgstr ""
+
+#: templates/users/create_pdf_certificates.html:308
+msgid "Staff Roles"
+msgstr ""
+
+#: templates/users/create_pdf_certificates.html:309
+msgid "Staff Departments"
+msgstr ""
+
+#: templates/users/create_pdf_certificates.html:310
+msgid "Staff IDs"
+msgstr ""
+
+#: templates/users/create_pdf_certificates.html:322
+msgid "Select difficulty level to certify: "
+msgstr ""
+
+#: templates/users/create_pdf_certificates.html:343
+msgid "Select staff role to certify: "
+msgstr ""
+
+#: templates/users/create_pdf_certificates.html:357
+msgid "Select staff department to certify:"
+msgstr ""
+
+#: templates/users/create_pdf_certificates.html:372
+msgid "Select users to certify:"
+msgstr ""
+
+#: templates/users/create_pdf_certificates.html:376
+msgid "All Users"
+msgstr ""
+
+#: templates/users/create_pdf_certificates.html:390
+msgid "GENERATE CERTS"
+msgstr ""
+
+#: templates/users/user_breakdown.html:13
+msgid "View User stats"
+msgstr ""
+
+#: templates/users/user_breakdown.html:28
+msgid "Stats"
+msgstr ""
+
+#: templates/users/user_breakdown.html:30
+msgid "Assessments:"
+msgstr ""
+
+#: templates/users/user_breakdown.html:31
+msgid "Passes:"
+msgstr ""
+
+#: templates/users/user_breakdown.html:32
+msgid "Date of last assessment:"
+msgstr ""
+
+#: templates/users/user_breakdown.html:33
+msgid "Highest Level attempted:"
+msgstr ""
+
+#: templates/users/user_breakdown.html:34
+msgid "Highest level passes:"
+msgstr ""
+
+#: templates/users/user_breakdown.html:89
+msgid "Edit User"
+msgstr ""
+
+#: templates/users/user_breakdown.html:148
+msgid "Are You Sure?"
+msgstr ""
+
+#: templates/users/user_breakdown.html:183
+msgid "Search..."
+msgstr ""
+
+#: templates/users/user_breakdown.html:184
+msgid "Assessed Users"
+msgstr ""
+
+#: templates/users/user_breakdown.html:185
+msgid "Unassessed Users"
+msgstr ""
+
+#: templates/users/user_breakdown.html:197
+msgid "Assessments"
+msgstr ""
+
+#: templates/users/user_breakdown.html:198
+msgid "View"
+msgstr ""
+
+#: templates/users/user_breakdown.html:199
+msgid "Edit"
+msgstr ""

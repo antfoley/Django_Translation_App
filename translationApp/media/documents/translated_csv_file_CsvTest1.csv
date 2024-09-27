@@ -1,0 +1,81 @@
+Screen Name,Texte de localisation en anglais (en-US = anglais)
+Organisation Sign IN,Bienvenue à la formation sur l'hygiène des mains de SureWash
+Organisation Sign IN,Qui se connecte ?
+Organisation Sign IN,"Veuillez indiquer l'identifiant de votre organisation si vous en avez un. Si ce n'est pas le cas, vous pouvez ignorer cette étape et explorer l'application."
+Organisation Sign IN,Entrez l'ID de l'organisation
+Organisation Sign IN,Continuer
+Organisation Sign IN,Sauter
+Employee Sign In,Quel est votre numéro d'employé?
+Employee Sign In,Veuillez saisir votre identifiant d'employé pour accéder à l'application SureWash.
+Employee Sign In,Entrez l'identifiant de l'employé
+QR/Barcode Screen,QR/Code à barres
+QR/Barcode Screen,Veuillez appuyer sur le bouton ci-dessous pour scanner un QR/code-barres
+QR/Barcode Screen,Scanner le QR/code-barres
+QR/Barcode Camera Screen,Placez le QR/code-barres à l'intérieur du cadre
+QR/Barcode Camera Screen,Balayage...
+QR/Barcode Camera Screen,Scan réussi !
+QR/Barcode Camera Screen,Numérisation non prise en charge
+QR/Barcode Camera Screen,Votre appareil ne prend pas en charge la numérisation d'un code à partir d'un article. Veuillez utiliser un appareil doté d'un appareil photo.
+QR/Barcode Camera Screen,Scanner
+Many Screen as back button,Dos
+Home Screen,Technique d'hygiène des mains
+Home Screen,Tutoriel
+Home Screen,Stagiaire
+Home Screen,Compétent
+Home Screen,Maître
+Home Screen,Commencer
+Home Screen,Anglais
+Home Screen,Espagnol
+Home Screen,Canadienne française
+Home Screen,Démarrer le tutoriel
+Side Menu,Maison
+Side Menu,Synchroniser les données
+Side Menu,Registre
+Side Menu,Configurez votre organisation.
+Side Menu,Visitez-nous
+Side Menu,Déconnexion
+Side Menu,Version 
+Hand Pose Camera Screen,Retour à l'accueil
+Hand Pose Camera Screen,Main gauche
+Hand Pose Camera Screen,Main droite
+Hand Pose Camera Screen,Veuillez placer votre appareil sur une surface plane.
+Hand Pose Camera Screen,Palmiers
+Hand Pose Camera Screen,Dos des mains
+Hand Pose Camera Screen,Entre les doigts
+Hand Pose Camera Screen,Dos des doigts
+Hand Pose Camera Screen,Les pouces
+Hand Pose Camera Screen,Bout des doigts
+Hand Pose Camera Screen,Poignets
+Hand Pose Camera Screen,Veuillez échanger vos mains pour le nettoyage
+Hand Pose Camera Screen,Suivez la vidéo de superposition et frottez vos mains paume contre paume.
+Hand Pose Camera Screen,Frottez vos mains paume contre paume.
+Hand Pose Camera Screen,Tenez vos mains à plat de manière à ce que les paumes soient face à la caméra et que le bout de vos doigts soit juste en dessous de la ligne supérieure
+Hand Pose Camera Screen,Palmiers
+Hand Pose Camera Screen,"Suivez la vidéo de superposition avec votre paume gauche sur le dos de votre main droite avec les doigts entrelacés, puis changez de main."
+Hand Pose Camera Screen,Dos des mains
+Hand Pose Camera Screen,"Paumes tournées vers l'extérieur, entrelacez les doigts et déplacez les mains comme dans la vidéo de superposition."
+Hand Pose Camera Screen,"Paumes tournées vers l'avant, entrelacez les doigts et déplacez les mains d'avant en arrière."
+Hand Pose Camera Screen,Entre les doigts
+Hand Pose Camera Screen,"Suivez la vidéo de superposition avec le dos des doigts sur les paumes opposées avec les doigts entrelacés, puis changez de main."
+Hand Pose Camera Screen,"Placez le dos des doigts sur les paumes opposées avec les doigts entrelacés, puis changez de main."
+Hand Pose Camera Screen,Dos des doigts
+Hand Pose Camera Screen,"Suivez la vidéo de superposition et frottez chaque pouce joint dans la main opposée en utilisant un mouvement de rotation, puis changez de main."
+Hand Pose Camera Screen,"Frottez chaque pouce joint dans la main opposée en utilisant un mouvement de rotation, puis changez de main."
+Hand Pose Camera Screen,Les pouces
+Hand Pose Camera Screen,"Suivez la vidéo de superposition et frottez le bout des doigts dans la paume opposée dans un mouvement circulaire, puis changez de main."
+Hand Pose Camera Screen,"Frottez le bout des doigts dans la paume opposée dans un mouvement circulaire, puis changez de main."
+Hand Pose Camera Screen,Bout des doigts
+Hand Pose Camera Screen,"Suivez la vidéo de superposition et frottez chaque poignet avec la main opposée, puis changez de main."
+Hand Pose Camera Screen,"Frottez chaque poignet avec la main opposée, puis changez de main."
+Hand Pose Camera Screen,Poignets
+Result Screen,"Félicitations John, tu as réussi"
+Result Screen,"Désolé, vous n'avez pas passé cette fois"
+Result Screen,"Pour réussir, vous devez travailler votre
+technique pour la pose suivante."
+Result Screen,"Pour obtenir 5 étoiles, vous devez travailler à améliorer votre vitesse dans les poses ci-dessous."
+Result Screen,Poursuivre la formation
+Result Screen,Niveau de réessai
+Alert Messages,Une erreur s'est produite. Veuillez réessayer ultérieurement.
+Alert Messages,Aucune connexion Internet disponible
+Alert Messages,Veuillez saisir l'ID de l'organisation avant de continuer.
+Alert Messages,Veuillez saisir l'identifiant de l'employé avant de continuer.

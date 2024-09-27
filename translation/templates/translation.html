@@ -1,0 +1,5 @@
+{% if document.translatedFile %}
+    <a href="{% url 'download_translated_file' document.id %}">Download Translated File</a>
+{% else %}
+    <p>Translation not available yet.</p>
+{% endif %}

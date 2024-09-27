@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload File for Translation</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f7f7f7;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #fff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .form-container h1 {
+            margin-bottom: 30px;
+            color: #343a40;
+        }
+        .btn-primary {
+            background-color: #008998;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #00323c;
+        }
+        .header {
+            background-color: #00323c;;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between; /* Align title and logo */
+            align-items: center;
+        }
+
+        .header-title {
+            font-size: 24px;
+        }
+
+        .header-logo img {
+            height: 50px; /* Set logo height */
+        }
+
+        .main-content {
+            flex: 1; /* Allow main content to grow */
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            text-align: center; /* Center text */
+            padding: 20px;
+        }
+
+        .main-content h1 {
+            margin-bottom: 20px;
+        }
+
+        .main-content a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .main-content a.secondary {
+            background-color: #6c757d; /* Different color for the secondary link */
+        }
+    </style>
+</head>
+<body>
+    {% load static %}
+    <header class="header">
+        <div class="header-title">Translation Service</div>
+        <div class="header-logo">
+            <img src="{% static 'translation/images/surewash.png' %}" alt="Logo">
+        </div>
+    </header>
+    <div class="main-content">
+        <div class="container">
+            <div class="form-container">
+                <h1 class="text-center">Upload File for Translation</h1>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% load form_tags %}
+                    <div class="mb-3">
+                        {{ form.title.label_tag }} <!-- File Title Label -->
+                        {{ form.title }} <!-- File Title Input Field -->
+                    </div>
+                    <div class="mb-3">
+                        {{ form.originalLang.label_tag }} <!-- Original Language Label -->
+                        {{ form.originalLang|add_class:"form-select" }} <!-- Dropdown for Original Language -->
+                    </div>
+                    <div class="mb-3">
+                        {{ form.desiredLang.label_tag }} <!-- Desired Language Label -->
+                        {{ form.desiredLang|add_class:"form-select" }} <!-- Dropdown for Desired Language -->
+                    </div>
+                    <div class="mb-3">
+                        {{ form.originalFile.label_tag }} <!-- File Upload Label -->
+                        {{ form.originalFile|add_class:"form-control" }} <!-- File Upload Input -->
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Upload</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS (for responsiveness and interactive components) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
