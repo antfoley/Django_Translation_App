@@ -1,8 +1,11 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from django.http import HttpResponse, Http404
 from django.template import loader
+import logging
 from .models import File
 from .forms import FileUploadForm  # Create this form in forms.py
+
+logger = logging.getLogger(__name__)
 
 # Create your views here.
 def index(request):
@@ -21,9 +24,13 @@ def upload_file(request):
     if request.method == 'POST':
         form = FileUploadForm(request.POST, request.FILES)
         if form.is_valid():
-            file_instance = form.save()
-            # Redirect to a success page or the same page to show the uploaded file
-            return redirect('success', documentId=file_instance.id)  # Update with your success URL
+            try:
+                file_instance = form.save()
+                # Redirect to a success page or the same page to show the uploaded file
+                return redirect('success', documentId=file_instance.id)  # Update with your success URL
+            except Exception as e:
+                logger.error(f'Error: {e}')
+                render(request, 'upload.html', {'form': form})
     else:
         form = FileUploadForm()
 
