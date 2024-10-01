@@ -5,3 +5,5 @@ pandas
 lxml
 chardet
 openpyxl
+pymupdf
+fitz
