@@ -1,6 +1,7 @@
 Django
 google-cloud-translate
 python-docx
+python-pptx
 pandas
 lxml
 chardet
