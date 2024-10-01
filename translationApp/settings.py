@@ -17,6 +17,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 GOOGLE_CLOUD_CREDENTIALS_PATH = BASE_DIR / 'translationApp' / 'booming-post-404017-49309d69296e.json'
+GOOGLE_PROJECT_ID = "booming-post-404017"
 
 STATIC_URL = '/static/'
 
@@ -33,9 +34,9 @@ STATICFILES_DIRS = [
 SECRET_KEY = 'django-insecure-%ru=@2zb=_mgnwb%wr*yfq==^x-5gw_@^f@u*mggne^b@q6p1^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['3.253.56.19']
+ALLOWED_HOSTS = ['3.253.56.19', '127.0.0.1']
 
 
 # Application definition
