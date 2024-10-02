@@ -30,6 +30,9 @@ jobs:
     - name: Check Dependecies versions
       run: |
         python -m pip list
+    - name: Set Up Google Transalte Credentials
+      run: |
+        echo "${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}" > /tmp/credentials.json
     - name: Migrate to make sure no migrations needed
       run: |
         python manage.py makemigrations
