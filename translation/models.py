@@ -13,7 +13,7 @@ from pptx import Presentation
 from google.cloud import translate_v2 as translate
 from google.cloud.translate_v3 import TranslationServiceClient
 from google.oauth2 import service_account
-import fitz
+from PyPDF2 import PdfReader, PdfWriter
 
 credentials = service_account.Credentials.from_service_account_file(settings.GOOGLE_CLOUD_CREDENTIALS_PATH)
 translateV3_client = TranslationServiceClient(credentials=credentials)
@@ -292,28 +292,19 @@ def translatePptx(self, preserve_formatting=True):
 
 
 def translatePdf(self, preserve_formatting=True):
-    doc = fitz.open(self.originalFile.path)
-
+    reader = PdfReader(self.originalFile.path)
+    writer = PdfWriter()
+    
     original_texts = []
     translations = []
-    page_texts = []
 
-    for page_num in range(len(doc)):
-        page = doc.load_page(page_num)
-        blocks = page.get_text("dict")["blocks"]
-        page_data = []
-        
-        for block in blocks:
-            if block["type"] == 0:  # Type 0 means it's text
-                for line in block["lines"]:
-                    line_text = ""
-                    for span in line["spans"]:
-                        line_text += span["text"]  # Collect text
-                    original_texts.append(line_text)
-                    page_data.append({"text": line_text, "block": block, "line": line})
-        
-        page_texts.append(page_data)
+    # Extract text from each page
+    for page in reader.pages:
+        text = page.extract_text()
+        if text:
+            original_texts.append(text)
 
+    # Translate text using the selected API version
     if self.apiVersion == 'v2':
         translations = [translate_string(self.desiredLang, text, self.originalLang) for text in original_texts]
     else:
@@ -326,45 +317,16 @@ def translatePdf(self, preserve_formatting=True):
         )
         translations = [translation.translated_text for translation in response.translations]
 
-    translation_idx = 0
-    for page_num, page_data in enumerate(page_texts):
-        page = doc.load_page(page_num)
-        
-        for item in page_data:
-            block = item["block"]
-            line = item["line"]
-            
-            if translation_idx < len(translations):
-                translated_text = translations[translation_idx]
+    # Create a new PDF with the translated text
+    for page_num in range(len(reader.pages)):
+        writer.add_page(reader.pages[page_num])  # Retain original formatting
+        if page_num < len(translations):
+            writer.pages[page_num].insert_text(translations[page_num], position=(0, 0))  # Adjust position as needed
 
-                page.add_redact_annot(
-                    block["bbox"],
-                    fill=(1, 1, 1)  
-                )
-                page.apply_redactions()
-                
-                for span in line["spans"]:
-                    try:
-                        page.insert_text(
-                            (span["bbox"][0], span["bbox"][1]),  
-                            translated_text,
-                            fontsize=span["size"],               
-                            fontname=span["font"],               
-                            color=(0, 0, 0),                     
-                        )
-                    except Exception as e:
-                        page.insert_text(
-                            (span["bbox"][0], span["bbox"][1]),
-                            translated_text,
-                            fontsize=span["size"],
-                            fontname="helv",
-                            color=(0, 0, 0),
-                        )
-                translation_idx += 1
-
+    # Save the translated PDF
     output_file_path = f'translated_pdf_file_{self.title}.pdf'
-    doc.save(output_file_path)
-    doc.close()
+    with open(output_file_path, 'wb') as f:
+        writer.write(f)
 
     self.translatedFile.save(output_file_path, ContentFile(open(output_file_path, 'rb').read()))
 
