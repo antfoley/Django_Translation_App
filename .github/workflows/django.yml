@@ -32,10 +32,10 @@ jobs:
         python -m pip list
     - name: Set Up Google Transalte Credentials
       run: |
-        echo "${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}" > /tmp/credentials.json
+        echo "${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}" > "/home/runner/work/Django_Translation_App/Django_Translation_App/translationApp/booming-post-404017-49309d69296e.json"
     - name: Migrate to make sure no migrations needed
       env:
-        GOOGLE_CLOUD_CREDENTIALS_PATH: "/tmp/credentials.json"
+        GOOGLE_CLOUD_CREDENTIALS_PATH: "/home/runner/work/Django_Translation_App/Django_Translation_App/translationApp/booming-post-404017-49309d69296e.json"
       run: |
         python manage.py makemigrations
         python manage.py migrate
