@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from django.http import HttpResponse, Http404
-from django.template import loader
+from django.contrib import messages
 import logging
 from .models import File
 from .forms import FileUploadForm  # Create this form in forms.py
@@ -29,7 +29,7 @@ def upload_file(request):
                 # Redirect to a success page or the same page to show the uploaded file
                 return redirect('success', documentId=file_instance.id)  # Update with your success URL
             except Exception as e:
-                logger.error(f'Error: {e}')
+                messages.error(request, f'An Error has occured! Please try again later! \n {e}')
                 render(request, 'upload.html', {'form': form})
     else:
         form = FileUploadForm()

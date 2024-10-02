@@ -1,3 +1,4 @@
+from sys import api_version
 from django import forms
 from .models import File
 
@@ -118,9 +119,15 @@ ORIGINAL_LANGUAGE_CHOICES = [
     ('en', 'English'),
 ]
 
+API_CHOICES = [
+    ('v2','Google Cloud Translate Version 2'),
+    ('v3','Google Cloud Translate Version 3'),
+]
+
 class FileUploadForm(forms.ModelForm):
     desiredLang = forms.ChoiceField(choices=TARGET_LANGUAGE_CHOICES, label="Select Target Language")
     originalLang = forms.ChoiceField(choices=ORIGINAL_LANGUAGE_CHOICES, label="Select Original Language")
+    apiVersion = forms.ChoiceField(choices=API_CHOICES, label="Select API Version")
     class Meta:
         model = File
-        fields = ['title', 'originalLang', 'desiredLang', 'originalFile']
+        fields = ['title', 'originalLang', 'desiredLang', 'originalFile', 'apiVersion']

@@ -1,2 +1,11 @@
-pip install python-pptx
-pip install docx-parser
+Django
+google-cloud-translate
+python-docx
+python-pptx
+pandas
+lxml
+chardet
+openpyxl
+pymupdf
+fitz
+polib

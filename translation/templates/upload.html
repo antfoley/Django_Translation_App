@@ -72,6 +72,14 @@
         .main-content a.secondary {
             background-color: #6c757d; /* Different color for the secondary link */
         }
+
+        .info{
+            display: none;
+        }
+
+        .icon:hover ~ .info{
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -100,6 +108,17 @@
                     <div class="mb-3">
                         {{ form.desiredLang.label_tag }} <!-- Desired Language Label -->
                         {{ form.desiredLang|add_class:"form-select" }} <!-- Dropdown for Desired Language -->
+                    </div>
+                    <div class="mb-3">
+                        {{ form.apiVersion.label_tag }} <!-- Api version tag -->
+                        {{ form.apiVersion|add_class:"form-select" }} <!-- Dropdown for Api Version -->
+
+                        <div class="icon">Info on API Version</div>
+                        <div class="info">
+                            Google Cloud Translation API Version 2 offers simple and straightforward translations, perfect for basic needs. 
+                            <br>
+                            Google Cloud Translation API Version 3, offers more advanced and readable translations at higher cost.
+                        </div>
                     </div>
                     <div class="mb-3">
                         {{ form.originalFile.label_tag }} <!-- File Upload Label -->
