@@ -30,12 +30,34 @@ jobs:
     - name: Check Dependecies versions
       run: |
         python -m pip list
-    - name: Set Up Google Transalte Credentials
+    # - name: Set Up Google Transalte Credentials
+    #   run: |
+    #     echo "${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}" > "${{ github.workspace }}/translationApp/booming-post-404017-49309d69296e.json"
+    - name: Debug Google Cloud Credentials
       run: |
-        echo "${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}" > "${{ github.workspace }}/translationApp/booming-post-404017-49309d69296e.json"
-    - name: Debug Credentials File
+        echo "${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}"
+    - name: Check Credentials File Content
       run: |
         cat "${{ github.workspace }}/translationApp/booming-post-404017-49309d69296e.json"
+    - name: Set Up Google Translate Credentials
+      run: |
+        cat <<EOF > "${{ github.workspace }}/translationApp/booming-post-404017-49309d69296e.json"
+        ${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}
+        EOF
+    - name: Check Credentials File Content
+      run: |
+        cat "${{ github.workspace }}/translationApp/booming-post-404017-49309d69296e.json"
+    - name: Validate JSON Credentials
+      run: |
+        python -c "
+        import json
+        with open('${{ github.workspace }}/translationApp/booming-post-404017-49309d69296e.json') as f:
+        try:
+          json.load(f)
+          print('JSON is valid.')
+        except json.JSONDecodeError as e:
+          print('JSON is invalid:', e)
+        "
     - name: Migrate to make sure no migrations needed
       env:
         GOOGLE_CLOUD_CREDENTIALS_PATH: "${{ github.workspace }}/translationApp/booming-post-404017-49309d69296e.json"
