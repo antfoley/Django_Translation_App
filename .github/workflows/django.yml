@@ -7,13 +7,14 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  test:
 
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     strategy:
-      max-parallel: 4
+      max-parallel: 5
       matrix:
         python-version: [3.6, 3.7, 3.8, 3.8.10, 3.9]
+        os: [ubuntu-latest, windows-latest, macos-latest]
 
     steps:
     - uses: actions/checkout@v4
@@ -25,6 +26,19 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+    - name: Migrate to make sure no migrations needed
+      run: |
+        python manage.py makemigrations
+        python manage.py migrate
     - name: Run Tests
       run: |
         python manage.py test
+    - name: Lint with Pylint
+      run: |
+        pip install pylint
+        pylint Django_Translation_App
+    - name: Run the Django development server
+      run: |
+        python manage.py runserver
+        sleep 10
+        curl http://127.0.0.1:8000/translation/upload/
