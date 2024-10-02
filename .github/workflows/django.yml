@@ -33,6 +33,9 @@ jobs:
     - name: Set Up Google Transalte Credentials
       run: |
         echo "${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}" > "${{ github.workspace }}/translationApp/booming-post-404017-49309d69296e.json"
+    - name: Debug Credentials File
+      run: |
+        cat "${{ github.workspace }}/translationApp/booming-post-404017-49309d69296e.json"
     - name: Migrate to make sure no migrations needed
       env:
         GOOGLE_CLOUD_CREDENTIALS_PATH: "${{ github.workspace }}/translationApp/booming-post-404017-49309d69296e.json"
