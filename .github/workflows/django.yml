@@ -34,6 +34,8 @@ jobs:
       run: |
         echo "${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}" > /tmp/credentials.json
     - name: Migrate to make sure no migrations needed
+      env:
+        GOOGLE_CLOUD_CREDENTIALS_PATH: "/tmp/credentials.json"
       run: |
         python manage.py makemigrations
         python manage.py migrate
