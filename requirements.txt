@@ -3,7 +3,7 @@ google-cloud-translate
 python-docx
 python-pptx
 pandas
-lxml
+lxml==4.3.1
 chardet
 openpyxl
 pypdf2

@@ -1,9 +1,20 @@
 import logging
-from django.shortcuts import render, redirect
+from django.http import Http404, HttpResponse
+from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib import messages
 from .forms import FileUploadForm
+from .models import File
 
 logger = logging.getLogger(__name__)
+
+def downloadTranslatedFile(documentId):
+    document = get_object_or_404(File, id=documentId)
+    if document.translatedFile:
+        response = HttpResponse(document.translatedFile, content_type='application/force-download')
+        response['Content-Disposition'] = f'attachment; filename="{document.translatedFile.name}"'
+        return response
+    else:
+        return Http404('No trnaslated document found')
 
 def upload_file(request):
     if request.method == 'POST':
