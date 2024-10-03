@@ -42,8 +42,7 @@ jobs:
         fi
         
         # Check the final score in the output
-        score=$(echo "$pylint_output" | grep -oP '\d+\.\d+(?=% Score)' | tail -n1)
-        
+        score=$(echo "$pylint_output" | grep -oP '\d+\.\d+(?=/10)' | tail -n1)
         # Check if the score is below the threshold
         if (( $(echo "$score < $min_score" | bc -l) )); then
             echo "pylint score of $score is below the threshold of $min_score. Please improve the code quality."
