@@ -26,8 +26,7 @@ jobs:
         disable_args="--disable=C0111,R0903,W0718"  # Add your disable codes here
         
         # Directories and files to ignore
-        ignore_dirs="--ignore=translation/templatetags/,/translation/migrations/,translation/staticfiles/,/manage.py"
-        
+        ignore_patterns="--ignore-patterns=templatetags|migrations|staticfiles|manage.py"        
         # Enable debugging mode
         set -x
         
