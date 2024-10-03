@@ -28,6 +28,9 @@ jobs:
         # Directories and files to ignore
         ignore_dirs="--ignore=templatetags,migrations,staticfiles"
         
+        # Enable debugging mode
+        set -x
+        
         # Run pylint and capture the output, ignoring certain directories
         pylint_output=$(pylint $disable_args $ignore_dirs $(git ls-files '*.py') 2>&1)
         pylint_exit_code=$?
@@ -42,3 +45,4 @@ jobs:
         fi
         
         echo "pylint passed without any issues."
+
