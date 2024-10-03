@@ -26,11 +26,12 @@ jobs:
         disable_args="--disable=C0111,R0903,W0718"  # Add your disable codes here
         
         # Directories and files to ignore
-        ignore_dirs="--ignore=templatetags,migrations,staticfiles,manage.py"        # Enable debugging mode
+        python_files=$(find . -name '*.py' -not -path './translation/templatetags/*' -not -path './translation/migrations/*' -not -path './translation/staticfiles/*' -not -name 'manage.py')
         set -x
         
         # Run pylint and capture the output, ignoring certain directories
-        pylint_output=$(pylint $ignore_patterns $disable_args $(git ls-files '*.py') 2>&1)
+        # pylint_output=$(pylint $ignore_patterns $disable_args $(git ls-files '*.py') 2>&1)
+        pylint $disable_args $python_files 2>&1
         pylint_exit_code=$?
         
         # Print pylint output for debugging
