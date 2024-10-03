@@ -55,10 +55,10 @@ jobs:
         import json
         with open('translationApp/booming-post-404017-49309d69296e.json') as f:
         try:
-          json.load(f)
-          print('JSON is valid.')
+        json.load(f)
+        print('JSON is valid.')
         except json.JSONDecodeError as e:
-          print('JSON is invalid:', e)
+        print('JSON is invalid:', e)
         "
     - name: Migrate to make sure no migrations needed
       env:
