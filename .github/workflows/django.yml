@@ -58,7 +58,3 @@ jobs:
     - name: Run Tests
       run: |
         python manage.py test
-    - name: Lint with Pylint
-      run: |
-        pip install pylint
-        pylint translation --exit-zero && pylint translationApp --exit-zero
