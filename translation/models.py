@@ -355,8 +355,8 @@ def translate_pdf(self):
         if page_num < len(translations):
             writer.pages[page_num].insert_text(translations[page_num], position=(0, 0))
     output_file_path = f'translated_pdf_file_{self.title}.pdf'
-    with open(output_file_path, 'wb') as f:
-        writer.write(f)
+    with open(output_file_path, 'wb') as file:
+        writer.write(file)
     with open(output_file_path, 'rb') as file:
         contents = file.read()
 

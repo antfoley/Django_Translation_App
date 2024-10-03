@@ -3,7 +3,7 @@ from . import views
 
 urlpatterns = [
     path('download/<int:documentId>/',
-         views.downloadTranslatedFile,
+         views.download_translated_file,
          name='download_translated_file'),
 
     path('upload/',

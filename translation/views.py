@@ -7,14 +7,13 @@ from .models import File
 
 logger = logging.getLogger(__name__)
 
-def downloadTranslatedFile(documentId):
-    document = get_object_or_404(File, id=documentId)
-    if document.translatedFile:
+def download_translated_file(document_id):
+    document = get_object_or_404(File, id=document_id)
+    if document.translated_file:
         response = HttpResponse(document.translatedFile, content_type='application/force-download')
         response['Content-Disposition'] = f'attachment; filename="{document.translatedFile.name}"'
         return response
-    else:
-        return Http404('No trnaslated document found')
+    return Http404('No trnaslated document found')
 
 def upload_file(request):
     if request.method == 'POST':
@@ -23,12 +22,9 @@ def upload_file(request):
             try:
                 file_instance = form.save()
                 return redirect('success', documentId=file_instance.id)
-            except Exception as e:
-                messages.error(request, f'An Error has occured! Please try again later! \n {e}')
+            except Exception as exception:
+                messages.error(request, f'An Error has occured! Please try again later! \n {exception}')
                 render(request, 'upload.html', {'form': form})
-    else:
-        form = FileUploadForm()
-
     return render(request, 'upload.html', {'form': form})
 
 def success(request, document_id):
