@@ -22,11 +22,6 @@ jobs:
         pip install pylint
     - name: Analysing the code with pylint
       run: |
-        # C0111: Disable missing docstring warning
-        # R0903 Disable too few public methods
-        # W0718 Disable too general of try catch
-
-        disable_args="--disable=C0111,R0903,W0718"
         # Array of pylint disable arguments
         disable_args="--disable=C0111,R0903,W0718"  # Add your disable codes here
         
@@ -34,22 +29,24 @@ jobs:
         min_score=9.0  # Set your desired minimum score here
         
         # Run pylint and capture the output
-        pylint_output=$(pylint $disable_args --score=y --msg-template="{msg_id}:{line:3d} {msg}" **/*.py)
+        pylint_output=$(pylint $disable_args --score=y --msg-template="{msg_id}:{line:3d} {msg}" **/*.py 2>&1)
         pylint_exit_code=$?
+        
+        # Print pylint output for debugging
+        echo "$pylint_output"
 
         # Check the overall score and exit code
         if [ $pylint_exit_code -ne 0 ]; then
             echo "pylint failed with the following issues:"
-            echo "$pylint_output"
             exit 1
         fi
-
+        
         # Check the final score in the output
         score=$(echo "$pylint_output" | grep -oP '\d+\.\d+(?=% Score)' | tail -n1)
-
+        
         if (( $(echo "$score < $min_score" | bc -l) )); then
             echo "pylint score of $score is below the threshold of $min_score. Commit aborted."
             exit 1
         fi
-
+        
         echo "pylint passed with a score of $score, proceeding with commit."
