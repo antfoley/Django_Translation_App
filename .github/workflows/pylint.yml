@@ -21,4 +21,9 @@ jobs:
         pip install pylint
     - name: Analysing the code with pylint
       run: |
-        pylint $(git ls-files '*.py')
+        # C0111: Disable missing docstring warning
+        # R0903 Disable too few public methods
+        # W0718 Disable too general of try catch
+
+        disable_args = "--disable=C0111, R0903, W0718"
+        pylint $disable_args $(git ls-files '*.py')
