@@ -27,7 +27,7 @@ jobs:
         
         # Set the minimum score threshold
         min_score=9.0  # Set your desired minimum score here
-        
+        set -x
         # Run pylint and capture the output
         pylint_output=$(pylint $disable_args $(git ls-files '*.py') 2>&1)
         pylint_exit_code=$?
