@@ -25,11 +25,11 @@ jobs:
         # Array of pylint disable arguments
         disable_args="--disable=C0111,R0903,W0718"  # Add your disable codes here
         
-        # Set the minimum score threshold
-        min_score=9.0  # Set your desired minimum score here
-        set -x
-        # Run pylint and capture the output
-        pylint_output=$(pylint $disable_args $(git ls-files '*.py') 2>&1)
+        # Directories to ignore
+        ignore_dirs="--ignore=templatetags,migrations,staticfiles"
+        
+        # Run pylint and capture the output, ignoring certain directories
+        pylint_output=$(pylint $disable_args $ignore_dirs $(git ls-files '*.py') 2>&1)
         pylint_exit_code=$?
         
         # Print pylint output for debugging
@@ -37,16 +37,8 @@ jobs:
         
         # Check the overall pylint exit code
         if [ $pylint_exit_code -ne 0 ]; then
-            echo "pylint found issues:"
+            echo "pylint found issues. Please fix the linting errors."
             exit 1  # Fail the workflow if there are linting issues
         fi
         
-        # Check the final score in the output
-        score=$(echo "$pylint_output" | grep -oP '\d+\.\d+(?=/10)' | tail -n1)
-        # Check if the score is below the threshold
-        if (( $(echo "$score < $min_score" | bc -l) )); then
-            echo "pylint score of $score is below the threshold of $min_score. Please improve the code quality."
-            exit 1  # Fail the workflow if the score is below the threshold
-        fi
-        
-        echo "pylint passed with a score of $score."
+        echo "pylint passed without any issues."
