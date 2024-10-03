@@ -23,7 +23,8 @@ def upload_file(request):
                 file_instance = form.save()
                 return redirect('success', documentId=file_instance.id)
             except Exception as exception:
-                messages.error(request, f'An Error has occured! Please try again later! \n {exception}')
+                messages.error(request,
+                               f'An Error has occured! Please try again later! \n {exception}')
                 render(request, 'upload.html', {'form': form})
     return render(request, 'upload.html', {'form': form})
 

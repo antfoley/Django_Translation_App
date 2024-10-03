@@ -27,11 +27,14 @@ jobs:
         
         # Directories and files to ignore
         python_files=$(find . -name '*.py' -not -path './translation/templatetags/*' -not -path './translation/migrations/*' -not -path './translation/staticfiles/*' -not -name 'manage.py')
+
+        # extention package allowed
+        extentions="--extension-pkg-allow-list=lxml"
         set -x
         
         # Run pylint and capture the output, ignoring certain directories
         # pylint_output=$(pylint $ignore_patterns $disable_args $(git ls-files '*.py') 2>&1)
-        pylint $disable_args $python_files 2>&1
+        pylint $disable_args $extentions $python_files 2>&1
         pylint_exit_code=$?
         
         # Print pylint output for debugging
