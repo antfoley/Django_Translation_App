@@ -32,14 +32,14 @@ jobs:
         python -m pip list
     # - name: Set Up Google Transalte Credentials
     #   run: |
-    #     echo "${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}" > "/home/runner/work/Django_Translation_App/translationApp/booming-post-404017-49309d69296e.json"
+    #     echo "${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}" > "translationApp/booming-post-404017-49309d69296e.json"
     - name: Debug Google Cloud Credentials
       run: |
         echo "${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}"
     - name: Check Credentials File Content
       run: |
         ls -d */
-        cat "/home/runner/work/Django_Translation_App/translationApp/booming-post-404017-49309d69296e.json"
+        cat "translationApp/booming-post-404017-49309d69296e.json"
     - name: Set Up Google Translate Credentials
       run: |
         cat <<EOF > "/home/runner/work/Django_Translation_App/translationApp/booming-post-404017-49309d69296e.json"
