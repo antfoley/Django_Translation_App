@@ -49,17 +49,6 @@ jobs:
       run: |
         ls -d */
         cat "translationApp/booming-post-404017-49309d69296e.json"
-    - name: Validate JSON Credentials
-      run: |
-        python -c "
-        import json
-        with open('translationApp/booming-post-404017-49309d69296e.json') as f:
-        try:
-        json.load(f)
-        print('JSON is valid.')
-        except json.JSONDecodeError as e:
-        print('JSON is invalid:', e)
-        "
     - name: Migrate to make sure no migrations needed
       env:
         GOOGLE_CLOUD_CREDENTIALS_PATH: "translationApp/booming-post-404017-49309d69296e.json"
