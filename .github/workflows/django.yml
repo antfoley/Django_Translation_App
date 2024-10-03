@@ -61,8 +61,7 @@ jobs:
     - name: Lint with Pylint
       run: |
         pip install pylint
-        pylint translation
-        pylint translationApp
+        pylint translation && pylint translationApp
     - name: Run the Django development server
       run: |
         python manage.py runserver
