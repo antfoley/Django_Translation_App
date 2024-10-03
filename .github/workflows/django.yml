@@ -62,7 +62,6 @@ jobs:
       run: |
         pip install pylint
         pylint translation --exit-zero && pylint translationApp --exit-zero
-        timeout-minutes: 10
     - name: Run the Django development server
       run: |
         python manage.py runserver
