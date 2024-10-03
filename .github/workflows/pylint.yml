@@ -29,7 +29,7 @@ jobs:
         min_score=9.0  # Set your desired minimum score here
 
         # Run pylint and capture the output
-        pylint_output=$(pylint $disable_args --score=y --msg-template="{msg_id}:{line:3d} {msg}" **/*.py 2>&1)
+        pylint_output=$(find . -name "*.py" | xargs pylint $disable_args --score=y --msg-template="{msg_id}:{line:3d} {msg}" 2>&1)
         pylint_exit_code=$?
 
         # Print pylint output for debugging
