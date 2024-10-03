@@ -42,7 +42,7 @@ jobs:
     #     cat "translationApp/booming-post-404017-49309d69296e.json"
     - name: Set Up Google Translate Credentials
       run: |
-        cat <<EOF > "/home/runner/work/Django_Translation_App/translationApp/booming-post-404017-49309d69296e.json"
+        cat <<EOF > "translationApp/booming-post-404017-49309d69296e.json"
         ${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}
         EOF
     - name: Check Credentials File Content
