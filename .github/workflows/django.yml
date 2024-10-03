@@ -62,6 +62,3 @@ jobs:
       run: |
         pip install pylint
         pylint translation --exit-zero && pylint translationApp --exit-zero
-    - name: Run the Django development server
-      run: |
-        python manage.py runserver
