@@ -25,5 +25,5 @@ jobs:
         # R0903 Disable too few public methods
         # W0718 Disable too general of try catch
 
-        disable_args="--disable=C0111, R0903, W0718"
+        disable_args="--disable=C0111,R0903,W0718"
         pylint $disable_args $(git ls-files '*.py')
