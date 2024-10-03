@@ -165,5 +165,13 @@ cython_debug/
 *.json
 
 #ignore uploaded files
-media/documents/*
-media/translated/*
+*.doc
+*.docx
+*.pdf
+*.ppt
+*.pptx
+*.xlsx
+*.csv
+*.po
+*.resx
+*.txt

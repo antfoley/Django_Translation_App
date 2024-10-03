@@ -8,3 +8,4 @@ chardet
 openpyxl
 pypdf2
 polib
+pylint

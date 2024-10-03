@@ -1,4 +1,3 @@
-from sys import api_version
 from django import forms
 from .models import File
 
@@ -125,9 +124,12 @@ API_CHOICES = [
 ]
 
 class FileUploadForm(forms.ModelForm):
-    desiredLang = forms.ChoiceField(choices=TARGET_LANGUAGE_CHOICES, label="Select Target Language")
-    originalLang = forms.ChoiceField(choices=ORIGINAL_LANGUAGE_CHOICES, label="Select Original Language")
-    apiVersion = forms.ChoiceField(choices=API_CHOICES, label="Select API Version")
+    desiredLang = forms.ChoiceField(choices=TARGET_LANGUAGE_CHOICES,
+                                    label="Select Target Language")
+    originalLang = forms.ChoiceField(choices=ORIGINAL_LANGUAGE_CHOICES,
+                                     label="Select Original Language")
+    apiVersion = forms.ChoiceField(choices=API_CHOICES,
+                                   label="Select API Version")
     class Meta:
         model = File
         fields = ['title', 'originalLang', 'desiredLang', 'originalFile', 'apiVersion']

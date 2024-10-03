@@ -1,11 +1,11 @@
 import subprocess
+import csv
+from io import BytesIO, TextIOWrapper
+import docx
 from django.conf import settings
 from django.db import models
 from django.core.files.base import ContentFile
-import csv
-import docx
-from io import BytesIO, TextIOWrapper
-from lxml import etree as ET
+import lxml.etree as ET
 import chardet
 import openpyxl
 import polib
@@ -15,10 +15,11 @@ from google.cloud.translate_v3 import TranslationServiceClient
 from google.oauth2 import service_account
 from PyPDF2 import PdfReader, PdfWriter
 
-credentials = service_account.Credentials.from_service_account_file(settings.GOOGLE_CLOUD_CREDENTIALS_PATH)
+credentials = service_account.Credentials.from_service_account_file(
+    settings.GOOGLE_CLOUD_CREDENTIALS_PATH)
 translateV3_client = TranslationServiceClient(credentials=credentials)
 translateV2_client = translate.Client(credentials=credentials)
-parent = f"projects/{settings.GOOGLE_PROJECT_ID}/locations/global"
+PARENT = f"projects/{settings.GOOGLE_PROJECT_ID}/locations/global"
 
 def detect_encoding(file_path):
     with open(file_path, 'rb') as file:
@@ -30,11 +31,14 @@ def detect_encoding(file_path):
         detector.close()
     return detector.result['encoding']
 
-def translate_string(target, text, sourceLang):
-    result = translateV2_client.translate(text, source_language=sourceLang, target_language=target, format_='text')
+def translate_string(target, text, source_lang):
+    result = translateV2_client.translate(text,
+                                          source_language=source_lang,
+                                          target_language=target,
+                                          format_='text')
     return str(result["translatedText"])
 
-def translateCsv(self):
+def translate_csv(self):
     encoding = detect_encoding(self.originalFile.path)
 
     original_texts = []
@@ -46,10 +50,13 @@ def translateCsv(self):
             rows.append(row)
 
     if self.apiVersion == 'v2':
-        translated_texts = [translate_string(self.desiredLang, text, self.originalLang) for text in original_texts]
+        translated_texts = [translate_string(self.desiredLang,
+                                             text,
+                                             self.originalLang)
+                                             for text in original_texts]
     else:
         response = translateV3_client.translate_text(
-            parent=parent,
+            parent=PARENT,
             contents=original_texts,
             mime_type="text/plain",
             source_language_code=self.originalLang,
@@ -66,24 +73,27 @@ def translateCsv(self):
 
     text_wrapper.flush()
     output_file_content.seek(0)
-    self.translatedFile.save(f'translated_csv_file_{self.title}.csv', ContentFile(output_file_content.getvalue()))
+    self.translated_file.save(f'translated_csv_file_{self.title}.csv',
+                             ContentFile(output_file_content.getvalue()))
     text_wrapper.close()
 
-def translateXlsx(self):
+def translate_xlsx(self):
     workbook = openpyxl.load_workbook(self.originalFile)
     sheet = workbook.active
-    
     original_texts = []
     for row in sheet.iter_rows():
         for cell in row:
-            if cell.value:  
+            if cell.value:
                 original_texts.append(str(cell.value))
 
     if self.apiVersion == 'v2':
-        translated_texts = [translate_string(self.desiredLang, text, self.originalLang) for text in original_texts]
+        translated_texts = [translate_string(self.desiredLang,
+                                             text,
+                                             self.originalLang)
+                                             for text in original_texts]
     else:
         response = translateV3_client.translate_text(
-            parent=parent,
+            parent=PARENT,
             contents=original_texts,
             mime_type="text/plain",
             source_language_code=self.originalLang,
@@ -94,24 +104,28 @@ def translateXlsx(self):
     translated_text_index = 0
     for row in sheet.iter_rows():
         for cell in row:
-            if cell.value: 
+            if cell.value:
                 cell.value = translated_texts[translated_text_index]
                 translated_text_index += 1
 
     output_file_content = BytesIO()
     workbook.save(output_file_content)
     output_file_content.seek(0)
-    self.translatedFile.save(f'translated_xlsx_file_{self.title}.xlsx', ContentFile(output_file_content.getvalue()))
+    self.translated_file.save(f'translated_xlsx_file_{self.title}.xlsx',
+                             ContentFile(output_file_content.getvalue()))
 
-def translatePo(self):
+def translate_po(self):
     po_file = polib.pofile(self.originalFile.path)
     original_texts = [entry.msgid for entry in po_file if entry.msgid]
 
     if self.apiVersion == 'v2':
-        translated_texts = [translate_string(self.desiredLang, text, self.originalLang) for text in original_texts]
+        translated_texts = [translate_string(self.desiredLang,
+                                             text,
+                                             self.originalLang)
+                                             for text in original_texts]
     else:
         response = translateV3_client.translate_text(
-            parent=parent,
+            parent=PARENT,
             contents=original_texts,
             mime_type="text/plain",
             source_language_code=self.originalLang,
@@ -120,17 +134,18 @@ def translatePo(self):
         translated_texts = [translation.translated_text for translation in response.translations]
 
     for i, entry in enumerate(po_file):
-        if entry.msgid:  
+        if entry.msgid:
             entry.msgstr = translated_texts[i]
 
     output_file_content = BytesIO()
     po_file.save(output_file_content)
     output_file_content.seek(0)
-    self.translatedFile.save(f'translated_po_file_{self.title}.po', ContentFile(output_file_content.getvalue()))
+    self.translated_file.save(f'translated_po_file_{self.title}.po',
+                             ContentFile(output_file_content.getvalue()))
 
-def translateDocx(self):
+def translate_docx(self):
     doc = docx.Document(self.originalFile.path)
-    
+
     original_texts = []
     translated_texts = []
 
@@ -139,12 +154,15 @@ def translateDocx(self):
             original_texts.append(para.text)
 
     if self.apiVersion == 'v2':
-        translated_texts = [translate_string(self.desiredLang, text, self.originalLang) for text in original_texts]
+        translated_texts = [translate_string(self.desiredLang,
+                                             text,
+                                             self.originalLang)
+                                             for text in original_texts]
     else:
         client = translateV3_client
 
         response = client.translate_text(
-            parent=parent,
+            parent=PARENT,
             contents=original_texts,
             mime_type="text/plain",
             source_language_code=self.originalLang,
@@ -153,10 +171,10 @@ def translateDocx(self):
         translated_texts = [translation.translated_text for translation in response.translations]
 
     for i, para in enumerate(doc.paragraphs):
-        if i < len(translated_texts): 
+        if i < len(translated_texts):
             for run in para.runs:
-                run.clear() 
-            
+                run.clear()
+
             translated_run = para.add_run(translated_texts[i])
             if para.runs:
                 translated_run.bold = para.runs[0].bold
@@ -168,9 +186,10 @@ def translateDocx(self):
     output_file_content = BytesIO()
     doc.save(output_file_content)
     output_file_content.seek(0)
-    self.translatedFile.save(f'translated_doc_file_{self.title}.docx', ContentFile(output_file_content.getvalue()))
+    self.translated_file.save(f'translated_doc_file_{self.title}.docx',
+                             ContentFile(output_file_content.getvalue()))
 
-def translateResx(self):
+def translate_resx(self):
     tree = ET.parse(self.originalFile.path)
     root = tree.getroot()
 
@@ -183,11 +202,14 @@ def translateResx(self):
             original_texts.append(original_text)
 
     if self.apiVersion == 'v2':
-        translations = [translate_string(self.desiredLang, text, self.originalLang) for text in original_texts]
+        translations = [translate_string(self.desiredLang,
+                                         text,
+                                         self.originalLang)
+                                         for text in original_texts]
     else:
         client = translateV3_client
         response = client.translate_text(
-            parent=parent,
+            parent=PARENT,
             contents=original_texts,
             mime_type="text/plain",
             source_language_code=self.originalLang,
@@ -203,16 +225,25 @@ def translateResx(self):
 
     output_file_path = f'translated_resx_file_{self.title}.resx'
     tree.write(output_file_path, encoding='utf-8', xml_declaration=True)
-    self.translatedFile.save(output_file_path, ContentFile(open(output_file_path, 'rb').read()))
+    with open(output_file_path, 'rb') as file:
+        contents = file.read()
+    self.translated_file.save(output_file_path, contents)
 
-def translateDoc(self):
+def translate_doc(self):
     docx_path = self.originalFile.path.replace('.doc', '.docx')
-    subprocess.run(['libreoffice', '--headless', '--convert-to', 'docx', self.originalFile.path, '--outdir', 'documents/'])
-    
-    self.originalFile.name = docx_path
-    translateDocx(self)
+    subprocess.run(['libreoffice',
+                    '--headless',
+                    '--convert-to',
+                    'docx',
+                    self.originalFile.path,
+                    '--outdir',
+                    'documents/'],
+                    check=False)
 
-def translatePpt(self, preserve_formatting=True):
+    self.originalFile.name = docx_path
+    translate_docx(self)
+
+def translate_ppt(self):
 
     presentation = Presentation(self.originalFile.path)
     for slide in presentation.slides:
@@ -225,7 +256,7 @@ def translatePpt(self, preserve_formatting=True):
                     original_text = run.text
                     if original_text.strip():
                         response = translateV3_client.translate_text(
-                            parent=parent,
+                            parent=PARENT,
                             contents=[original_text],
                             mime_type="text/plain",
                             source_language_code=self.originalLang,
@@ -233,27 +264,20 @@ def translatePpt(self, preserve_formatting=True):
                         )
                         translated_text = response.translations[0].translated_text
                         run.text = translated_text
-
-                        if preserve_formatting:
-                            if run.font.bold:
-                                run.font.bold = True
-                            if run.font.italic:
-                                run.font.italic = True
-                            if run.font.underline:
-                                run.font.underline = True
-                            if run.font.size:
-                                run.font.size = run.font.size
-                            if run.font.name:
-                                run.font.name = run.font.name
+                        run.font.bold = run.font.bold if run.font.bold else None
+                        run.font.italic = run.font.italic if run.font.italic else None
+                        run.font.underline = run.font.underline if run.font.underline else None
+                        run.font.size = run.font.size if run.font.size else None
+                        run.font.name = run.font.name if run.font.name else None
 
     output = BytesIO()
     presentation.save(output)
     content = ContentFile(output.getvalue())
 
     translated_filename = f'translated_ppt_file_{self.title}.pptx'
-    self.translatedFile.save(translated_filename, content)
+    self.translated_file.save(translated_filename, content)
 
-def translatePptx(self, preserve_formatting=True):
+def translate_pptx(self):
     prs = Presentation(self.originalFile.path)
 
     original_texts = []
@@ -267,10 +291,13 @@ def translatePptx(self, preserve_formatting=True):
                     original_texts.append(text)
 
     if self.apiVersion == 'v2':
-        translations = [translate_string(self.desiredLang, text, self.originalLang) for text in original_texts]
+        translations = [translate_string(self.desiredLang,
+                                         text,
+                                         self.originalLang)
+                                         for text in original_texts]
     else:
         response = translateV3_client.translate_text(
-            parent=parent,
+            parent=PARENT,
             contents=original_texts,
             mime_type="text/plain",
             source_language_code=self.originalLang,
@@ -288,13 +315,15 @@ def translatePptx(self, preserve_formatting=True):
 
     output_file_path = f'translated_pptx_file_{self.title}.pptx'
     prs.save(output_file_path)
-    self.translatedFile.save(output_file_path, ContentFile(open(output_file_path, 'rb').read()))
+    with open(output_file_path, 'rb') as file:
+        contents = file.read()
+    self.translated_file.save(output_file_path, contents)
 
 
-def translatePdf(self, preserve_formatting=True):
+def translate_pdf(self):
     reader = PdfReader(self.originalFile.path)
     writer = PdfWriter()
-    
+
     original_texts = []
     translations = []
 
@@ -306,10 +335,13 @@ def translatePdf(self, preserve_formatting=True):
 
     # Translate text using the selected API version
     if self.apiVersion == 'v2':
-        translations = [translate_string(self.desiredLang, text, self.originalLang) for text in original_texts]
+        translations = [translate_string(self.desiredLang,
+                                         text,
+                                         self.originalLang)
+                                         for text in original_texts]
     else:
         response = translateV3_client.translate_text(
-            parent=parent,
+            parent=PARENT,
             contents=original_texts,
             mime_type="text/plain",
             source_language_code=self.originalLang,
@@ -318,17 +350,17 @@ def translatePdf(self, preserve_formatting=True):
         translations = [translation.translated_text for translation in response.translations]
 
     # Create a new PDF with the translated text
-    for page_num in range(len(reader.pages)):
-        writer.add_page(reader.pages[page_num])  # Retain original formatting
+    for page_num in enumerate(reader.pages):
+        writer.add_page(reader.pages[page_num])
         if page_num < len(translations):
-            writer.pages[page_num].insert_text(translations[page_num], position=(0, 0))  # Adjust position as needed
-
-    # Save the translated PDF
+            writer.pages[page_num].insert_text(translations[page_num], position=(0, 0))
     output_file_path = f'translated_pdf_file_{self.title}.pdf'
     with open(output_file_path, 'wb') as f:
         writer.write(f)
+    with open(output_file_path, 'rb') as file:
+        contents = file.read()
 
-    self.translatedFile.save(output_file_path, ContentFile(open(output_file_path, 'rb').read()))
+    self.translated_file.save(output_file_path, contents)
 
 class File(models.Model):
     title = models.CharField(max_length=200)
@@ -336,42 +368,42 @@ class File(models.Model):
     desiredLang = models.CharField(max_length=2)
     apiVersion = models.CharField(max_length=2)
     originalFile = models.FileField(upload_to='documents/')
-    translatedFile = models.FileField(upload_to='translated/', blank=True, null=True)
+    translated_file = models.FileField(upload_to='translated/', blank=True, null=True)
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
-        if self.originalFile and not self.translatedFile:
+        if self.originalFile and not self.translated_file:
             self.translate()
 
     def translate(self):
         arr = self.originalFile.name.split('.')
         file_type = arr[-1].lower()
         if file_type == 'csv':
-            self.translatedFile = f'translated_csv_file_{self.title}.csv'
-            translateCsv(self)
+            self.translated_file = f'translated_csv_file_{self.title}.csv'
+            translate_csv(self)
         elif file_type == 'xlsx':
-            self.translatedFile = f'translated_xlsx_file_{self.title}.xlsx'
-            translateXlsx(self)
+            self.translated_file = f'translated_xlsx_file_{self.title}.xlsx'
+            translate_xlsx(self)
         elif file_type == 'po':
-            self.translatedFile = f'translated_po_file_{self.title}.po'
-            translatePo(self)
+            self.translated_file = f'translated_po_file_{self.title}.po'
+            translate_po(self)
         elif file_type == 'docx':
-            self.translatedFile = f'translated_docx_file_{self.title}.docx'
-            translateDocx(self)
+            self.translated_file = f'translated_docx_file_{self.title}.docx'
+            translate_docx(self)
         elif file_type == 'doc':
-            self.translatedFile = f'translated_doc_file_{self.title}.doc'
-            translateDoc(self)
+            self.translated_file = f'translated_doc_file_{self.title}.doc'
+            translate_doc(self)
         elif file_type == 'resx':
-            self.translatedFile = f'translated_resx_file_{self.title}.resx'
-            translateResx(self)
+            self.translated_file = f'translated_resx_file_{self.title}.resx'
+            translate_resx(self)
         elif file_type == 'pptx':
-            self.translatedFile = f'translated_pptx_file_{self.title}.pptx'
-            translatePptx(self)
+            self.translated_file = f'translated_pptx_file_{self.title}.pptx'
+            translate_pptx(self)
         elif file_type == 'ppt':
-            self.translatedFile = f'translated_pptx_file_{self.title}.ppt'
-            translatePptx(self) 
+            self.translated_file = f'translated_pptx_file_{self.title}.ppt'
+            translate_pptx(self)
         elif file_type == 'pdf':
-            self.translatedFile = f'translated_pdf_file_{self.title}.pdf'
-            translatePdf(self)
+            self.translated_file = f'translated_pdf_file_{self.title}.pdf'
+            translate_pdf(self)
         else:
             raise ValueError(f"Unsupported file type: {file_type}")
-        self.save(update_fields=['translatedFile'])
+        self.save(update_fields=['translated_file'])
