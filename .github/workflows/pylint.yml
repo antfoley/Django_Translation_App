@@ -31,7 +31,7 @@ jobs:
         set -x
         
         # Run pylint and capture the output, ignoring certain directories
-        pylint_output=$(pylint $disable_args $ignore_dirs $(git ls-files '*.py') 2>&1)
+        pylint_output=$(pylint $disable_args $ignore_patterns $(git ls-files '*.py') 2>&1)
         pylint_exit_code=$?
         
         # Print pylint output for debugging
