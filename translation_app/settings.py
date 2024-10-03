@@ -63,7 +63,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'translationApp.urls'
+ROOT_URLCONF = 'translation_app.urls'
 
 TEMPLATES = [
     {
@@ -81,7 +81,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'translationApp.wsgi.application'
+WSGI_APPLICATION = 'translation_app.wsgi.application'
 
 
 # Database
