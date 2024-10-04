@@ -35,6 +35,7 @@ jobs:
           --protocol tcp \
           --port 22 \
           --cidr ${{ steps.ip.outputs.ipv4 }}/32
+        echo "Whitelisted runner IP address: ${{ steps.ip.outputs.ipv4 }}"
 
     - name: Check connection to EC2
       if: always()
