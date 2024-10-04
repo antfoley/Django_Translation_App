@@ -26,8 +26,8 @@ jobs:
         username: ${{ secrets.EC2_USER }}
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
-          cd /home/${{ secrets.EC2_USER }}
-          git pull origin main
+          cd /home/${{ secrets.EC2_USER }}/Django_Translation_App
+          git pull
         timeout: 5m
 
     - name: Execute deployment script on EC2
@@ -45,4 +45,4 @@ jobs:
             pip install -r requirements.txt
             python manage.py makemigrations
             python manage.py migrate
-            nohup python manage.py runserver 0.0.0.0:8000 &
+            nohup python manage.py runserver 0.0.0.0:8000
