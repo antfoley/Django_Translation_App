@@ -19,14 +19,15 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ secrets.AWS_REGION }}
 
-    - name: Copy files to EC2
-      uses: appleboy/scp-action@v0.1.3
+    - name: Pull latest code on EC2
+      uses: appleboy/ssh-action@v0.1.3
       with:
         host: ${{ secrets.EC2_HOST }}
         username: ${{ secrets.EC2_USER }}
         key: ${{ secrets.EC2_SSH_KEY }}
-        source: "."
-        target: "/home/${{ secrets.EC2_USER }}/app"
+        script: |
+          cd /home/${{ secrets.EC2_USER }}/Django_Translation_App
+          git pull origin main
 
     - name: Execute deployment script on EC2
       uses: appleboy/ssh-action@v0.1.3
