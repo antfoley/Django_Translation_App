@@ -1,21 +1,16 @@
-name: Deploy to AWS EC2
+name: Debug SSH Connection to AWS EC2
 
 on:
   push:
     branches: [ "main" ]
 
 jobs:
-  deploy:
+  debug-ssh:
     runs-on: ubuntu-latest
     env:
       AWS_INSTANCE_SG_ID: ${{ secrets.AWS_INSTANCE_SG_ID }}
     steps:
-    - name: Checkout code
-      if: always()
-      uses: actions/checkout@v4
-
     - name: Configure AWS credentials
-      if: always()
       uses: aws-actions/configure-aws-credentials@v1
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -23,12 +18,10 @@ jobs:
         aws-region: ${{ secrets.AWS_REGION }}
 
     - name: Get runner IP address
-      if: always()
       id: ip
       uses: haythem/public-ip@v1.2
     
     - name: Whitelist runner IP address
-      if: always()
       run: |
         aws ec2 authorize-security-group-ingress \
           --group-id $AWS_INSTANCE_SG_ID \
@@ -37,36 +30,16 @@ jobs:
           --cidr ${{ steps.ip.outputs.ipv4 }}/32
         echo "Whitelisted runner IP address: ${{ steps.ip.outputs.ipv4 }}"
 
+    - name: Verify whitelisted IP address
+      run: |
+        aws ec2 describe-security-groups --group-ids $AWS_INSTANCE_SG_ID
+
     - name: Check connection to EC2
-      if: always()
       run: |
         echo "${{ secrets.EC2_SSH_KEY }}" > ec2_key.pem
         chmod 600 ec2_key.pem
+        cat ec2_key.pem
         ssh -vvv -o StrictHostKeyChecking=no -i ec2_key.pem ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} "echo 'Connection successful'"
-
-    - name: Pull latest code on EC2
-      if: always()
-      run: |
-        ssh -vvv -o StrictHostKeyChecking=no -i ec2_key.pem ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
-          cd /home/${{ secrets.EC2_USER }}/Django_Translation_App || exit 1
-          git pull || exit 1
-        EOF
-
-    - name: Execute deployment script on EC2
-      if: always()
-      run: |
-        ssh -vvv -o StrictHostKeyChecking=no -i ec2_key.pem ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
-          cd /home/${{ secrets.EC2_USER }}/Django_Translation_App || exit 1
-          sudo apt update || exit 1
-          sudo apt install -y python3-venv || exit 1
-          python3 -m venv venv || exit 1
-          source venv/bin/activate || exit 1
-          python -m pip install --upgrade pip || exit 1
-          pip install -r requirements.txt || exit 1
-          python manage.py makemigrations || exit 1
-          python manage.py migrate || exit 1
-          nohup python manage.py runserver 0.0.0.0:8000 &
-        EOF
 
     - name: Revoke runner IP address
       if: always()
