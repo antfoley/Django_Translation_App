@@ -26,7 +26,7 @@ jobs:
         username: ${{ secrets.EC2_USER }}
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
-          cd /home/${{ secrets.EC2_USER }}/Django_Translation_App
+          cd /home/${{ secrets.EC2_USER }}
           git pull origin main
 
     - name: Execute deployment script on EC2
