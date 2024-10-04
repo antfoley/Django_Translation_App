@@ -28,6 +28,7 @@ jobs:
         script: |
           cd /home/${{ secrets.EC2_USER }}
           git pull origin main
+        timeout: 5m
 
     - name: Execute deployment script on EC2
       uses: appleboy/ssh-action@v0.1.3
