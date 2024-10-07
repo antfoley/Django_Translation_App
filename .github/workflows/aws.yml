@@ -18,6 +18,20 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
 
+      - name: Get runner IP address
+        id: ip
+        uses: haythem/public-ip@v1.2
+    
+      - name: Whitelist runner IP address
+        run: |
+          aws ec2 authorize-security-group-ingress \
+            --group-id $AWS_INSTANCE_SG_ID \
+            --protocol tcp \
+            --port 22 \
+            --cidr ${{ steps.ip.outputs.ipv4 }}/32
+          echo "Whitelisted runner IP address: ${{ steps.ip.outputs.ipv4 }}"
+
+
       - name: Install Docker on EC2
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
@@ -34,3 +48,14 @@ jobs:
           sudo docker stop $(sudo docker ps -q) || true  # Stop any existing containers
           sudo docker run -d -p 80:80 ${{ secrets.DOCKER_USERNAME }}/django-translation-app:latest
           EOF
+
+
+      - name: Revoke runner IP address
+        if: always()
+        run: |
+          echo "Revoking runner IP address: ${{ steps.ip.outputs.ipv4 }}"
+          aws ec2 revoke-security-group-ingress \
+            --group-id $AWS_INSTANCE_SG_ID \
+            --protocol tcp \
+            --port 22 \
+            --cidr ${{ steps.ip.outputs.ipv4 }}/32
