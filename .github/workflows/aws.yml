@@ -45,7 +45,7 @@ jobs:
 
       - name: Install Docker on EC2
         run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} 
+          ssh -i ${{ secrets.EC2_SSH_KEY }} -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} 
           sudo apt-get update -y
           sudo apt-get install -y docker.io
           sudo systemctl start docker
@@ -53,7 +53,7 @@ jobs:
 
       - name: Pull latest image and deploy container
         run: |
-          ssh -i ${{ secrets.EC2_SSH_KEY }}-o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}
+          ssh -i ${{ secrets.EC2_SSH_KEY }} -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}
           sudo docker pull ${{ secrets.DOCKER_USERNAME }}/django-translation-app:latest
           sudo docker stop $(sudo docker ps -q) || true  # Stop any existing containers
           sudo docker run -d -p 80:80 ${{ secrets.DOCKER_USERNAME }}/django-translation-app:latest
