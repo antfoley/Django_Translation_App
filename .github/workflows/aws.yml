@@ -1,52 +1,36 @@
-name: Debug SSH Connection to AWS EC2
+name: Deploy to EC2
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main  # Triggers on push to the main branch
 
 jobs:
-  debug-ssh:
+  deploy:
     runs-on: ubuntu-latest
-    env:
-      AWS_INSTANCE_SG_ID: ${{ secrets.AWS_INSTANCE_SG_ID }}
+
     steps:
-    - name: Configure AWS credentials
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: ${{ secrets.AWS_REGION }}
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Get runner IP address
-      id: ip
-      uses: haythem/public-ip@v1.2
-    
-    - name: Whitelist runner IP address
-      run: |
-        aws ec2 authorize-security-group-ingress \
-          --group-id $AWS_INSTANCE_SG_ID \
-          --protocol tcp \
-          --port 22 \
-          --cidr ${{ steps.ip.outputs.ipv4 }}/32
-        echo "Whitelisted runner IP address: ${{ steps.ip.outputs.ipv4 }}"
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.4
+        with:
+          ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
 
-    - name: Verify whitelisted IP address
-      run: |
-        aws ec2 describe-security-groups --group-ids $AWS_INSTANCE_SG_ID
+      - name: Install Docker on EC2
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
+          sudo apt-get update -y
+          sudo apt-get install -y docker.io
+          sudo systemctl start docker
+          sudo systemctl enable docker
+          EOF
 
-    - name: Check connection to EC2
-      run: |
-        echo "${{ secrets.EC2_SSH_KEY }}" > ec2_key.pem
-        chmod 600 ec2_key.pem
-        cat ec2_key.pem
-        ssh -vvv -o StrictHostKeyChecking=no -i ec2_key.pem ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} "echo 'Connection successful'"
-
-    - name: Revoke runner IP address
-      if: always()
-      run: |
-        echo "Revoking runner IP address: ${{ steps.ip.outputs.ipv4 }}"
-        aws ec2 revoke-security-group-ingress \
-          --group-id $AWS_INSTANCE_SG_ID \
-          --protocol tcp \
-          --port 22 \
-          --cidr ${{ steps.ip.outputs.ipv4 }}/32
+      - name: Pull latest image and deploy container
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
+          sudo docker pull ${{ secrets.DOCKER_USERNAME }}/django-translation-app:latest
+          sudo docker stop $(sudo docker ps -q) || true  # Stop any existing containers
+          sudo docker run -d -p 80:80 ${{ secrets.DOCKER_USERNAME }}/django-translation-app:latest
+          EOF
