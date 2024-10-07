@@ -20,8 +20,11 @@ jobs:
 
       - name: Get runner IP address
         id: ip
-        uses: haythem/public-ip@v1.2
-    
+        #uses: haythem/public-ip@v1.2
+        run: |
+         echo "IP=$(curl -s http://checkip.amazonaws.com)" >> $GITHUB_ENV
+
+
       - name: Install AWS CLI
         run: |
           sudo apt-get update
@@ -36,9 +39,7 @@ jobs:
             --group-id ${{ secrets.AWS_INSTANCE_SG_ID }} \
             --protocol tcp \
             --port 22 \
-            --cidr ${{ steps.ip.outputs.ipv4 }}/32
-          echo "Whitelisted runner IP address: ${{ steps.ip.outputs.ipv4 }}"
-
+            --cidr ${{ steps.ip.outputs.ip }}/32
 
       - name: Install Docker on EC2
         run: |
