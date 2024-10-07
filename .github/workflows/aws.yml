@@ -25,7 +25,7 @@ jobs:
       - name: Whitelist runner IP address
         run: |
           aws ec2 authorize-security-group-ingress \
-            --group-id ${{ AWS_INSTANCE_SG_ID }} \
+            --group-id ${{ secrets.AWS_INSTANCE_SG_ID }} \
             --protocol tcp \
             --port 22 \
             --cidr ${{ steps.ip.outputs.ipv4 }}/32
@@ -55,7 +55,7 @@ jobs:
         run: |
           echo "Revoking runner IP address: ${{ steps.ip.outputs.ipv4 }}"
           aws ec2 revoke-security-group-ingress \
-            --group-id ${{ AWS_INSTANCE_SG_ID }} \
+            --group-id ${{ secrets.AWS_INSTANCE_SG_ID }} \
             --protocol tcp \
             --port 22 \
             --cidr ${{ steps.ip.outputs.ipv4 }}/32
