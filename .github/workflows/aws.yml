@@ -40,7 +40,7 @@ jobs:
             --group-id ${{ secrets.AWS_INSTANCE_SG_ID }} \
             --protocol tcp \
             --port 22 \
-            --cidr $RUNNER_IP/32
+            --cidr "$RUNNER_IP/32"
 
       - name: Install Docker on EC2
         run: |
@@ -70,4 +70,4 @@ jobs:
             --group-id ${{ secrets.AWS_INSTANCE_SG_ID }} \
             --protocol tcp \
             --port 22 \
-            --cidr $RUNNER_IP/32
+            --cidr "$RUNNER_IP/32"
