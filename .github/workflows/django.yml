@@ -58,3 +58,8 @@ jobs:
     - name: Run Tests
       run: |
         python manage.py test
+    - name: Run Server
+      env:
+        GOOGLE_CLOUD_CREDENTIALS_PATH: "translation_app/booming-post-404017-49309d69296e.json"
+      run: |
+        python manage.py runserver
