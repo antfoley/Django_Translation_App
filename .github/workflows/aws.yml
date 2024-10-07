@@ -8,10 +8,11 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
+    env:
+      AWS_INSTANCE_SG_ID: ${{ secrets.AWS_INSTANCE_SG_ID }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up SSH
         uses: webfactory/ssh-agent@v0.5.4
@@ -19,28 +20,28 @@ jobs:
           ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
 
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v3
+        uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Get GitHub Runner's Public IP
-        run: |
-          echo "Fetching runner's IP..."
-          RUNNER_IP=$(curl -s http://checkip.amazonaws.com)
-          echo "Runner IP is: $RUNNER_IP"
-          echo "RUNNER_IP=$RUNNER_IP" >> $GITHUB_ENV
+      - name: Get runner IP address
+        id: ip
+        uses: haythem/public-ip@v1.2
 
       - name: Whitelist runner IP address
-        env:
-          RUNNER_IP: ${{ env.RUNNER_IP }}
         run: |
           aws ec2 authorize-security-group-ingress \
-            --group-id ${{ secrets.AWS_INSTANCE_SG_ID }} \
+            --group-id $AWS_INSTANCE_SG_ID \
             --protocol tcp \
             --port 22 \
-            --cidr "$RUNNER_IP/32"
+            --cidr ${{ steps.ip.outputs.ipv4 }}/32
+          echo "Whitelisted runner IP address: ${{ steps.ip.outputs.ipv4 }}"
+
+      - name: Verify whitelisted IP address
+        run: |
+          aws ec2 describe-security-groups --group-ids $AWS_INSTANCE_SG_ID
 
       - name: Install Docker on EC2
         run: |
@@ -65,9 +66,9 @@ jobs:
         env:
           RUNNER_IP: ${{ env.RUNNER_IP }}
         run: |
-          echo "Revoking runner IP address: $RUNNER_IP"
+          echo "Revoking runner IP address: ${{ steps.ip.outputs.ipv4 }}"
           aws ec2 revoke-security-group-ingress \
-            --group-id ${{ secrets.AWS_INSTANCE_SG_ID }} \
+            --group-id $AWS_INSTANCE_SG_ID \
             --protocol tcp \
             --port 22 \
-            --cidr "$RUNNER_IP/32"
+            --cidr ${{ steps.ip.outputs.ipv4 }}/32
