@@ -38,6 +38,17 @@ SECRET_KEY = 'django-insecure-%ru=@2zb=_mgnwb%wr*yfq==^x-5gw_@^f@u*mggne^b@q6p1^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+def write_api_key_to_file(secret_name, file_name):
+    secret_path = f"/run/secrets/{secret_name}"
+    if os.path.exists(secret_path):
+        with open(file_name, "w") as api_key_file:
+            api_key_file.write(open(secret_path, "r").read().strip())
+        # Optionally set the file permissions for security
+        os.chmod(file_name, 0o600)  # Read/write for owner only
+
+# Call this function to create the API key file
+write_api_key_to_file("google_cloud_credentials", "booming-post-404017-49309d69296e.json")
+
 ALLOWED_HOSTS = ['3.253.56.19', '127.0.0.1', 'localhost']
 
 
