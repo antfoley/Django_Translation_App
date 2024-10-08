@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       AWS_INSTANCE_SG_ID: ${{ secrets.AWS_INSTANCE_SG_ID }}
-      
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -53,41 +52,33 @@ jobs:
           docker build -t ${{ secrets.DOCKER_USERNAME }}/django-translation-app:latest .
           docker push ${{ secrets.DOCKER_USERNAME }}/django-translation-app:latest
 
-      # SSH into the EC2 instance and install Docker (if necessary)
-      - name: SSH into EC2 and Install Docker
+      - name: Install Docker on EC2
         run: |
-          echo ${{ secrets.EC2_SSH_KEY }} > key.pem
-          chmod 600 key.pem
-          ssh -i key.pem -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} \
-          `if ! [ -x "$(command -v docker)" ]; then \
-            sudo apt-get update -y \
-            sudo apt-get install -y docker.io \
-            sudo systemctl start docker \
-            sudo systemctl enable docker; \
-          else \
-            echo "Docker is already installed" \
-          fi`
+          echo "${{ secrets.EC2_SSH_KEY }}" > key.pem && chmod 600 key.pem << 'EOF'
+          ssh -i key.pem -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}
+          sudo apt-get update -y
+          sudo apt-get install -y docker.io
+          sudo systemctl start docker
+          sudo systemctl enable docker
+          EOF
 
-      # SSH into the EC2 instance and deploy the latest Docker container
       - name: Pull latest image and deploy container
         run: |
-          echo ${{ secrets.EC2_SSH_KEY }} > key.pem
-          chmod 600 key.pem
-          ssh -i key.pem -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} \
-          `sudo docker pull ${{ secrets.DOCKER_USERNAME }}/django-translation-app:latest &&
-          sudo docker stop $(sudo docker ps -q) || true  && \ 
-          sudo docker rm $(sudo docker ps -a -q) || true  && \ 
-          sudo docker run -d -p 8000:8000 --restart unless-stopped --memory="512m" ${{ secrets.DOCKER_USERNAME }}/django-translation-app:latest`
+          echo "${{ secrets.EC2_SSH_KEY }}" > key.pem && chmod 600 key.pem << 'EOF'
+          ssh -i key.pem -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}
+          sudo docker pull ${{ secrets.DOCKER_USERNAME }}/django-translation-app:latest
+          sudo docker stop $(sudo docker ps -q) # Stop any existing containers
+          sudo docker rm $(sudo docker ps -a -q) # Remove any existing containers
+          sudo docker run -d -p 8000:8000 --restart unless-stopped --memory="512m" ${{ secrets.DOCKER_USERNAME }}/django-translation-app:latest
+          EOF
 
-      # Check Docker container logs
       - name: Check Docker container logs
         run: |
-          echo ${{ secrets.EC2_SSH_KEY }} > key.pem
-          chmod 600 key.pem
-          ssh -i key.pem -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}
-          `sudo docker logs $(sudo docker ps -q)`
+          echo "${{ secrets.EC2_SSH_KEY }}" > key.pem && chmod 600 key.pem << 'EOF'
+          ssh -i key.pem -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} 
+          sudo docker logs $(sudo docker ps -q)
+          EOF
 
-      # Revoke runner IP address from the security group after job completion
       - name: Revoke runner IP address
         if: always()
         run: |
