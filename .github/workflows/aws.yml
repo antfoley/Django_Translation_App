@@ -56,7 +56,8 @@ jobs:
       # SSH into the EC2 instance and install Docker (if necessary)
       - name: SSH into EC2 and Install Docker
         run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
+          echo ${{ secrets.EC2_SSH_KEY }} > key.pem && chmod 600 key.pem
+          ssh -i key.pem -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
           if ! [ -x "$(command -v docker)" ]; then
             sudo apt-get update -y
             sudo apt-get install -y docker.io
@@ -70,7 +71,8 @@ jobs:
       # SSH into the EC2 instance and deploy the latest Docker container
       - name: Pull latest image and deploy container
         run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
+          echo ${{ secrets.EC2_SSH_KEY }} > key.pem && chmod 600 key.pem
+          ssh -i key.pem -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
           sudo docker pull ${{ secrets.DOCKER_USERNAME }}/django-translation-app:latest
           sudo docker stop $(sudo docker ps -q) || true  # Stop existing containers, if any
           sudo docker rm $(sudo docker ps -a -q) || true  # Remove existing containers, if any
