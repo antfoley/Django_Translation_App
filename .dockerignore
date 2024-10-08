@@ -162,7 +162,7 @@ cython_debug/
 #.idea/
 
 #ignore all json files because of sensitive data
-*.json
+# *.json
 
 #ignore uploaded files
 *.doc
