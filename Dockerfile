@@ -10,6 +10,7 @@ WORKDIR /Django_Translatation_App
 
 # Install dependencies
 COPY requirements.txt /Django_Translatation_App/
+RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the application code
