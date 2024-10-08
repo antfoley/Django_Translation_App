@@ -58,7 +58,7 @@ jobs:
         run: |
           echo ${{ secrets.EC2_SSH_KEY }} > key.pem
           chmod 600 key.pem
-          ssh -i key.pem -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}
+          ssh -i key.pem -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} >> EOF
           if ! [ -x "$(command -v docker)" ]; then
             sudo apt-get update -y
             sudo apt-get install -y docker.io
@@ -67,6 +67,7 @@ jobs:
           else
             echo "Docker is already installed"
           fi
+          EOF
 
       # SSH into the EC2 instance and deploy the latest Docker container
       - name: Pull latest image and deploy container
