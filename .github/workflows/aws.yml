@@ -48,6 +48,7 @@ jobs:
 
       - name: Build and push Docker image
         run: |
+          echo "${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}" > translation_app/booming-post-404017-49309d69296e.json
           docker build -t ${{ secrets.DOCKER_USERNAME }}/django-translation-app:latest .
           docker push ${{ secrets.DOCKER_USERNAME }}/django-translation-app:latest
 
@@ -68,7 +69,7 @@ jobs:
           sudo docker pull ${{ secrets.DOCKER_USERNAME }}/django-translation-app:latest
           sudo docker stop $(sudo docker ps -q) || true  # Stop any existing containers
           sudo docker rm $(sudo docker ps -a -q) || true  # Remove any existing containers
-          sudo docker run -d -p 8000:8000 --restart unless-stopped --memory="512m" --cpus="1" ${{ secrets.DOCKER_USERNAME }}/django-translation-app:latest
+          sudo docker run -d -p 8000:8000 --restart unless-stopped --memory="512m" ${{ secrets.DOCKER_USERNAME }}/django-translation-app:latest
           EOF
 
       - name: Check Docker container logs

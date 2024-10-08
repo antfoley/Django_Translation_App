@@ -16,15 +16,16 @@ def download_translated_file(document_id):
     return Http404('No trnaslated document found')
 
 def upload_file(request):
-    form = FileUploadForm()
     if request.method == 'POST':
         form = FileUploadForm(request.POST, request.FILES)
         if form.is_valid():
             try:
                 file_instance = form.save()
-                return redirect('success', documentId=file_instance.id)
+                return redirect('success', document_id=file_instance.id)
             except Exception as exc:
                 messages.error(request, f'An error has occurred! Please try again later! \n {exc}')
+    else:
+        form = FileUploadForm()
     return render(request, 'upload.html', {'form': form})
 
 def success(request, document_id):
