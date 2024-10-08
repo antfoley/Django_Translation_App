@@ -10,8 +10,12 @@ WORKDIR /Django_Translatation_App
 
 # Install dependencies
 COPY requirements.txt /Django_Translatation_App/
-RUN pip install --upgrade pip
-RUN pip install --no-cache-dir -r requirements.txt
+RUN python -m venv /opt/venv
+RUN /opt/venv/bin/pip install --upgrade pip
+RUN /opt/venv/bin/pip install --no-cache-dir -r requirements.txt
+
+# Activate virtual environment
+ENV PATH="/opt/venv/bin:$PATH"
 
 # Copy the application code
 COPY . /Django_Translatation_App/
