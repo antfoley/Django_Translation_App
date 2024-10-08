@@ -54,11 +54,13 @@ jobs:
       - name: Build and push Docker image
         run: |
           docker build -t ${{ secrets.DOCKER_USERNAME }}/django-translation-app:latest .
+        
       - name: Initialize Docker Swarm
         run: |
-          echo "${{ secrets.EC2_SSH_KEY }}" > key.pem && chmod 600 key.pem
+          echo "${{ secrets.EC2_SSH_KEY }}" > key.pem && chmod 600 key.pem << 'EOF'
           ssh -i key.pem -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} "
             docker swarm init || echo 'Swarm already initialized'"
+          EOF
 
       - name: Create Docker Secret
         run: |
@@ -66,9 +68,10 @@ jobs:
 
       - name: Deploy to Docker Swarm
         run: |
-          echo "${{ secrets.EC2_SSH_KEY }}" > key.pem && chmod 600 key.pem
+          echo "${{ secrets.EC2_SSH_KEY }}" > key.pem && chmod 600 key.pem << 'EOF'
           ssh -i key.pem -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} "
             docker stack deploy -c ./docker-compose.yml my_stack"
+          EOF  
 
       - name: Revoke runner IP address
         if: always()
