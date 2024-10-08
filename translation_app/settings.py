@@ -41,8 +41,10 @@ DEBUG = False
 def write_api_key_to_file(secret_name, file_name):
     secret_path = f"/run/secrets/{secret_name}"
     if os.path.exists(secret_path):
+        with open(secret_path, "r") as secret_file:
+            secret_content = secret_file.read().strip()
         with open(file_name, "w") as api_key_file:
-            api_key_file.write(open(secret_path, "r").read().strip())
+            api_key_file.write(secret_content)
         # Optionally set the file permissions for security
         os.chmod(file_name, 0o600)  # Read/write for owner only
 
