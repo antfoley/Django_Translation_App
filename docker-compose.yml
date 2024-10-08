@@ -2,13 +2,13 @@ version: '3.8'
 
 services:
   web:
-    image: your_dockerhub_username/django-translation-app:latest
+    image: antfoley14/django-translation-app:latest
     deploy:
       replicas: 3  # Number of instances to run
       restart_policy:
         condition: on-failure
     secrets:
-      - django_api_key  # Reference to the secret
+      - google_cloud_credentials  # Reference to the secret
     environment:
       GOOGLE_CLOUD_CREDENTIALS: /run/secrets/google_cloud_credentials  # Set the environment variable
     ports:
@@ -17,7 +17,7 @@ services:
       - webnet
 
 secrets:
-  django_api_key:
+  google_cloud_credentials:
     external: true  # Reference to an external Docker secret
 
 networks:
