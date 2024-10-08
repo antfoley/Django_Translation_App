@@ -59,7 +59,7 @@ jobs:
         run: |
           echo "${{ secrets.EC2_SSH_KEY }}" > key.pem && chmod 600 key.pem << 'EOF'
           ssh -i key.pem -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}
-          docker swarm init || echo 'Swarm already initialized'
+          sudo docker swarm init || echo 'Swarm already initialized'
           echo "${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}" | docker secret create google_cloud_credentials -
           EOF
 
@@ -74,8 +74,8 @@ jobs:
         run: |
           echo "${{ secrets.EC2_SSH_KEY }}" > key.pem && chmod 600 key.pem << 'EOF'
           ssh -i key.pem -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} 
-          docker stack rm my_stack || echo 'No stack to remove'
-          docker stack deploy -c ./docker-compose.yml my_stack
+          sudo docker stack rm my_stack || echo 'No stack to remove'
+          sudo docker stack deploy -c ./docker-compose.yml my_stack
           EOF  
 
       - name: Revoke runner IP address
