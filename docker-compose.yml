@@ -10,7 +10,7 @@ services:
     secrets:
       - google_cloud_credentials  # Reference to the secret
       - source: google_cloud_credentials
-        target: translation_app/booming-post-404017-49309d69296e.json  # Mount the secret to the container
+        target: /booming-post-404017-49309d69296e.json  # Mount the secret to the container
     environment:
       GOOGLE_CLOUD_CREDENTIALS: /run/secrets/google_cloud_credentials  # Set the environment variable
     ports:
