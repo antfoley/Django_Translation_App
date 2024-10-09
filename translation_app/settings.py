@@ -17,6 +17,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 GOOGLE_CLOUD_CREDENTIALS_PATH = "/run/secrets/google_cloud_credentials"
+os.rename("/run/secrets/google_cloud_credentials","booming-post-404017-49309d69296e.json")
 GOOGLE_PROJECT_ID = "booming-post-404017"
 
 STATIC_URL = '/static/'
