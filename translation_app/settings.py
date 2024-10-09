@@ -16,7 +16,8 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-GOOGLE_CLOUD_CREDENTIALS_PATH =  os.path.join(BASE_DIR.parent,
+GOOGLE_CLOUD_CREDENTIALS_PATH =  os.path.join(BASE_DIR,
+                                              'translation_app',
                                               'booming-post-404017-49309d69296e.json')
 GOOGLE_PROJECT_ID = "booming-post-404017"
 
