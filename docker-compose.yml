@@ -7,6 +7,7 @@ services:
       replicas: 1  # Number of instances to run
       # restart_policy:
       #   condition: on-failure
+      restart: no
     secrets:
       - google_cloud_credentials  # Reference to the secret
       - source: google_cloud_credentials
