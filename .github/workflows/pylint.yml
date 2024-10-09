@@ -23,7 +23,7 @@ jobs:
     - name: Analysing the code with pylint
       run: |
         # Array of pylint disable arguments
-        disable_args="--disable=C0111,R0903,W0718,W1514"  # Add your disable codes here
+        disable_args="--disable=C0111,R0903,W0718, W1514"  # Add your disable codes here
         
         # Directories and files to ignore
         python_files=$(find . -name '*.py' -not -path './translation/templatetags/*' -not -path './translation/migrations/*' -not -path './translation/staticfiles/*' -not -name 'manage.py')
