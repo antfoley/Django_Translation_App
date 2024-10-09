@@ -1,5 +1,6 @@
 import subprocess
 import csv
+import os
 from io import BytesIO, TextIOWrapper
 import docx
 from django.conf import settings
@@ -17,7 +18,7 @@ from PyPDF2 import PdfReader, PdfWriter
 
 try:
     credentials = service_account.Credentials.from_service_account_file(
-    settings.GOOGLE_CLOUD_CREDENTIALS_PATH)
+    os.environ.get('GOOGLE_APPLICATION_CREDENTIALS'))
 except FileNotFoundError:
     credentials =service_account.Credentials.from_service_account_file(
     r'translation_app\booming-post-404017-49309d69296e.json')
