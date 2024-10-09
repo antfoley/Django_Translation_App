@@ -5,8 +5,8 @@ services:
     image: antfoley14/django-translation-app:latest
     deploy:
       replicas: 3  # Number of instances to run
-      restart_policy:
-        condition: on-failure
+      # restart_policy:
+      #   condition: on-failure
     secrets:
       - google_cloud_credentials  # Reference to the secret
     environment:

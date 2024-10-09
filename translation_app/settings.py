@@ -16,7 +16,7 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-GOOGLE_CLOUD_CREDENTIALS_PATH = os.getenv('GOOGLE_APPLICATION_CREDENTIALS')
+GOOGLE_CLOUD_CREDENTIALS_PATH = "/run/secrets/google_cloud_credentials"
 GOOGLE_PROJECT_ID = "booming-post-404017"
 
 STATIC_URL = '/static/'
