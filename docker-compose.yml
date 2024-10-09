@@ -4,7 +4,7 @@ services:
   web:
     image: antfoley14/django-translation-app:latest
     deploy:
-      replicas: 3  # Number of instances to run
+      replicas: 1  # Number of instances to run
       # restart_policy:
       #   condition: on-failure
     secrets:
