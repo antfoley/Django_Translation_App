@@ -15,7 +15,7 @@ services:
         target: /booming-post-404017-49309d69296e.json  # Mount the secret to the container
     environment:
       GOOGLE_CLOUD_CREDENTIALS: /run/secrets/google_cloud_credentials  # Set the environment variable
-    command: /bin/sh
+    command: python manage.py runserver 0.0.0.0:8000
     ports:
       - "8000:8000"  # Expose port 8000
     networks:
