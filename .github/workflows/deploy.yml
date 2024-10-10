@@ -16,11 +16,24 @@ jobs:
         - name: Install SSH client
           run: sudo apt-get install -y openssh-client
 
+        - name: Debug SSH connection
+          run: |
+            echo "$SSH_PRIVATE_KEY" > private_key
+            chmod 600 private_key
+            ssh -v -i private_key -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_HOST "echo 'SSH connection successful'"
+          env:
+            SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+            SERVER_USER: ${{ secrets.EC2_USER }}
+            SERVER_HOST: ${{ secrets.EC2_HOST }}
+          shell: bash
+
+
         - name: SSH and deploy
           env:
             SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
             SERVER_USER: ${{ secrets.EC2_USER }}
             SERVER_HOST: ${{ secrets.EC2_HOST }}
+            GOOGLE_CLOUD_CREDENTIALS: ${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}
             BRANCH_NAME: restart
           run: |
             echo "$SSH_PRIVATE_KEY" > private_key
@@ -36,7 +49,7 @@ jobs:
               source venv/bin/activate
               pip install --upgrade pip
               pip install -r requirements.txt
-              echo "${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}" > translation_app/booming-post-404017-49309d69296e.json
+              echo "$GOOGLE_CLOUD_CREDENTIALS" > translation_app/booming-post-404017-49309d69296e.json
               python manage.py makemigrations
               python manage.py migrate
               python manage.py runserver 0.0.0.0:8000
