@@ -26,12 +26,19 @@ jobs:
             echo "$SSH_PRIVATE_KEY" > private_key << 'EOF'
             chmod 600 private_key
             ssh -i private_key -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_HOST 
+              sudo apt-get update
+              sudo apt-get install -y python3-pip python3-venv
+              python3 -m venv venv
               cd Django_Translation_App
+              git fetch origin $BRANCH_NAME
               git pull origin $BRANCH_NAME
               git checkout $BRANCH_NAME
-              source /venv/bin/activate
+              source venv/bin/activate
               pip install --upgrade pip
               pip install -r requirements.txt
+              echo ${{secrets.GOOGLE_CLOUD_CREDENTIALS}} > translation_app\booming-post-404017-49309d69296e.json
+              python manage.py makemigratations
+              python manage.py migrate
               python manage.py runserver 0.0.0.0:8000
             EOF
           shell: bash

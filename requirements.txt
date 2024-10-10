@@ -1,4 +1,4 @@
-Django==3.2.5
+Django
 google-cloud-translate
 python-docx
 python-pptx
