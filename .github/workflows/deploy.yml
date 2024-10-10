@@ -25,7 +25,7 @@ jobs:
           run: |
             echo "$SSH_PRIVATE_KEY" > private_key
             chmod 600 private_key
-            ssh -i private_key -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_HOST << EOF
+            ssh -v -i private_key -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_HOST << EOF
               sudo apt-get update
               sudo apt-get install -y python3-pip python3-venv
               if [ ! -d "venv" ]; then python3 -m venv venv; fi
