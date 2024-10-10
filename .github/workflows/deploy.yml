@@ -23,9 +23,9 @@ jobs:
             SERVER_HOST: ${{ secrets.EC2_HOST }}
             BRANCH_NAME: restart
           run: |
-            echo "$SSH_PRIVATE_KEY" > private_key << 'EOF'
+            echo "$SSH_PRIVATE_KEY" > private_key
             chmod 600 private_key
-            ssh -i private_key -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_HOST 
+            ssh -i private_key -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_HOST << EOF
               sudo apt-get update
               sudo apt-get install -y python3-pip python3-venv
               python3 -m venv venv
@@ -36,8 +36,8 @@ jobs:
               source venv/bin/activate
               pip install --upgrade pip
               pip install -r requirements.txt
-              echo ${{secrets.GOOGLE_CLOUD_CREDENTIALS}} > translation_app\booming-post-404017-49309d69296e.json
-              python manage.py makemigratations
+              echo "${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}" > translation_app/booming-post-404017-49309d69296e.json
+              python manage.py makemigrations
               python manage.py migrate
               python manage.py runserver 0.0.0.0:8000
             EOF
