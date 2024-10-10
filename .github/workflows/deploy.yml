@@ -16,29 +16,33 @@ jobs:
         - name: Install SSH client
           run: sudo apt-get install -y openssh-client
 
-        - name: Debug SSH connection
-          run: |
-            echo "$SSH_PRIVATE_KEY" > private_key
-            chmod 600 private_key
-            ssh -v -i private_key -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_HOST "echo 'SSH connection successful'"
-          env:
-            SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
-            SERVER_USER: ${{ secrets.EC2_USER }}
-            SERVER_HOST: ${{ secrets.EC2_HOST }}
-          shell: bash
+       
+            # echo "$SSH_PRIVATE_KEY" > private_key
+            # chmod 600 private_key
+            # ssh -t -v -i private_key -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_HOST << EOF
+            #   sudo apt-get update
+            #   sudo apt-get install -y python3-pip python3-venv
+            #   if [ ! -d "venv" ]; then python3 -m venv venv; fi
+            #   cd Django_Translation_App
+            #   git fetch origin $BRANCH_NAME
+            #   git pull origin $BRANCH_NAME
+            #   git checkout $BRANCH_NAME
+            #   source venv/bin/activate
+            #   pip install --upgrade pip
+            #   pip install -r requirements.txt
+            #   echo "$GOOGLE_CLOUD_CREDENTIALS" > translation_app/booming-post-404017-49309d69296e.json
+            #   python manage.py makemigrations
+            #   python manage.py migrate
+            #   python manage.py runserver 0.0.0.0:8000
+            # EOF
 
-
-        - name: SSH and deploy
-          env:
+        - name: Deploy
+          uses: easingthemes/ssh-deploy@main
+          with:
+            REMOTE_HOST: ${{ secrets.EC2_HOST}}
+            REMOTE_USER: ${{ secrets.EC2_USER }}
             SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
-            SERVER_USER: ${{ secrets.EC2_USER }}
-            SERVER_HOST: ${{ secrets.EC2_HOST }}
-            GOOGLE_CLOUD_CREDENTIALS: ${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}
-            BRANCH_NAME: restart
-          run: |
-            echo "$SSH_PRIVATE_KEY" > private_key
-            chmod 600 private_key
-            ssh -t -v -i private_key -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_HOST << EOF
+            SCRIPT_AFTER: |
               sudo apt-get update
               sudo apt-get install -y python3-pip python3-venv
               if [ ! -d "venv" ]; then python3 -m venv venv; fi
@@ -52,6 +56,4 @@ jobs:
               echo "$GOOGLE_CLOUD_CREDENTIALS" > translation_app/booming-post-404017-49309d69296e.json
               python manage.py makemigrations
               python manage.py migrate
-              python manage.py runserver 0.0.0.0:8000
-            EOF
-          shell: bash
+              python manage.py runserver
