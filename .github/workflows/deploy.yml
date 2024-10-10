@@ -23,13 +23,13 @@ jobs:
             SERVER_HOST: ${{ secrets.EC2_HOST }}
             BRANCH_NAME: restart
           run: |
-            echo "$SSH_PRIVATE_KEY" > private_key
+            echo "$SSH_PRIVATE_KEY" > private_key << 'EOF'
             chmod 600 private_key
-            ssh -i private_key -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_HOST << 'EOF'
-              cd /path/to/your/repo
+            ssh -i private_key -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_HOST 
+              cd Django_Translation_App
               git pull origin $BRANCH_NAME
               git checkout $BRANCH_NAME
-              source /path/to/your/virtualenv/bin/activate
+              source /venv/bin/activate
               python manage.py runserver 0.0.0.0:8000
             EOF
           shell: bash
