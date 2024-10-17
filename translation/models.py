@@ -20,7 +20,7 @@ try:
         settings.GOOGLE_CLOUD_CREDENTIALS_PATH)
 except Exception as e:
     credentials = service_account.Credentials.from_service_account_file(
-        r'translation_app\booming-post-404017-49309d69296e.json')
+        r'translation_app/booming-post-404017-49309d69296e.json')
 translateV3_client = TranslationServiceClient(credentials=credentials)
 translateV2_client = translate.Client(credentials=credentials)
 PARENT = f"projects/{settings.GOOGLE_PROJECT_ID}/locations/global"
